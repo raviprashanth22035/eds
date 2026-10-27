@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1700 960" width="1700" height="960" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#334155"/>
+    </marker>
+    <filter id="sh" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <g id="ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M16 16l5 5"/></g></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></g><g fill="currentColor"><circle cx="8" cy="14" r="1.2"/><circle cx="12" cy="14" r="1.2"/><circle cx="16" cy="14" r="1.2"/><circle cx="8" cy="18" r="1.2"/><circle cx="12" cy="18" r="1.2"/></g></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4z"/><path d="M15 7v10" stroke-dasharray="2 2"/></g></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></g></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></g></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/></g><circle cx="12" cy="12" r="1.6" fill="currentColor"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21a2 2 0 0 0 4 0"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></g></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></g></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></g></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></g></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></g></symbol>
+    <!-- Adobe-style badge -->
+    <symbol id="b-aem" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#eb1000"/><path d="M20 9L31 31h-6l-2.2-5h-6.2l2.3-5h2l-1.9-4.3L14 31H9z" fill="#fff"/></symbol>
+  </defs>
+
+  <rect width="1700" height="960" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="850" y="58" text-anchor="middle" font-size="34" font-weight="800" fill="#0f172a">NFL Events Hub – Platform Architecture</text>
+  <text x="850" y="92" text-anchor="middle" font-size="18" fill="#475569">Unified event platform for web and OnePass mobile experiences</text>
+
+  <!-- ============ CHANNEL ============ -->
+  <g filter="url(#sh)"><rect x="30" y="130" width="260" height="600" rx="14" fill="#fff" stroke="#dbe3ee"/></g>
+  <rect x="46" y="146" width="96" height="30" rx="15" fill="#2563eb"/>
+  <text x="94" y="166" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Channel</text>
+  <!-- React atom -->
+  <g transform="translate(160 235)" fill="none" stroke="#149eca" stroke-width="3">
+    <ellipse rx="40" ry="15"/><ellipse rx="40" ry="15" transform="rotate(60)"/><ellipse rx="40" ry="15" transform="rotate(120)"/>
+    <circle r="6" fill="#149eca" stroke="none"/>
+  </g>
+  <text x="160" y="300" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">React Events Hub</text>
+  <text x="160" y="323" text-anchor="middle" font-size="14" fill="#64748b">Web + OnePass single experience</text>
+  <line x1="50" y1="348" x2="270" y2="348" stroke="#e2e8f0"/>
+  <g font-size="15" fill="#1e293b">
+    <rect x="52" y="367" width="36" height="36" rx="8" fill="#eff6ff"/><use href="#i-search" x="59" y="374" width="22" height="22" color="#2563eb"/><text x="102" y="390">Browse / search</text>
+    <rect x="52" y="427" width="36" height="36" rx="8" fill="#eff6ff"/><use href="#i-cal" x="59" y="434" width="22" height="22" color="#2563eb"/><text x="102" y="450">Event details</text>
+    <rect x="52" y="487" width="36" height="36" rx="8" fill="#eff6ff"/><use href="#i-ticket" x="59" y="494" width="22" height="22" color="#2563eb"/><text x="102" y="510">Registration</text>
+    <rect x="52" y="547" width="36" height="36" rx="8" fill="#eff6ff"/><use href="#i-user" x="59" y="554" width="22" height="22" color="#2563eb"/><text x="102" y="570">My events</text>
+  </g>
+  <g font-size="12" fill="#64748b">
+    <text x="52" y="640">Next.js / React SPA</text>
+    <text x="52" y="660">OnePass app (WebView / native)</text>
+    <text x="52" y="680">OnePass SSO session</text>
+  </g>
+
+  <!-- ============ ADOBE CDN ============ -->
+  <g filter="url(#sh)"><rect x="390" y="130" width="220" height="500" rx="14" fill="#fff" stroke="#dbe3ee"/></g>
+  <rect x="406" y="146" width="158" height="30" rx="15" fill="#e11d2d"/>
+  <text x="485" y="166" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Adobe CDN (Fastly)</text>
+  <rect x="465" y="196" width="70" height="70" rx="14" fill="#fee2e2"/>
+  <use href="#i-globe" x="479" y="210" width="42" height="42" color="#e11d2d"/>
+  <text x="500" y="300" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Adobe CDN</text>
+  <text x="500" y="324" text-anchor="middle" font-size="16" font-weight="600" fill="#334155">(Fastly)</text>
+  <text x="500" y="356" text-anchor="middle" font-size="13.5" fill="#64748b">Global caching, security</text>
+  <text x="500" y="375" text-anchor="middle" font-size="13.5" fill="#64748b">and performance</text>
+  <line x1="410" y1="398" x2="590" y2="398" stroke="#e2e8f0"/>
+  <g font-size="13" fill="#1e293b">
+    <use href="#i-bolt" x="410" y="416" width="18" height="18" color="#e11d2d"/><text x="436" y="430">Edge cache · purge keys</text>
+    <use href="#i-shield" x="410" y="446" width="18" height="18" color="#e11d2d"/><text x="436" y="460">WAF · DDoS · rate limits</text>
+    <use href="#i-lock" x="410" y="476" width="18" height="18" color="#e11d2d"/><text x="436" y="490">TLS · origin shielding</text>
+  </g>
+
+  <!-- ============ AEM HEADLESS ============ -->
+  <g filter="url(#sh)"><rect x="650" y="130" width="330" height="260" rx="14" fill="#fff" stroke="#dbe3ee"/></g>
+  <rect x="666" y="146" width="168" height="30" rx="15" fill="#eb1000"/>
+  <text x="750" y="166" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">AEM Headless (Sites)</text>
+  <!-- Author -->
+  <rect x="665" y="195" width="125" height="70" rx="10" fill="#fff" stroke="#cbd5e1"/>
+  <use href="#b-aem" x="675" y="213" width="34" height="34"/>
+  <text x="716" y="227" font-size="14" font-weight="700" fill="#0f172a">AEM</text>
+  <text x="716" y="245" font-size="14" font-weight="700" fill="#0f172a">Author</text>
+  <!-- Publish -->
+  <rect x="840" y="195" width="125" height="70" rx="10" fill="#fff" stroke="#cbd5e1"/>
+  <use href="#b-aem" x="850" y="213" width="34" height="34"/>
+  <text x="891" y="227" font-size="14" font-weight="700" fill="#0f172a">AEM</text>
+  <text x="891" y="245" font-size="14" font-weight="700" fill="#0f172a">Publish</text>
+  <line x1="790" y1="230" x2="838" y2="230" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)"/>
+  <text x="814" y="221" text-anchor="middle" font-size="11" fill="#475569">Publish</text>
+  <!-- Dispatcher -->
+  <rect x="840" y="292" width="125" height="40" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="902" y="317" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">Dispatcher</text>
+  <line x1="902" y1="265" x2="902" y2="290" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)"/>
+  <g font-size="12" fill="#475569">
+    <text x="668" y="300">• Content Fragment Models</text>
+    <text x="668" y="320">• Persisted GraphQL queries</text>
+    <text x="668" y="340">• Universal Editor</text>
+  </g>
+
+  <!-- Dispatcher -> CDN -->
+  <path d="M902 332 V420 H612" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)"/>
+  <text x="760" y="412" text-anchor="middle" font-size="13" fill="#334155">Content APIs (GraphQL)</text>
+
+  <!-- CDN <-> BFF -->
+  <line x1="610" y1="490" x2="1008" y2="490" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)"/>
+  <text x="810" y="481" text-anchor="middle" font-size="13" fill="#334155">Content APIs (GraphQL)</text>
+  <line x1="1010" y1="550" x2="612" y2="550" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)"/>
+  <text x="810" y="572" text-anchor="middle" font-size="13" fill="#334155">BFF response</text>
+  <text x="810" y="590" text-anchor="middle" font-size="13" fill="#334155">(unified experience JSON)</text>
+
+  <!-- CDN -> Channel -->
+  <line x1="390" y1="300" x2="292" y2="300" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)"/>
+  <text x="340" y="274" text-anchor="middle" font-size="11" fill="#334155">Unified</text>
+  <text x="340" y="290" text-anchor="middle" font-size="11" fill="#334155">experience JSON</text>
+
+  <!-- ============ BFF ============ -->
+  <g filter="url(#sh)"><rect x="1010" y="130" width="290" height="620" rx="14" fill="#fff" stroke="#dbe3ee"/></g>
+  <rect x="1026" y="146" width="166" height="30" rx="15" fill="#3c873a"/>
+  <text x="1109" y="166" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">NFL Events Hub BFF</text>
+  <polygon points="1155,183 1184,200 1184,234 1155,251 1126,234 1126,200" fill="#3c873a"/>
+  <text x="1155" y="224" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">JS</text>
+  <text x="1155" y="285" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">Node.js BFF</text>
+  <text x="1155" y="310" text-anchor="middle" font-size="13.5" fill="#64748b">Composes content, event data</text>
+  <text x="1155" y="329" text-anchor="middle" font-size="13.5" fill="#64748b">and user context</text>
+  <line x1="1030" y1="352" x2="1280" y2="352" stroke="#e2e8f0"/>
+  <g font-size="15" fill="#1e293b">
+    <rect x="1032" y="372" width="36" height="36" rx="8" fill="#ecfdf3"/><use href="#i-doc" x="1039" y="379" width="22" height="22" color="#3c873a"/><text x="1082" y="395">Content aggregation</text>
+    <rect x="1032" y="434" width="36" height="36" rx="8" fill="#ecfdf3"/><use href="#i-cal" x="1039" y="441" width="22" height="22" color="#3c873a"/><text x="1082" y="457">Event services</text>
+    <rect x="1032" y="496" width="36" height="36" rx="8" fill="#ecfdf3"/><use href="#i-user" x="1039" y="503" width="22" height="22" color="#3c873a"/><text x="1082" y="519">User &amp; registration</text>
+    <rect x="1032" y="558" width="36" height="36" rx="8" fill="#ecfdf3"/><use href="#i-target" x="1039" y="565" width="22" height="22" color="#3c873a"/><text x="1082" y="581">Personalization</text>
+    <rect x="1032" y="620" width="36" height="36" rx="8" fill="#fef2f2"/><use href="#i-db" x="1039" y="627" width="22" height="22" color="#dc382d"/><text x="1082" y="643">Caching (Redis)</text>
+  </g>
+  <text x="1155" y="712" text-anchor="middle" font-size="12" fill="#64748b">OnePass JWT validation · circuit breakers</text>
+
+  <!-- ============ NFL SYSTEMS ============ -->
+  <g filter="url(#sh)"><rect x="1420" y="130" width="250" height="605" rx="14" fill="#fff" stroke="#dbe3ee"/></g>
+  <rect x="1436" y="146" width="116" height="30" rx="15" fill="#013369"/>
+  <text x="1494" y="166" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">NFL Systems</text>
+  <g font-size="15" font-weight="700" fill="#0f172a">
+    <rect x="1440" y="195" width="210" height="110" rx="10" fill="#fff" stroke="#cbd5e1"/>
+    <rect x="1454" y="230" width="40" height="40" rx="9" fill="#e8eef7"/><use href="#i-shield" x="1462" y="238" width="24" height="24" color="#013369"/>
+    <text x="1506" y="246">NFL Identity</text><text x="1506" y="266" font-weight="500" fill="#475569">(OnePass)</text>
+
+    <rect x="1440" y="330" width="210" height="110" rx="10" fill="#fff" stroke="#cbd5e1"/>
+    <rect x="1454" y="365" width="40" height="40" rx="9" fill="#e8eef7"/><use href="#i-cal" x="1462" y="373" width="24" height="24" color="#013369"/>
+    <text x="1506" y="381">League &amp; Club</text><text x="1506" y="401">Event Sources</text>
+
+    <rect x="1440" y="465" width="210" height="110" rx="10" fill="#fff" stroke="#cbd5e1"/>
+    <rect x="1454" y="500" width="40" height="40" rx="9" fill="#e8eef7"/><use href="#i-ticket" x="1462" y="508" width="24" height="24" color="#013369"/>
+    <text x="1506" y="516">Ticketing &amp; RSVP</text><text x="1506" y="536">Providers</text>
+
+    <rect x="1440" y="600" width="210" height="110" rx="10" fill="#fff" stroke="#cbd5e1"/>
+    <rect x="1454" y="635" width="40" height="40" rx="9" fill="#e8eef7"/><use href="#i-bell" x="1462" y="643" width="24" height="24" color="#013369"/>
+    <text x="1506" y="651">Calendar /</text><text x="1506" y="671">Notifications</text>
+  </g>
+  <!-- BFF <-> NFL systems -->
+  <g stroke="#334155" stroke-width="1.8" marker-start="url(#arr)" marker-end="url(#arr)">
+    <line x1="1302" y1="250" x2="1438" y2="250"/>
+    <line x1="1302" y1="385" x2="1438" y2="385"/>
+    <line x1="1302" y1="520" x2="1438" y2="520"/>
+    <line x1="1302" y1="655" x2="1438" y2="655"/>
+  </g>
+  <g font-size="12" fill="#334155" text-anchor="middle">
+    <text x="1370" y="241">REST / GraphQL</text>
+    <text x="1370" y="376">REST / GraphQL</text>
+    <text x="1370" y="511">REST / GraphQL</text>
+    <text x="1370" y="646">REST / GraphQL</text>
+  </g>
+
+  <!-- ============ DYNAMIC MEDIA ============ -->
+  <g filter="url(#sh)"><rect x="560" y="790" width="420" height="130" rx="14" fill="#fff" stroke="#dbe3ee"/></g>
+  <rect x="576" y="806" width="210" height="30" rx="15" fill="#c2410c"/>
+  <text x="681" y="826" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">AEM Assets (Dynamic Media)</text>
+  <use href="#b-aem" x="580" y="852" width="44" height="44"/>
+  <text x="642" y="870" font-size="17" font-weight="700" fill="#0f172a">Dynamic Media Delivery</text>
+  <text x="642" y="893" font-size="14" fill="#64748b">Images, video, smart-crop renditions</text>
+  <path d="M560 870 H160 V732" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)"/>
+  <text x="360" y="860" text-anchor="middle" font-size="13" fill="#334155">Media delivery</text>
+
+  <!-- Footer -->
+  <text x="1670" y="945" text-anchor="end" font-size="12" fill="#94a3b8">AEM as a Cloud Service · Adobe-managed Fastly CDN · Node.js BFF</text>
+</svg>
