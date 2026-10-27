@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "NFL Events Hub Architecture",
+    "output": ".archify/architecture-nfl-events-hub-20261027-005123/nfl-events-hub.html",
+    "locale": "en",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    { "id": "author", "type": "backend", "label": "AEM Author", "sublabel": "editors, Content Fragments", "pos": [40, 60], "size": [140, 64] },
+    { "id": "publish", "type": "backend", "label": "AEM Publish", "sublabel": "GraphQL endpoint", "pos": [300, 60], "size": [140, 64] },
+    { "id": "dispatcher", "type": "cloud", "label": "Dispatcher", "sublabel": "cache + filters", "pos": [300, 180], "size": [140, 64] },
+    { "id": "app", "type": "frontend", "label": "React Events Hub", "sublabel": "Web + OnePass app", "pos": [40, 336], "size": [130, 64] },
+    { "id": "cdn", "type": "cloud", "label": "Adobe CDN", "sublabel": "Fastly, WAF, edge cache", "pos": [300, 320], "size": [140, 96] },
+    { "id": "dm", "type": "cloud", "label": "Dynamic Media", "sublabel": "AEM Assets renditions", "pos": [300, 520], "size": [140, 64] },
+    { "id": "bff", "type": "backend", "label": "Events Hub BFF", "sublabel": "Node.js, composes one JSON", "tag": "content + events + user", "pos": [620, 230], "size": [170, 340] },
+    { "id": "redis", "type": "database", "label": "Redis", "sublabel": "response + session cache", "pos": [620, 650], "size": [170, 64] },
+    { "id": "identity", "type": "security", "label": "NFL Identity", "sublabel": "OnePass sign-in", "pos": [920, 230], "size": [170, 64] },
+    { "id": "events", "type": "external", "label": "League & club", "sublabel": "event sources", "pos": [920, 320], "size": [170, 64] },
+    { "id": "ticketing", "type": "external", "label": "Ticketing & RSVP", "sublabel": "providers", "pos": [920, 410], "size": [170, 64] },
+    { "id": "notify", "type": "external", "label": "Calendar", "sublabel": "notifications", "pos": [920, 500], "size": [170, 64] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "AEM as a Cloud Service: Sites", "wraps": ["author", "publish", "dispatcher"] },
+    { "kind": "region", "label": "NFL systems: REST / GraphQL", "wraps": ["identity", "events", "ticketing", "notify"] }
+  ],
+  "connections": [
+    { "id": "app-request", "from": "app", "to": "cdn", "label": "GET /api/*", "variant": "emphasis" },
+    { "id": "cdn-to-bff", "from": "cdn", "to": "bff", "label": "origin selector", "variant": "emphasis" },
+    { "id": "bff-query", "from": "bff", "to": "cdn", "label": "persisted GraphQL query" },
+    { "id": "cdn-to-dispatcher", "from": "cdn", "to": "dispatcher", "label": "/graphql" },
+    { "id": "dispatcher-to-publish", "from": "dispatcher", "to": "publish", "label": "cache miss" },
+    { "id": "author-publish", "from": "author", "to": "publish", "label": "publish" },
+    { "id": "bff-identity", "from": "bff", "to": "identity", "label": "verify token", "variant": "security" },
+    { "id": "bff-events", "from": "bff", "to": "events", "label": "event feeds" },
+    { "id": "bff-ticketing", "from": "bff", "to": "ticketing", "label": "RSVP" },
+    { "id": "bff-notify", "from": "bff", "to": "notify", "label": "reminders", "variant": "dashed" },
+    { "id": "bff-redis", "from": "bff", "to": "redis", "label": "read / write" },
+    { "id": "bff-response", "from": "bff", "to": "cdn", "label": "experience JSON" },
+    { "id": "cdn-response", "from": "cdn", "to": "app", "label": "experience JSON" },
+    { "id": "media", "from": "dm", "to": "app", "label": "image + video" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Request path", "items": ["App calls /api/* on the Adobe CDN", "Origin selector routes /api/* to the BFF", "BFF reads Content Fragments via persisted GraphQL queries", "BFF calls identity, events, ticketing and notifications", "One experience JSON returns through the CDN"] },
+    { "dot": "emerald", "title": "AEM", "items": ["Editors author Content Fragments in Author", "Publish serves GraphQL behind Dispatcher", "Dynamic Media serves image and video renditions"] },
+    { "dot": "violet", "title": "BFF", "items": ["Content aggregation and event services", "User, registration and personalization", "Redis caches responses and sessions"] }
+  ]
+}
