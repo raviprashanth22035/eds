@@ -50,9 +50,9 @@
     <p class="eyebrow">Solution architecture · NFL Events Hub on AEM Edge Delivery Services</p>
     <h1>NFL Events Hub — solution architecture</h1>
     <div class="diagram-container">
-    <svg viewBox="0 0 1280 880" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="nfl-events-hub-solution-title nfl-events-hub-solution-desc">
+    <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="nfl-events-hub-solution-title nfl-events-hub-solution-desc">
 <title id="nfl-events-hub-solution-title">NFL Events Hub solution architecture</title>
-<desc id="nfl-events-hub-solution-desc">Solution architecture of the NFL Events Hub: club-authored event sites on AEM Edge Delivery Services served from the CDN to fans on the web, NFL app, OnePass and club sites; a thin edge middleware for NFL ID session and pass-through calls to the registration service, wallet and future Leap features; paid events exit to ticket providers.</desc>
+<desc id="nfl-events-hub-solution-desc">Solution architecture of the NFL Events Hub: club-authored event sites on AEM Edge Delivery Services served from the CDN to fans on the web, NFL app, OnePass and club sites; a thin edge middleware for NFL ID session and pass-through calls to the registration service; paid events exit to ticket providers.</desc>
 <defs>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
 <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
@@ -62,51 +62,36 @@
 <rect x="624" y="40" width="240" height="224" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
 <rect x="678" y="44" width="132" height="12" rx="2" fill="#f5f5f5"/>
 <text x="744" y="53" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">ADOBE EDGE DELIVERY</text>
-<rect x="320" y="144" width="232" height="472" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<rect x="320" y="144" width="232" height="392" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
 <rect x="358" y="148" width="156" height="12" rx="2" fill="#f5f5f5"/>
 <text x="436" y="157" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">EDGE · CDN + MIDDLEWARE</text>
-<rect x="1016" y="280" width="224" height="504" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
-<rect x="1052" y="284" width="152" height="12" rx="2" fill="#f5f5f5"/>
-<text x="1128" y="293" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">NFL &amp; PARTNER SERVICES</text>
+<rect x="1016" y="288" width="224" height="232" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<rect x="1084" y="292" width="88" height="12" rx="2" fill="#f5f5f5"/>
+<text x="1128" y="301" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">NFL SERVICES</text>
 <path d="M 216,212 H 334" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
 <path d="M 216,400 H 334" fill="none" stroke="#bf4520" stroke-width="1.4" marker-end="url(#arrow-accent)"/>
-<path d="M 128,448 V 502" fill="none" stroke="#2e5aa8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-link)"/>
-<path d="M 216,704 H 428 Q 436,704 436,696 V 602" fill="none" stroke="#bf4520" stroke-width="1.4" marker-end="url(#arrow-accent)"/>
+<path d="M 128,448 V 510" fill="none" stroke="#2e5aa8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-link)"/>
 <path d="M 536,200 H 638" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
 <path d="M 640,224 H 538" fill="none" stroke="#4f5d75" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
 <path d="M 744,136 V 174" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
-<path d="M 536,340 H 736 Q 744,340 744,332 V 250" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
-<path d="M 536,360 H 1030" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
-<path d="M 536,440 H 1030" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
-<path d="M 1128,472 V 502" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
-<path d="M 536,568 H 944 Q 952,568 952,576 V 624 Q 952,632 960,632 H 1030" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
-<path d="M 536,588 H 912 Q 920,588 920,596 V 720 Q 920,728 928,728 H 1030" fill="none" stroke="#2e5aa8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-link)"/>
+<path d="M 536,352 H 1030" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+<path d="M 536,456 H 1030" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
 <rect x="220" y="184" width="112" height="16" rx="2" fill="#f5f5f5"/>
 <text x="276" y="196" fill="#5a6580" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">PAGES · JSON</text>
 <rect x="228" y="372" width="96" height="16" rx="2" fill="#f5f5f5"/>
 <text x="276" y="384" fill="#bf4520" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">AUTH · API</text>
-<rect x="132" y="468" width="104" height="16" rx="2" fill="#f5f5f5"/>
-<text x="184" y="480" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">BUY TICKETS</text>
-<rect x="260" y="676" width="120" height="16" rx="2" fill="#f5f5f5"/>
-<text x="320" y="688" fill="#bf4520" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">SCAN · STATUS</text>
+<rect x="132" y="472" width="104" height="16" rx="2" fill="#f5f5f5"/>
+<text x="184" y="484" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">BUY TICKETS</text>
 <rect x="558" y="172" width="60" height="16" rx="2" fill="#f5f5f5"/>
 <text x="588" y="184" fill="#5a6580" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">ORIGIN</text>
 <rect x="562" y="232" width="52" height="16" rx="2" fill="#f5f5f5"/>
 <text x="588" y="244" fill="#5a6580" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">PURGE</text>
 <rect x="760" y="148" width="72" height="16" rx="2" fill="#f5f5f5"/>
 <text x="796" y="160" fill="#5a6580" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">PUBLISH</text>
-<rect x="756" y="286" width="112" height="16" rx="2" fill="#f5f5f5"/>
-<text x="812" y="298" fill="#5a6580" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">STATUS SHEET</text>
-<rect x="840" y="338" width="120" height="16" rx="2" fill="#f5f5f5"/>
-<text x="900" y="350" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">SIGN-IN · SSO</text>
-<rect x="724" y="412" width="120" height="16" rx="2" fill="#f5f5f5"/>
-<text x="784" y="424" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">REGISTER · QR</text>
-<rect x="1138" y="480" width="52" height="16" rx="2" fill="#f5f5f5"/>
-<text x="1164" y="492" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">ALERT</text>
-<rect x="728" y="544" width="112" height="16" rx="2" fill="#f5f5f5"/>
-<text x="784" y="556" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">PASS SIGNING</text>
-<rect x="670" y="596" width="60" height="16" rx="2" fill="#f5f5f5"/>
-<text x="700" y="608" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">FUTURE</text>
+<rect x="724" y="324" width="120" height="16" rx="2" fill="#f5f5f5"/>
+<text x="784" y="336" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">SIGN-IN · SSO</text>
+<rect x="724" y="428" width="120" height="16" rx="2" fill="#f5f5f5"/>
+<text x="784" y="440" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">REGISTER · QR</text>
 <rect x="40" y="176" width="176" height="272" rx="6" fill="#f5f5f5"/>
 <rect x="40" y="176" width="176" height="272" rx="6" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
 <rect x="48" y="184" width="36" height="12" rx="2" fill="transparent" stroke="rgba(90,101,128,0.40)" stroke-width="0.8"/>
@@ -115,27 +100,20 @@
 <text x="128" y="244" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">public · logged in</text>
 <text x="128" y="276" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">NFL app · OnePass</text>
 <text x="128" y="296" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">nfl.com · club sites</text>
-<text x="128" y="316" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">(embedded)</text>
-<rect x="40" y="504" width="176" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="40" y="504" width="176" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<rect x="48" y="512" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
-<text x="64" y="521" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">EXT</text>
-<text x="128" y="544" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Ticket providers</text>
-<text x="128" y="564" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">TM · NFL · On Location</text>
-<rect x="40" y="672" width="176" height="72" rx="6" fill="#f5f5f5"/>
-<rect x="40" y="672" width="176" height="72" rx="6" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
-<rect x="48" y="680" width="44" height="12" rx="2" fill="transparent" stroke="rgba(90,101,128,0.40)" stroke-width="0.8"/>
-<text x="70" y="689" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">STAFF</text>
-<text x="128" y="712" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Club staff</text>
-<text x="128" y="732" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">scanner · console</text>
+<rect x="40" y="512" width="176" height="64" rx="6" fill="#f5f5f5"/>
+<rect x="40" y="512" width="176" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<rect x="48" y="520" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
+<text x="64" y="529" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">EXT</text>
+<text x="128" y="552" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Ticket providers</text>
+<text x="128" y="572" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">paid events</text>
 <rect x="336" y="176" width="200" height="72" rx="6" fill="#f5f5f5"/>
 <rect x="336" y="176" width="200" height="72" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
 <rect x="344" y="184" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
 <text x="360" y="193" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">CDN</text>
 <text x="436" y="216" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Page cache</text>
 <text x="436" y="236" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">same HTML for all</text>
-<rect x="336" y="328" width="200" height="272" rx="6" fill="#f5f5f5"/>
-<rect x="336" y="328" width="200" height="272" rx="6" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
+<rect x="336" y="328" width="200" height="192" rx="6" fill="#f5f5f5"/>
+<rect x="336" y="328" width="200" height="192" rx="6" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
 <rect x="344" y="336" width="36" height="12" rx="2" fill="transparent" stroke="rgba(191,69,32,0.50)" stroke-width="0.8"/>
 <text x="362" y="345" fill="#bf4520" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">EDGE</text>
 <text x="436" y="376" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Thin middleware</text>
@@ -143,74 +121,52 @@
 <text x="436" y="428" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">/auth/*</text>
 <text x="436" y="448" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">/api/register</text>
 <text x="436" y="468" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">/api/my-events</text>
-<text x="436" y="488" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">/api/checkin</text>
-<text x="436" y="508" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">/api/wallet</text>
 <rect x="640" y="72" width="208" height="64" rx="6" fill="#f5f5f5"/>
 <rect x="640" y="72" width="208" height="64" rx="6" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
 <rect x="648" y="80" width="48" height="12" rx="2" fill="transparent" stroke="rgba(90,101,128,0.40)" stroke-width="0.8"/>
 <text x="672" y="89" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">AUTHOR</text>
-<text x="744" y="112" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Club authoring</text>
-<text x="744" y="132" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">per club · market</text>
+<text x="744" y="112" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Authoring</text>
+<text x="744" y="132" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">events · status · forms</text>
 <rect x="640" y="176" width="208" height="72" rx="6" fill="#f5f5f5"/>
 <rect x="640" y="176" width="208" height="72" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
 <rect x="648" y="184" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
 <text x="664" y="193" fill="#2d3142" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">EDS</text>
 <text x="744" y="216" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Event sites</text>
-<text x="744" y="236" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">hub · events · forms</text>
-<rect x="1032" y="312" width="192" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="1032" y="312" width="192" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<rect x="1040" y="320" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
-<text x="1056" y="329" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">IDP</text>
-<text x="1128" y="352" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">NFL ID</text>
-<text x="1128" y="372" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">id.nfl.com · Gigya</text>
-<rect x="1032" y="408" width="192" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="1032" y="408" width="192" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<rect x="1040" y="416" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
-<text x="1056" y="425" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">API</text>
-<text x="1128" y="448" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Registration svc</text>
-<text x="1128" y="468" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">capacity · QR · status</text>
-<rect x="1032" y="504" width="192" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="1032" y="504" width="192" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<rect x="1040" y="512" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
-<text x="1056" y="521" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">API</text>
-<text x="1128" y="544" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Notifications</text>
-<text x="1128" y="564" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">email · app · web push</text>
-<rect x="1032" y="600" width="192" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="1032" y="600" width="192" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<rect x="1040" y="608" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
-<text x="1056" y="617" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">API</text>
-<text x="1128" y="640" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Wallet APIs</text>
-<text x="1128" y="660" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Apple · Google</text>
-<rect x="1032" y="696" width="192" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="1032" y="696" width="192" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<rect x="1040" y="704" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
-<text x="1056" y="713" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">API</text>
-<text x="1128" y="736" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Leap (future)</text>
-<text x="1128" y="756" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">badges · offers</text>
-<line x1="40" y1="812" x2="1240" y2="812" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
-<text x="40" y="832" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
-<rect x="40" y="846" width="16" height="12" rx="2" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
-<text x="64" y="856" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Thin middleware</text>
-<rect x="192" y="846" width="16" height="12" rx="2" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
-<text x="216" y="856" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">EDS event sites</text>
-<rect x="344" y="846" width="16" height="12" rx="2" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<text x="368" y="856" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">External service</text>
-<rect x="496" y="846" width="16" height="12" rx="2" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
-<text x="520" y="856" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">People / authoring</text>
-<line x1="648" y1="852" x2="676" y2="852" stroke="#bf4520" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
-<text x="684" y="856" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Session &amp; API</text>
-<line x1="800" y1="852" x2="828" y2="852" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
-<text x="836" y="856" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Server-side call</text>
-<line x1="952" y1="852" x2="980" y2="852" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
-<text x="988" y="856" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Content path</text>
-<line x1="1104" y1="852" x2="1132" y2="852" stroke="#2e5aa8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-link)"/>
-<text x="1140" y="856" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Exit link / future</text>
+<text x="744" y="236" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">listing · filters · forms</text>
+<rect x="1032" y="320" width="192" height="64" rx="6" fill="#f5f5f5"/>
+<rect x="1032" y="320" width="192" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<rect x="1040" y="328" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
+<text x="1056" y="337" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">IDP</text>
+<text x="1128" y="360" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">NFL ID</text>
+<text x="1128" y="380" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">id.nfl.com</text>
+<rect x="1032" y="424" width="192" height="64" rx="6" fill="#f5f5f5"/>
+<rect x="1032" y="424" width="192" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<rect x="1040" y="432" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
+<text x="1056" y="441" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">API</text>
+<text x="1128" y="464" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Registration svc</text>
+<text x="1128" y="484" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">QR · status · wallet</text>
+<line x1="40" y1="652" x2="1240" y2="652" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<text x="40" y="672" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
+<rect x="40" y="686" width="16" height="12" rx="2" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
+<text x="64" y="696" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Thin middleware</text>
+<rect x="216" y="686" width="16" height="12" rx="2" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="240" y="696" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">EDS event sites</text>
+<rect x="392" y="686" width="16" height="12" rx="2" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<text x="416" y="696" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">External service</text>
+<rect x="568" y="686" width="16" height="12" rx="2" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
+<text x="592" y="696" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Fans / authoring</text>
+<line x1="744" y1="692" x2="772" y2="692" stroke="#bf4520" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
+<text x="780" y="696" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Session &amp; API</text>
+<line x1="920" y1="692" x2="948" y2="692" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+<text x="956" y="696" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Server-side call</text>
+<line x1="1096" y1="692" x2="1124" y2="692" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+<text x="1132" y="696" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Content path</text>
     </svg>
     </div>
 <section><h2><span>01</span>Summary</h2>
 <p>The Events Hub is a set of fast, cached event sites on <b>AEM Edge Delivery Services (EDS)</b>, authored by clubs and the league,
 shown on nfl.com, club sites, the NFL app and OnePass. A <b>thin edge middleware</b> owns the signed-in session with NFL ID and forwards
-the few per-fan calls (register, my events, check-in, wallet). NFL’s own systems stay the source of truth for identity, registrations,
+the few per-fan calls (register, my events). NFL’s own systems stay the source of truth for identity, registrations,
 notifications and ticketing. The hub never takes payments: paid events link out.</p>
 <ul class="principles">
 <li><b>Static first.</b> Anything the same for every fan is an EDS page or JSON from the CDN.</li>
@@ -224,6 +180,7 @@ notifications and ticketing. The hub never takes payments: paid events link out.
 <tr><td>Simple design, NFL branding</td><td>NFL Global Design Playbook as EDS design tokens; small block library</td><td>EDS</td></tr>
 <tr><td>Club-managed international 1:1 events first</td><td>Per-club, per-market authoring workspaces; one codebase serves the hub and every club or event site (repoless)</td><td>EDS + authoring</td></tr>
 <tr><td>Event details, venue location</td><td>Event page: details, schedule, venue and map, FAQ, sponsors</td><td>EDS blocks</td></tr>
+<tr><td>All events, filters, search</td><td>Query index publishes every event’s metadata as <code>events.json</code>; listing block filters by club, market, city, date, type, free/paid in the browser</td><td>EDS</td></tr>
 <tr><td>Public view and logged-in view</td><td>Same cached page; blocks call <code>/api/me</code> and switch to personalized state</td><td>EDS + middleware</td></tr>
 <tr><td>OnePass-style Login and Register</td><td>Both open hosted id.nfl.com (sign-in / sign-up) — identical look</td><td>NFL ID + middleware</td></tr>
 <tr><td>Register for events with extra fields</td><td>Form block; fields authored per event in a sheet; submit with the fan’s NFL ID</td><td>EDS + middleware + registration svc</td></tr>
@@ -231,25 +188,23 @@ notifications and ticketing. The hub never takes payments: paid events link out.
 <tr><td>Buy Tickets outside the hub</td><td>Authored ticket URL and provider per event (Ticketmaster, NFL ticket account, club, On Location)</td><td>Exit link</td></tr>
 <tr><td>No pricing, no credit cards</td><td>Not modelled; no payment code anywhere</td><td>—</td></tr>
 <tr><td>My registered events, status</td><td><code>/api/my-events</code> via middleware to the registration service</td><td>Middleware</td></tr>
-<tr><td>QR codes and gate entry</td><td>Registration svc issues signed QR (per-club setting); staff scanner page calls <code>/api/checkin</code></td><td>Registration svc + scanner</td></tr>
-<tr><td>Add to Wallet</td><td>Pass signed server-side; Apple and Google Wallet</td><td>Middleware → Wallet APIs</td></tr>
-<tr><td>Real-time cancellations</td><td>Staff console sets status → registration svc alerts registrants; middleware publishes the status sheet; CDN purged in seconds</td><td>Staff console + notifications + EDS</td></tr>
+<tr><td>QR codes and gate entry</td><td>Registration svc issues a signed QR (per-club setting) and validates it at entry</td><td>Registration svc</td></tr>
+<tr><td>Add to Wallet</td><td>Signed Apple / Google Wallet pass returned with the registration</td><td>Registration svc</td></tr>
+<tr><td>Real-time cancellations</td><td>Authors set status in the status sheet and publish; CDN purged in seconds; registration svc emails / pushes registrants</td><td>EDS + registration svc</td></tr>
 <tr><td>Embed in NFL app, OnePass, websites</td><td>App mode (WebView, JS bridge) and embed mode (nfl.com, club sites)</td><td>EDS</td></tr>
 <tr><td>Future: league events, Leap features</td><td>Same blocks for league events; Leap (badges, scanning, offers, sponsors) behind the middleware</td><td>Future</td></tr>
 </tbody></table></div></section>
 <section><h2><span>03</span>Components</h2><div class="tbl"><table><thead><tr><th>Component</th><th>Responsibility</th><th>Technology</th></tr></thead><tbody>
-<tr><td>Event sites</td><td>Hub, club and market sites, event pages, listings, forms, My Events shell, scanner and console pages</td><td>AEM EDS, repoless multi-site, vanilla JS blocks</td></tr>
+<tr><td>Event sites</td><td>Hub, club and market sites, event pages, listings, forms, My Events shell</td><td>AEM EDS, repoless multi-site, vanilla JS blocks</td></tr>
 <tr><td>Authoring</td><td>Clubs and league author events, form fields, status sheet; publish = live</td><td>Document authoring (Drive/SharePoint/DA) or Universal Editor; folder permissions per club</td></tr>
 <tr><td>Page cache</td><td>Serves identical HTML/JSON to everyone; push-invalidated on publish</td><td>BYO CDN (Cloudflare/Fastly/Akamai) in front of EDS</td></tr>
-<tr><td>Thin middleware</td><td>NFL ID session (HttpOnly cookie), pass-through to registration, check-in, wallet; publishes status via EDS Admin API; rate limiting</td><td>Edge worker on the same CDN</td></tr>
+<tr><td>Thin middleware</td><td>NFL ID session (HttpOnly cookie); pass-through to the registration service; rate limiting</td><td>Edge worker on the same CDN</td></tr>
 <tr><td>NFL ID</td><td>Login, sign-up, SSO across nfl.com, NFL app, OnePass</td><td>id.nfl.com (Gigya / SAP CDC per NFL docs)</td></tr>
-<tr><td>Registration service</td><td>Registrations, capacity and time slots, one-per-fan rules, QR issue and validation, event status</td><td>NFL / OnePass backend (preferred); POC fallback: small serverless store</td></tr>
-<tr><td>Notifications</td><td>Email, app push, web push to registrants and opted-in visitors</td><td>NFL CRM / push platform</td></tr>
-<tr><td>Wallet</td><td>Apple and Google Wallet passes</td><td>Signed by middleware or a small serverless function</td></tr>
+<tr><td>Registration service</td><td>Registrations, capacity, one-per-fan rules, QR issue and validation, wallet passes, alerts to registrants</td><td>NFL / OnePass backend (preferred); POC fallback: small serverless store</td></tr>
 <tr><td>Ticket providers</td><td>Paid sales</td><td>Ticketmaster, NFL ticket account, club ticketing, On Location</td></tr>
-<tr><td>Leap (future)</td><td>Badges, scanning, offers, sponsor integrations</td><td>Behind the middleware</td></tr>
+<tr><td>Leap (future)</td><td>Badges, scanning, offers, sponsor integrations</td><td>Later, behind the middleware</td></tr>
 </tbody></table></div></section>
-<section><h2><span>04</span>Key flows</h2><ol class="flows"><li><b>Browse.</b> Fan opens hub or event page → CDN serves cached EDS HTML; listings read <code>events.json</code> (query index); status banner reads <code>status.json</code>.</li><li><b>Log in / Register account.</b> Button → <code>/auth/login</code> or <code>/auth/signup</code> → id.nfl.com → back to <code>/auth/callback</code> → middleware sets session cookie. Already signed in on nfl.com = no prompt. In apps: the app hands over its session (one-time code) — no second login.</li><li><b>Register for an event (free).</b> Register → form block (fields from the event’s sheet) → <code>POST /api/register</code> → registration svc checks capacity and rules → confirmation, status and QR.</li><li><b>Buy tickets (paid).</b> Buy Tickets → authored provider URL in a new tab. Nothing stored in the hub.</li><li><b>My events.</b> <code>/api/my-events</code> → registered events, live status, QR, Add to Wallet (<code>/api/wallet</code> returns a signed pass).</li><li><b>Gate entry.</b> Staff sign in to the scanner page → camera reads QR → <code>POST /api/checkin</code> → valid / already used / wrong event.</li><li><b>Cancellation.</b> Staff console marks event or city cancelled → registration svc updates status and triggers alerts to registrants → middleware updates the status sheet via EDS Admin API → publish purges CDN → every page shows the banner within seconds.</li><li><b>In-app and embeds.</b> Same URLs in app mode (no site chrome, native share/back/wallet via JS bridge) or embed mode on nfl.com and club sites; login from an embed opens id.nfl.com top-level.</li></ol></section>
+<section><h2><span>04</span>Key flows</h2><ol class="flows"><li><b>Browse.</b> Fan opens hub or event page → CDN serves cached EDS HTML; listings read <code>events.json</code> (query index); status banner reads <code>status.json</code>.</li><li><b>Log in / Register account.</b> Button → <code>/auth/login</code> or <code>/auth/signup</code> → id.nfl.com → back to <code>/auth/callback</code> → middleware sets session cookie. Already signed in on nfl.com = no prompt. In apps: the app hands over its session (one-time code) — no second login.</li><li><b>Register for an event (free).</b> Register → form block (fields from the event’s sheet) → <code>POST /api/register</code> → registration svc checks capacity and rules → confirmation, status and QR.</li><li><b>Buy tickets (paid).</b> Buy Tickets → authored provider URL in a new tab. Nothing stored in the hub.</li><li><b>My events.</b> <code>/api/my-events</code> → registered events, live status, QR, Add to Wallet (signed pass from the registration service).</li><li><b>Entry.</b> The fan shows the QR (or wallet pass) at the venue; it is validated against the registration service.</li><li><b>Cancellation.</b> Authors mark the event (or every event in a city) cancelled in the status sheet and publish → CDN purged → every page and listing shows it within seconds; the registration service emails / pushes registered fans.</li><li><b>In-app and embeds.</b> Same URLs in app mode (no site chrome, native share/back/wallet via JS bridge) or embed mode on nfl.com and club sites; login from an embed opens id.nfl.com top-level.</li></ol></section>
 <section><h2><span>05</span>Event content model (authored)</h2><div class="tbl"><table><thead><tr><th>Field</th><th>Example</th><th>Used for</th></tr></thead><tbody>
 <tr><td>club · market · language</td><td>raiders · de · de-DE</td><td>Workspaces, listing filters, localization</td></tr>
 <tr><td>title · date/time · timezone</td><td>Raiders Watch Party Berlin · 2026-11-08 19:00 · Europe/Berlin</td><td>Page, listing, calendar</td></tr>
@@ -265,18 +220,18 @@ notifications and ticketing. The hub never takes payments: paid events link out.
 <tr><td>Event content</td><td>EDS (club/league authors)</td><td>Cached pages, JSON</td></tr>
 <tr><td>Fan identity</td><td>NFL ID</td><td>Session cookie only</td></tr>
 <tr><td>Registrations, capacity, QR validity, check-ins</td><td>Registration service</td><td>Nothing (pass-through)</td></tr>
-<tr><td>Event status</td><td>Registration service; mirrored to EDS status sheet for display</td><td>Cached status.json</td></tr>
+<tr><td>Event status</td><td>EDS status sheet (authored)</td><td>Cached status.json</td></tr>
 <tr><td>Fan contact and consent</td><td>NFL CRM / notifications</td><td>Nothing</td></tr>
 <tr><td>Tickets and payments</td><td>Ticket providers</td><td>Nothing</td></tr>
 </tbody></table></div></section>
-<section><h2><span>07</span>Non-functional</h2><ul class="principles"><li><b>Scale.</b> Spikes (registration opening, Draft and Super Bowl week) hit the CDN cache; only per-fan calls reach the middleware. Rate-limit and queue <code>/api/register</code>; load-test it before peak events.</li><li><b>Performance.</b> EDS pages target Lighthouse 100; personalization loads after first paint.</li><li><b>Security.</b> Tokens never in the browser; HttpOnly, Secure, SameSite cookies; secrets only in the worker; staff pages need staff role.</li><li><b>Privacy.</b> International events mean GDPR and local rules: consent for push and email, minimal form fields, data stays in NFL systems.</li><li><b>Localization.</b> Site per market/language from one codebase.</li><li><b>Accessibility.</b> WCAG 2.2 AA blocks; QR also available as a code fans can read out.</li><li><b>Embeds.</b> Allow-list embedding domains; logged-in features open top-level because browsers block third-party cookies.</li></ul></section>
+<section><h2><span>07</span>Non-functional</h2><ul class="principles"><li><b>Scale.</b> Spikes (registration opening, Draft and Super Bowl week) hit the CDN cache; only per-fan calls reach the middleware. Rate-limit and queue <code>/api/register</code>; load-test it before peak events.</li><li><b>Performance.</b> EDS pages target Lighthouse 100; personalization loads after first paint.</li><li><b>Security.</b> Tokens never in the browser; HttpOnly, Secure, SameSite cookies; secrets only in the worker.</li><li><b>Privacy.</b> International events mean GDPR and local rules: consent for push and email, minimal form fields, data stays in NFL systems.</li><li><b>Localization.</b> Site per market/language from one codebase.</li><li><b>Accessibility.</b> WCAG 2.2 AA blocks; QR also available as a code fans can read out.</li><li><b>Embeds.</b> Allow-list embedding domains; logged-in features open top-level because browsers block third-party cookies.</li></ul></section>
 <section><h2><span>08</span>Phasing</h2><div class="tbl"><table><thead><tr><th>Phase</th><th>Scope</th></tr></thead><tbody>
 <tr><td>POC</td><td>Hub + 3–5 club events; public and logged-in views; NFL ID login; Register with per-event form; My Events with QR; Buy Tickets exit for 1–2 events; app mode in OnePass</td></tr>
-<tr><td>Phase 1 — club international events</td><td>All clubs and markets, localization, capacity and time slots, gate scanner, Add to Wallet, cancellation alerts, embeds on club sites</td></tr>
+<tr><td>Phase 1 — club international events</td><td>All clubs and markets, localization, capacity and time slots, QR entry, Add to Wallet, cancellation alerts, embeds on club sites</td></tr>
 <tr><td>Phase 2 — league events</td><td>Draft, Super Bowl week, international games fan events; giveaways; hospitality links</td></tr>
 <tr><td>Phase 3 — Leap features</td><td>Badges, scanning rewards, offer redemption, sponsor integrations</td></tr>
 </tbody></table></div></section>
-<section><h2><span>09</span>Open questions</h2><ol class="flows"><li>Does an NFL / OnePass registration API exist (capacity, QR, status), or does the POC need its own store?</li><li>Can the hub be registered with NFL ID (Gigya site group or OIDC client), and can OnePass and the NFL app hand over sessions?</li><li>Must QR codes work with existing OnePass / Leap scanners?</li><li>Which notification platform and channels exist today?</li><li>Wallet: does NFL have Apple pass-type and Google issuer accounts?</li><li>Exact ticket URLs and providers for the paid POC events.</li><li>Authoring choice (documents vs Universal Editor) and per-club permissions.</li><li>CDN choice for production (BYO CDN with edge worker vs AEM Edge Functions).</li></ol></section>
+<section><h2><span>09</span>Open questions</h2><ol class="flows"><li>Does an NFL / OnePass registration API exist (capacity, QR, status), or does the POC need its own store?</li><li>Can the hub be registered with NFL ID (Gigya site group or OIDC client), and can OnePass and the NFL app hand over sessions?</li><li>Must QR codes work with existing OnePass / Leap scanners at venues?</li><li>Which notification channel (email, app push) should alert registrants about cancellations?</li><li>Wallet: does NFL have Apple pass-type and Google issuer accounts?</li><li>Exact ticket URLs and providers for the paid POC events.</li><li>Authoring choice (documents vs Universal Editor) and per-club permissions.</li><li>CDN choice for production (BYO CDN with edge worker vs AEM Edge Functions).</li></ol></section>
   </div>
 </body>
 </html>
