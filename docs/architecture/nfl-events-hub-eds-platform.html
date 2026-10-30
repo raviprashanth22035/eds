@@ -29,11 +29,11 @@
 <body>
   <div class="frame">
     <p class="eyebrow">Architecture · NFL Events Hub on EDS</p>
-    <h1>NFL Events Hub — platform architecture</h1>
+    <h1>NFL Events Hub — high-level architecture</h1>
     <div class="diagram-container">
     <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="nfl-events-hub-eds-platform-title nfl-events-hub-eds-platform-desc">
 <title id="nfl-events-hub-eds-platform-title">NFL Events Hub on Edge Delivery Services</title>
-<desc id="nfl-events-hub-eds-platform-desc">Architecture of the NFL Events Hub on AEM Edge Delivery Services: web and app users get cached EDS pages authored in Google Drive and fed by league event data, while a thin edge worker handles sign-in with NFL ID and calls the RSVP and ticketing APIs.</desc>
+<desc id="nfl-events-hub-eds-platform-desc">High-level architecture of the NFL Events Hub: a hub and per-event sites on AEM Edge Delivery Services, served from the CDN to web and OnePass app users, with a thin edge middleware handling NFL ID sign-in and calls to the registration and booking system.</desc>
 <defs>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
 <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
@@ -68,16 +68,17 @@
 <text x="944" y="216" fill="#5a6580" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">JSON2HTML</text>
 <rect x="720" y="372" width="120" height="16" rx="2" fill="#f5f5f5"/>
 <text x="780" y="384" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">SIGN-IN · SSO</text>
-<rect x="716" y="516" width="128" height="16" rx="2" fill="#f5f5f5"/>
-<text x="780" y="528" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">RSVP · TICKETS</text>
+<rect x="724" y="516" width="112" height="16" rx="2" fill="#f5f5f5"/>
+<text x="780" y="528" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">REGISTRATION</text>
 <rect x="40" y="196" width="184" height="264" rx="6" fill="#f5f5f5"/>
 <rect x="40" y="196" width="184" height="264" rx="6" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
 <rect x="48" y="204" width="44" height="12" rx="2" fill="transparent" stroke="rgba(90,101,128,0.40)" stroke-width="0.8"/>
 <text x="70" y="213" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">USERS</text>
-<text x="132" y="244" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Users</text>
+<text x="132" y="244" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Fans</text>
 <text x="132" y="264" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">web browser</text>
 <text x="132" y="296" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">OnePass · NFL app</text>
-<text x="132" y="316" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">embedded WebView</text>
+<text x="132" y="316" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">app-mode WebView</text>
+<text x="132" y="336" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">FanScan: native</text>
 <rect x="344" y="196" width="192" height="72" rx="6" fill="#f5f5f5"/>
 <rect x="344" y="196" width="192" height="72" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
 <rect x="352" y="204" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
@@ -94,20 +95,20 @@
 <rect x="672" y="64" width="200" height="72" rx="6" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
 <rect x="680" y="72" width="48" height="12" rx="2" fill="transparent" stroke="rgba(90,101,128,0.40)" stroke-width="0.8"/>
 <text x="704" y="81" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">AUTHOR</text>
-<text x="772" y="104" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Google Drive</text>
+<text x="772" y="104" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Authoring</text>
 <text x="772" y="124" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">docs · sheets</text>
 <rect x="672" y="196" width="200" height="72" rx="6" fill="#f5f5f5"/>
 <rect x="672" y="196" width="200" height="72" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
 <rect x="680" y="204" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
 <text x="696" y="213" fill="#2d3142" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">EDS</text>
-<text x="772" y="236" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Edge Delivery</text>
-<text x="772" y="256" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">pages · blocks · json</text>
+<text x="772" y="236" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Event sites</text>
+<text x="772" y="256" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">hub + repoless sites</text>
 <rect x="1016" y="196" width="208" height="72" rx="6" fill="#f5f5f5"/>
 <rect x="1016" y="196" width="208" height="72" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
 <rect x="1024" y="204" width="36" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
 <text x="1042" y="213" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">FEED</text>
-<text x="1120" y="236" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">League events</text>
-<text x="1120" y="256" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">league · club data</text>
+<text x="1120" y="236" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">League feeds</text>
+<text x="1120" y="256" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">events · clubs</text>
 <rect x="1016" y="364" width="208" height="72" rx="6" fill="#f5f5f5"/>
 <rect x="1016" y="364" width="208" height="72" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
 <rect x="1024" y="372" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
@@ -118,14 +119,14 @@
 <rect x="1016" y="508" width="208" height="72" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
 <rect x="1024" y="516" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
 <text x="1040" y="525" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">API</text>
-<text x="1120" y="548" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">RSVP &amp; tickets</text>
-<text x="1120" y="568" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">partner APIs</text>
+<text x="1120" y="548" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Registration</text>
+<text x="1120" y="568" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">booking · capacity</text>
 <line x1="40" y1="652" x2="1240" y2="652" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
 <text x="40" y="672" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
 <rect x="40" y="686" width="16" height="12" rx="2" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
 <text x="64" y="696" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Thin middleware</text>
 <rect x="216" y="686" width="16" height="12" rx="2" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
-<text x="240" y="696" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">EDS origin</text>
+<text x="240" y="696" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">EDS event sites</text>
 <rect x="392" y="686" width="16" height="12" rx="2" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
 <text x="416" y="696" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">CDN / NFL system</text>
 <rect x="568" y="686" width="16" height="12" rx="2" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
@@ -138,7 +139,7 @@
 <text x="1132" y="696" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Content path</text>
     </svg>
     </div>
-    <p class="caption">Pages, event listings and search are static EDS output served from the CDN. Only sign-in and per-user actions (RSVP, my events) go through the thin edge middleware. No React app, no Node BFF, no headless AEM tier.</p>
+    <p class="caption">One EDS codebase runs the hub and every event site (Draft, Super Bowl, international games). Only sign-in, registration and my-events go through the thin middleware; booking and capacity stay in NFL&#x27;s existing system, and FanScan check-ins stay native in OnePass.</p>
   </div>
 </body>
 </html>
