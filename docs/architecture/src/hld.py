@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import *  # noqa: F401,F403
 
 OUT = sys.argv[1]
-H = 960
+H = 1080
 
 ICONS = {
     # 24x24 line icons, stroke = currentColor
@@ -58,10 +58,9 @@ def vlabel(x, cy, text, kind="muted"):
 d = []
 # zones
 d.append(zone(24, 136, 200, 320, "CLIENTS"))
-d.append(zone(512, 104, 368, 520, "PLATFORM · WHAT WE BUILD"))
-d.append(zone(904, 424, 336, 312, "NFL SERVICES · SYSTEMS OF RECORD"))
-d.append(f'<text x="920" y="124" fill="{SOFT}" font-size="8" font-family="{MONO}" letter-spacing="0.18em">PARTNERS</text>')
-d.append(f'<text x="40" y="780" fill="{SOFT}" font-size="8" font-family="{MONO}" letter-spacing="0.18em">OPERATIONS · ADOBE-MANAGED, NOTHING TO PROVISION</text>')
+d.append(zone(512, 104, 368, 768, "PLATFORM · WHAT WE BUILD"))
+d.append(zone(1064, 104, 176, 712, "NFL & PARTNERS"))
+d.append(f'<text x="40" y="900" fill="{SOFT}" font-size="8" font-family="{MONO}" letter-spacing="0.18em">OPERATIONS</text>')
 # connectors
 d.append(arrow("M 224,184 H 294"))                                                    # clients -> DNS
 d.append(label(260, 156, "HTTPS"))
@@ -72,53 +71,60 @@ d.append(arrow("M 696,200 V 278"))                                              
 d.append(vlabel(696, 240, "PUBLISH"))
 d.append(arrow("M 376,392 V 520 Q 376,528 384,528 H 534", "accent"))                  # CDN -> worker
 d.append(label(452, 500, "/AUTH · /API", "accent"))
-d.append(arrow("M 856,304 H 880 Q 888,304 888,296 V 176 Q 888,168 896,168 H 918", "link", dashed=True))  # page -> Ticketmaster
-d.append(vlabel(888, 248, "BUY TICKETS", "link"))
-d.append(arrow("M 856,488 H 918", "link"))                                            # worker -> NFL ID
-d.append(arrow("M 856,584 H 918", "link"))                                            # worker -> OnePass
-d.append(arrow("M 988,616 V 646", "link"))                                            # OnePass -> notifications
-d.append(arrow("M 1152,616 V 646"))                                                   # OnePass -> registrations
+d.append(arrow("M 856,304 H 1048 Q 1056,304 1056,296 V 176 Q 1056,168 1064,168 H 1078", "link", dashed=True))  # -> Ticketmaster
+d.append(vlabel(1056, 248, "BUY", "link"))
+d.append(arrow("M 856,488 H 1078", "link"))                                           # worker -> NFL ID
+d.append(label(960, 460, "SIGN-IN · SSO", "link"))
+d.append(arrow("M 696,568 V 622", "accent"))                                          # worker -> registration
+d.append(vlabel(696, 596, "REGISTER", "accent"))
+d.append(arrow("M 696,736 V 782"))                                                    # registration -> DB
+d.append(arrow("M 856,664 H 1078", "link"))                                           # registration -> notifications
+d.append(label(960, 636, "ALERTS", "link"))
+d.append(arrow("M 856,712 H 944 Q 952,712 952,720 V 752 Q 952,760 960,760 H 1078", "link"))   # registration -> wallet
+d.append(label(900, 684, "PASS", "link"))
 # client rows
-d.append(client_row(40, 168, 176, 72, "phone", "NFL OnePass", "iOS · Android"))
-d.append(client_row(40, 264, 176, 72, "app", "NFL App", "WebView embed"))
+d.append(client_row(40, 168, 176, 72, "phone", "NFL OnePass", "embeds the hub"))
+d.append(client_row(40, 264, 176, 72, "app", "NFL App", "embeds the hub"))
 d.append(client_row(40, 360, 176, 72, "laptop", "Web", "nfl.com · clubs"))
 # nodes
 d.append(node(296, 152, 160, 64, "external", "DNS", "DNS", "nfl.com subdomain"))
 d.append(node(296, 280, 160, 112, "external", "CDN", "Edge CDN", "cache · WAF · queue", ["Adobe or BYO"]))
 d.append(node(536, 136, 320, 64, "input", "AUTHORS", "AEM authoring", "clubs · league · docs · sheets · UE"))
-d.append(node(536, 280, 320, 112, "focal", "ORIGIN", "NFL Events Hub", "AEM Edge Delivery",
+d.append(node(536, 280, 320, 112, "focal", "PORTAL", "NFL Events Hub", "AEM Edge Delivery",
               ["pages · blocks · events.json"]))
-d.append(node(536, 456, 320, 144, "focal", "BFF", "Edge worker", "session · API proxy",
-              ["stateless · no data stored", "/auth/* · /api/*"]))
-d.append(node(920, 136, 304, 64, "external", "PARTNER", "Ticketmaster", "paid events · VIP On Location"))
-d.append(node(920, 456, 304, 64, "external", "IDP", "NFL ID", "id.nfl.com · one account"))
-d.append(node(920, 552, 304, 64, "external", "SOR", "OnePass event platform", "registration · QR · wallet"))
-d.append(node(920, 648, 136, 64, "external", "SOR", "Notifications", "email · push"))
-d.append(node(1080, 648, 144, 64, "store", "DATA", "Registrations", "OnePass-owned"))
+d.append(node(536, 456, 320, 112, "backend", "BFF", "Edge worker", "session · API proxy",
+              ["stateless · no data stored"]))
+d.append(node(536, 624, 320, 112, "focal", "SERVICE", "Event registration service", "registration · QR · check-in",
+              ["capacity · wallet passes"]))
+d.append(node(536, 784, 320, 64, "store", "DATA", "Registrations DB", "managed database"))
+d.append(node(1080, 136, 144, 64, "external", "PARTNER", "Ticketmaster", "paid events"))
+d.append(node(1080, 456, 144, 64, "external", "IDP", "NFL ID", "id.nfl.com"))
+d.append(node(1080, 632, 144, 64, "external", "NFL", "Notifications", "email · push"))
+d.append(node(1080, 728, 144, 64, "external", "PARTNER", "Wallet", "Apple · Google"))
 for i, (tag, name, sub) in enumerate([("CI/CD", "Code", "GitHub → code sync"),
                                       ("ENV", "Preview → live", ".aem.page → .aem.live"),
                                       ("SEC", "Security", "WAF · bot · rate limits"),
                                       ("OBS", "Observability", "AEM telemetry · logs")]):
-    d.append(node(40 + i * 304, 792, 288, 64, "store", tag, name, sub))
-d.append(legend_y(888, [("input", "Clients / authors"), ("focal", "What we build"), ("external", "NFL / partner"),
-                        ("store", "Data / operations"), ("arrow:muted", "Content path"), ("arrow:accent", "Signed-in path"),
-                        ("arrow:link", "Server-side call"), ("arrow:link:dashed", "Link-out")]))
+    d.append(node(40 + i * 304, 912, 288, 64, "store", tag, name, sub))
+d.append(legend_y(1008, [("input", "Clients / authors"), ("focal", "Core platform"), ("backend", "Thin edge worker"),
+                         ("external", "NFL / partner"), ("store", "Data / operations"), ("arrow:accent", "Signed-in path"),
+                         ("arrow:link", "Server-side call"), ("arrow:link:dashed", "Link-out")]))
 
 doc = page("nfl-events-hub-hld", "High-level design · NFL Events Hub",
            "NFL Events Hub — high-level design",
            "NFL Events Hub high-level design",
            "High-level design of the NFL Events Hub: NFL OnePass, NFL App and web clients reach the hub through DNS and the edge CDN; "
            "pages come from AEM Edge Delivery, authored by clubs and the league; only signed-in calls reach a stateless edge worker that "
-           "calls NFL ID and the OnePass event platform, which owns registrations and notifications; paid events link out to Ticketmaster.",
+           "signs fans in with NFL ID and forwards registrations to the event registration service we build, which stores registrations, issues QR codes and wallet passes and triggers notifications; paid events link out to Ticketmaster.",
            "\n".join(d))
 doc = doc.replace('viewBox="0 0 1280 720"', f'viewBox="0 0 1280 {H}"', 1)
 points = ("<ol class=\"points\">"
           "<li><b>Clients.</b> NFL OnePass and the NFL App open the hub in a WebView; the web is nfl.com and club sites. One portal for all three.</li>"
           "<li><b>Edge.</b> DNS → CDN. The CDN serves cached pages to everyone and sends only <code>/auth</code> and <code>/api</code> to the edge worker.</li>"
-          "<li><b>Platform we build.</b> The NFL Events Hub on AEM Edge Delivery (authored by clubs and the league) and a thin edge worker: stateless, no database.</li>"
-          "<li><b>NFL services.</b> NFL ID for sign-in; the OnePass event platform owns registrations, QR, wallet passes and notifications.</li>"
+          "<li><b>Platform we build.</b> The NFL Events Hub on AEM Edge Delivery (authored by clubs and the league), a thin stateless edge worker, and one event registration service with its own database: registration, capacity, QR codes, check-in and wallet passes.</li>"
+          "<li><b>NFL &amp; partners.</b> NFL ID for sign-in, NFL notifications (email, app push) for confirmations and cancellations, Apple / Google Wallet for passes.</li>"
           "<li><b>Partners.</b> Paid events link out to Ticketmaster (VIP via On Location). No payments in the hub.</li>"
-          "<li><b>Operations.</b> GitHub → code sync → preview → live; WAF and bot rules at the CDN; AEM telemetry and logs. No servers, VPCs or databases to run.</li></ol>")
+          "<li><b>Operations.</b> GitHub → code sync → preview → live; WAF and bot rules at the CDN; AEM telemetry and logs. The only data we hold is in the registration service’s managed database.</li></ol>")
 css = """    .points { margin-top: 1.5rem; padding-left: 1.3rem; display: grid; gap: 0.45rem; max-width: 64rem; }
     .points li { font-size: 0.95rem; line-height: 1.55; color: #4f5d75; } .points b { color: #2d3142; }
     code { font-family: var(--font-mono); font-size: 0.82em; }
