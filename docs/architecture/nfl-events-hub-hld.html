@@ -33,9 +33,9 @@
     <p class="eyebrow">High-level design · NFL Events Hub</p>
     <h1>NFL Events Hub — high-level design</h1>
     <div class="diagram-container">
-    <svg viewBox="0 0 1280 1144" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="nfl-events-hub-hld-title nfl-events-hub-hld-desc">
+    <svg viewBox="0 0 1280 960" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="nfl-events-hub-hld-title nfl-events-hub-hld-desc">
 <title id="nfl-events-hub-hld-title">NFL Events Hub high-level design</title>
-<desc id="nfl-events-hub-hld-desc">High-level design of the NFL Events Hub: NFL OnePass, NFL App and web clients reach events.nfl.com through DNS and the edge CDN; pages come from AEM Edge Delivery, authored by clubs and the league; only signed-in calls reach a stateless edge worker that calls NFL ID and NFL’s existing registration service through the NFL API gateway; a personalization block uses the AEP Web SDK and Adobe Edge Network for Adobe Target offers and Real-Time CDP audiences; registration events drive Journey Optimizer and Adobe Campaign messages; paid events link out to Ticketmaster.</desc>
+<desc id="nfl-events-hub-hld-desc">High-level design of the NFL Events Hub: NFL OnePass, NFL App and web clients reach events.nfl.com through DNS and the edge CDN; pages come from AEM Edge Delivery, authored by clubs and the league; only signed-in calls reach a stateless edge worker that signs fans in with NFL ID and forwards registrations to NFL’s existing event registration service, which issues QR codes and wallet passes and triggers notifications through Adobe Journey Optimizer and Adobe Campaign; a personalization block reaches Adobe Target and Real-Time CDP through the Web SDK; paid events link out to Ticketmaster.</desc>
 <defs>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
 <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
@@ -45,16 +45,13 @@
 <rect x="24" y="136" width="200" height="320" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
 <rect x="94" y="140" width="60" height="12" rx="2" fill="#f5f5f5"/>
 <text x="124" y="149" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">CLIENTS</text>
-<rect x="512" y="104" width="368" height="632" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<rect x="512" y="104" width="368" height="520" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
 <rect x="596" y="108" width="200" height="12" rx="2" fill="#f5f5f5"/>
 <text x="696" y="117" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">EVENTS.NFL.COM · WHAT WE BUILD</text>
-<rect x="1040" y="424" width="200" height="216" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
-<rect x="1064" y="428" width="152" height="12" rx="2" fill="#f5f5f5"/>
-<text x="1140" y="437" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">NFL SYSTEMS · EXISTING</text>
-<rect x="328" y="776" width="912" height="152" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
-<rect x="618" y="780" width="332" height="12" rx="2" fill="#f5f5f5"/>
-<text x="784" y="789" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">ADOBE EXPERIENCE CLOUD · PERSONALIZATION &amp; MESSAGING</text>
-<text x="40" y="964" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.18em">OPERATIONS · NOTHING TO PROVISION, NO DATABASE OF OURS</text>
+<rect x="936" y="104" width="304" height="632" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<rect x="982" y="108" width="212" height="12" rx="2" fill="#f5f5f5"/>
+<text x="1088" y="117" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">NFL, ADOBE &amp; PARTNERS · EXISTING</text>
+<text x="40" y="780" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.18em">OPERATIONS · NOTHING TO PROVISION, NO DATABASE OF OURS</text>
 <path d="M 224,184 H 294" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
 <rect x="234" y="156" width="52" height="16" rx="2" fill="#f5f5f5"/>
 <text x="260" y="168" fill="#5a6580" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">HTTPS</text>
@@ -68,24 +65,21 @@
 <path d="M 376,392 V 520 Q 376,528 384,528 H 534" fill="none" stroke="#bf4520" stroke-width="1.4" marker-end="url(#arrow-accent)"/>
 <rect x="396" y="500" width="112" height="16" rx="2" fill="#f5f5f5"/>
 <text x="452" y="512" fill="#bf4520" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">/AUTH · /API</text>
-<path d="M 856,304 H 888 Q 896,304 896,296 V 176 Q 896,168 904,168 H 1054" fill="none" stroke="#2e5aa8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-link)"/>
+<path d="M 856,304 H 888 Q 896,304 896,296 V 176 Q 896,168 904,168 H 950" fill="none" stroke="#2e5aa8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-link)"/>
 <rect x="904" y="240" width="36" height="16" rx="2" fill="#f5f5f5"/>
 <text x="922" y="252" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">BUY</text>
-<path d="M 856,528 H 902" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
-<path d="M 1016,488 H 1054" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
-<path d="M 1016,584 H 1054" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
-<path d="M 1100,616 V 744 Q 1100,752 1092,752 H 984 Q 976,752 976,760 V 806" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
-<rect x="1108" y="680" width="60" height="16" rx="2" fill="#f5f5f5"/>
-<text x="1138" y="692" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">EVENTS</text>
-<path d="M 608,712 V 806" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
-<rect x="616" y="752" width="72" height="16" rx="2" fill="#f5f5f5"/>
-<text x="652" y="764" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">WEB SDK</text>
-<path d="M 528,840 H 506" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
-<path d="M 688,840 H 710" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
-<path d="M 872,840 H 894" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
-<path d="M 792,872 V 896 Q 792,904 800,904 H 1152 Q 1160,904 1160,896 V 874" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
-<rect x="940" y="882" width="88" height="16" rx="2" fill="#f5f5f5"/>
-<text x="984" y="894" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">AUDIENCES</text>
+<path d="M 856,376 H 950" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+<rect x="868" y="348" width="72" height="16" rx="2" fill="#f5f5f5"/>
+<text x="904" y="360" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">WEB SDK</text>
+<path d="M 856,488 H 950" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+<rect x="868" y="460" width="72" height="16" rx="2" fill="#f5f5f5"/>
+<text x="904" y="472" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">SIGN-IN</text>
+<path d="M 856,584 H 950" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+<rect x="864" y="556" width="80" height="16" rx="2" fill="#f5f5f5"/>
+<text x="904" y="568" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">REGISTER</text>
+<path d="M 1088,616 V 646" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+<rect x="1096" y="624" width="60" height="16" rx="2" fill="#f5f5f5"/>
+<text x="1126" y="636" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">ALERTS</text>
 <rect x="40" y="168" width="176" height="72" rx="6" fill="#f5f5f5"/>
 <rect x="40" y="168" width="176" height="72" rx="6" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
 <g transform="translate(52 190.0) scale(1.17)" fill="none" stroke="#4f5d75" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 18.5h3"/></g>
@@ -120,13 +114,14 @@
 <text x="572" y="153" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">AUTHORS</text>
 <text x="696" y="176" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">AEM authoring</text>
 <text x="696" y="196" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">clubs · league · docs · sheets · UE</text>
-<rect x="536" y="280" width="320" height="112" rx="6" fill="#f5f5f5"/>
-<rect x="536" y="280" width="320" height="112" rx="6" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
+<rect x="536" y="280" width="320" height="136" rx="6" fill="#f5f5f5"/>
+<rect x="536" y="280" width="320" height="136" rx="6" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
 <rect x="544" y="288" width="48" height="12" rx="2" fill="transparent" stroke="rgba(191,69,32,0.50)" stroke-width="0.8"/>
 <text x="568" y="297" fill="#bf4520" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">PORTAL</text>
 <text x="696" y="328" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">NFL Events Hub</text>
 <text x="696" y="348" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">events.nfl.com · AEM Edge Delivery</text>
-<text x="696" y="380" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">pages · blocks · events.json</text>
+<text x="696" y="380" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">pages · events.json</text>
+<text x="696" y="400" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">blocks: personalization · alerts</text>
 <rect x="536" y="456" width="320" height="144" rx="6" fill="#f5f5f5"/>
 <rect x="536" y="456" width="320" height="144" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
 <rect x="544" y="464" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.40)" stroke-width="0.8"/>
@@ -135,115 +130,81 @@
 <text x="696" y="524" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">session · API proxy</text>
 <text x="696" y="556" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">stateless · no data stored</text>
 <text x="696" y="576" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">/auth/* · /api/*</text>
-<rect x="536" y="648" width="320" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="536" y="648" width="320" height="64" rx="6" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
-<rect x="544" y="656" width="44" height="12" rx="2" fill="transparent" stroke="rgba(191,69,32,0.50)" stroke-width="0.8"/>
-<text x="566" y="665" fill="#bf4520" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">BLOCK</text>
-<text x="696" y="688" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Personalization block</text>
-<text x="696" y="708" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">in every page · offers · recs</text>
-<rect x="904" y="456" width="112" height="144" rx="6" fill="#f5f5f5"/>
-<rect x="904" y="456" width="112" height="144" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<rect x="912" y="464" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
-<text x="928" y="473" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">API</text>
-<text x="960" y="504" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">NFL API</text>
-<text x="960" y="524" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">gateway</text>
-<text x="960" y="556" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">existing</text>
-<text x="960" y="576" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">if present</text>
-<rect x="1056" y="136" width="168" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="1056" y="136" width="168" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<rect x="1064" y="144" width="56" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
-<text x="1092" y="153" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">PARTNER</text>
-<text x="1140" y="176" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Ticketmaster</text>
-<text x="1140" y="196" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">paid events</text>
-<rect x="1056" y="456" width="168" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="1056" y="456" width="168" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<rect x="1064" y="464" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
-<text x="1080" y="473" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">IDP</text>
-<text x="1140" y="496" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">NFL ID</text>
-<text x="1140" y="516" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">sign-in · SSO</text>
-<rect x="1056" y="552" width="168" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="1056" y="552" width="168" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<rect x="1064" y="560" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
-<text x="1080" y="569" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">SOR</text>
-<text x="1140" y="592" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Registration</text>
-<text x="1140" y="612" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">QR · status · wallet</text>
-<rect x="344" y="808" width="160" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="344" y="808" width="160" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<rect x="352" y="816" width="44" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
-<text x="374" y="825" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">ADOBE</text>
-<text x="424" y="848" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Adobe Target</text>
-<text x="424" y="868" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">A/B · offers</text>
-<rect x="528" y="808" width="160" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="528" y="808" width="160" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<rect x="536" y="816" width="44" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
-<text x="558" y="825" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">ADOBE</text>
-<text x="608" y="848" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Edge Network</text>
-<text x="608" y="868" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">AEP Web SDK</text>
-<rect x="712" y="808" width="160" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="712" y="808" width="160" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<rect x="720" y="816" width="44" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
-<text x="742" y="825" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">ADOBE</text>
-<text x="792" y="848" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Real-Time CDP</text>
-<text x="792" y="868" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">profiles · audiences</text>
-<rect x="896" y="808" width="160" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="896" y="808" width="160" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<rect x="904" y="816" width="44" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
-<text x="926" y="825" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">ADOBE</text>
-<text x="976" y="848" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">AJO</text>
-<text x="976" y="868" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">real-time journeys</text>
-<rect x="1080" y="808" width="160" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="1080" y="808" width="160" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<rect x="1088" y="816" width="44" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
-<text x="1110" y="825" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">ADOBE</text>
-<text x="1160" y="848" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Adobe Campaign</text>
-<text x="1160" y="868" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">batch email</text>
-<rect x="40" y="976" width="288" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="40" y="976" width="288" height="64" rx="6" fill="rgba(45,49,66,0.05)" stroke="#4f5d75" stroke-width="1"/>
-<rect x="48" y="984" width="44" height="12" rx="2" fill="transparent" stroke="rgba(79,93,117,0.50)" stroke-width="0.8"/>
-<text x="70" y="993" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">CI/CD</text>
-<text x="184" y="1016" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Code</text>
-<text x="184" y="1036" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">GitHub → code sync</text>
-<rect x="344" y="976" width="288" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="344" y="976" width="288" height="64" rx="6" fill="rgba(45,49,66,0.05)" stroke="#4f5d75" stroke-width="1"/>
-<rect x="352" y="984" width="32" height="12" rx="2" fill="transparent" stroke="rgba(79,93,117,0.50)" stroke-width="0.8"/>
-<text x="368" y="993" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">ENV</text>
-<text x="488" y="1016" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Preview → live</text>
-<text x="488" y="1036" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">.aem.page → .aem.live</text>
-<rect x="648" y="976" width="288" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="648" y="976" width="288" height="64" rx="6" fill="rgba(45,49,66,0.05)" stroke="#4f5d75" stroke-width="1"/>
-<rect x="656" y="984" width="32" height="12" rx="2" fill="transparent" stroke="rgba(79,93,117,0.50)" stroke-width="0.8"/>
-<text x="672" y="993" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">SEC</text>
-<text x="792" y="1016" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Security &amp; consent</text>
-<text x="792" y="1036" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">WAF · bot · CMP · setConsent</text>
-<rect x="952" y="976" width="288" height="64" rx="6" fill="#f5f5f5"/>
-<rect x="952" y="976" width="288" height="64" rx="6" fill="rgba(45,49,66,0.05)" stroke="#4f5d75" stroke-width="1"/>
-<rect x="960" y="984" width="32" height="12" rx="2" fill="transparent" stroke="rgba(79,93,117,0.50)" stroke-width="0.8"/>
-<text x="976" y="993" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">OBS</text>
-<text x="1096" y="1016" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Observability</text>
-<text x="1096" y="1036" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">AEM telemetry · logs</text>
-<line x1="40" y1="1072" x2="1240" y2="1072" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
-<text x="40" y="1092" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
-<rect x="40" y="1106" width="16" height="12" rx="2" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
-<text x="64" y="1116" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Clients / authors</text>
-<rect x="190" y="1106" width="16" height="12" rx="2" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
-<text x="214" y="1116" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Our platform</text>
-<rect x="311" y="1106" width="16" height="12" rx="2" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
-<text x="335" y="1116" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Thin edge worker</text>
-<rect x="455" y="1106" width="16" height="12" rx="2" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<text x="479" y="1116" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">NFL / Adobe / partner</text>
-<rect x="628" y="1106" width="16" height="12" rx="2" fill="rgba(45,49,66,0.05)" stroke="#4f5d75" stroke-width="1"/>
-<text x="652" y="1116" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Operations</text>
-<line x1="738" y1="1112" x2="766" y2="1112" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
-<text x="774" y="1116" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Content</text>
-<line x1="842" y1="1112" x2="870" y2="1112" stroke="#bf4520" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
-<text x="878" y="1116" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Signed-in</text>
-<line x1="958" y1="1112" x2="986" y2="1112" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
-<text x="994" y="1116" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Server / SDK call</text>
-<line x1="1120" y1="1112" x2="1148" y2="1112" stroke="#2e5aa8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-link)"/>
-<text x="1156" y="1116" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Link-out</text>
+<rect x="952" y="136" width="272" height="64" rx="6" fill="#f5f5f5"/>
+<rect x="952" y="136" width="272" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<rect x="960" y="144" width="56" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
+<text x="988" y="153" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">PARTNER</text>
+<text x="1088" y="176" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Ticketmaster</text>
+<text x="1088" y="196" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">paid events · VIP On Location</text>
+<rect x="952" y="456" width="272" height="64" rx="6" fill="#f5f5f5"/>
+<rect x="952" y="456" width="272" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<rect x="960" y="464" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
+<text x="976" y="473" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">IDP</text>
+<text x="1088" y="496" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">NFL ID</text>
+<text x="1088" y="516" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">id.nfl.com · one account</text>
+<rect x="952" y="552" width="272" height="64" rx="6" fill="#f5f5f5"/>
+<rect x="952" y="552" width="272" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<rect x="960" y="560" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
+<text x="976" y="569" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">SOR</text>
+<text x="1088" y="592" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Event registration</text>
+<text x="1088" y="612" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">registration · QR · wallet</text>
+<rect x="952" y="344" width="272" height="64" rx="6" fill="#f5f5f5"/>
+<rect x="952" y="344" width="272" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<rect x="960" y="352" width="44" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
+<text x="982" y="361" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">ADOBE</text>
+<text x="1088" y="384" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Personalization</text>
+<text x="1088" y="404" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Target · Real-Time CDP</text>
+<rect x="952" y="648" width="272" height="64" rx="6" fill="#f5f5f5"/>
+<rect x="952" y="648" width="272" height="64" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<rect x="960" y="656" width="44" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
+<text x="982" y="665" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">ADOBE</text>
+<text x="1088" y="688" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Notifications</text>
+<text x="1088" y="708" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">AJO · Adobe Campaign</text>
+<rect x="40" y="792" width="288" height="64" rx="6" fill="#f5f5f5"/>
+<rect x="40" y="792" width="288" height="64" rx="6" fill="rgba(45,49,66,0.05)" stroke="#4f5d75" stroke-width="1"/>
+<rect x="48" y="800" width="44" height="12" rx="2" fill="transparent" stroke="rgba(79,93,117,0.50)" stroke-width="0.8"/>
+<text x="70" y="809" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">CI/CD</text>
+<text x="184" y="832" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Code</text>
+<text x="184" y="852" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">GitHub → code sync</text>
+<rect x="344" y="792" width="288" height="64" rx="6" fill="#f5f5f5"/>
+<rect x="344" y="792" width="288" height="64" rx="6" fill="rgba(45,49,66,0.05)" stroke="#4f5d75" stroke-width="1"/>
+<rect x="352" y="800" width="32" height="12" rx="2" fill="transparent" stroke="rgba(79,93,117,0.50)" stroke-width="0.8"/>
+<text x="368" y="809" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">ENV</text>
+<text x="488" y="832" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Preview → live</text>
+<text x="488" y="852" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">.aem.page → .aem.live</text>
+<rect x="648" y="792" width="288" height="64" rx="6" fill="#f5f5f5"/>
+<rect x="648" y="792" width="288" height="64" rx="6" fill="rgba(45,49,66,0.05)" stroke="#4f5d75" stroke-width="1"/>
+<rect x="656" y="800" width="32" height="12" rx="2" fill="transparent" stroke="rgba(79,93,117,0.50)" stroke-width="0.8"/>
+<text x="672" y="809" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">SEC</text>
+<text x="792" y="832" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Security</text>
+<text x="792" y="852" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">WAF · bot · rate limits</text>
+<rect x="952" y="792" width="288" height="64" rx="6" fill="#f5f5f5"/>
+<rect x="952" y="792" width="288" height="64" rx="6" fill="rgba(45,49,66,0.05)" stroke="#4f5d75" stroke-width="1"/>
+<rect x="960" y="800" width="32" height="12" rx="2" fill="transparent" stroke="rgba(79,93,117,0.50)" stroke-width="0.8"/>
+<text x="976" y="809" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">OBS</text>
+<text x="1096" y="832" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Observability</text>
+<text x="1096" y="852" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">AEM telemetry · logs</text>
+<line x1="40" y1="888" x2="1240" y2="888" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<text x="40" y="908" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
+<rect x="40" y="922" width="16" height="12" rx="2" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
+<text x="64" y="932" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Clients / authors</text>
+<rect x="190" y="922" width="16" height="12" rx="2" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
+<text x="214" y="932" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">events.nfl.com hub</text>
+<rect x="340" y="922" width="16" height="12" rx="2" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="364" y="932" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Thin edge worker</text>
+<rect x="490" y="922" width="16" height="12" rx="2" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<text x="514" y="932" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">NFL / Adobe / partner</text>
+<rect x="640" y="922" width="16" height="12" rx="2" fill="rgba(45,49,66,0.05)" stroke="#4f5d75" stroke-width="1"/>
+<text x="664" y="932" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Operations</text>
+<line x1="790" y1="928" x2="818" y2="928" stroke="#bf4520" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
+<text x="826" y="932" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Signed-in path</text>
+<line x1="940" y1="928" x2="968" y2="928" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+<text x="976" y="932" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Server-side call</text>
+<line x1="1090" y1="928" x2="1118" y2="928" stroke="#2e5aa8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-link)"/>
+<text x="1126" y="932" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Link-out</text>
     </svg>
     </div>
-    <ol class="points"><li><b>Clients.</b> NFL OnePass and the NFL App open the hub in a WebView; the web is nfl.com and club sites. One portal for all three.</li><li><b>Edge.</b> DNS → CDN. The CDN serves cached pages to everyone and sends only <code>/auth</code> and <code>/api</code> to the edge worker.</li><li><b>What we build: events.nfl.com.</b> The NFL Events Hub on AEM Edge Delivery (authored by clubs and the league) and a thin, stateless edge worker. No database of ours.</li><li><b>NFL systems (existing).</b> The edge worker calls NFL ID and the registration service (QR, status, wallet) through NFL’s API gateway if one exists; no extra API layer is built.</li><li><b>Personalization.</b> A personalization block in every page uses the AEP Web SDK (EDS martech plugin) to reach the Adobe Edge Network: Adobe Target picks offers, Real-Time CDP supplies profiles and audiences. Browser-direct, after first paint, consent-gated.</li><li><b>Messaging.</b> Registration events (registered, cancelled) stream into AEP: Journey Optimizer sends real-time journeys (confirmation, cancellation alert, reminder, push); Adobe Campaign sends batch email to Real-Time CDP audiences.</li><li><b>Partners.</b> Paid events link out to Ticketmaster (VIP via On Location). No payments in the hub.</li><li><b>Operations.</b> GitHub → code sync → preview → live; WAF and bot rules at the CDN; AEM telemetry and logs. Nothing to provision and no fan data stored by the hub.</li></ol>
+    <ol class="points"><li><b>Clients.</b> NFL OnePass and the NFL App open the hub in a WebView; the web is nfl.com and club sites. One portal for all three.</li><li><b>Edge.</b> DNS → CDN. The CDN serves cached pages to everyone and sends only <code>/auth</code> and <code>/api</code> to the edge worker.</li><li><b>What we build: events.nfl.com.</b> The NFL Events Hub on AEM Edge Delivery (authored by clubs and the league) and a thin, stateless edge worker. No database of ours.</li><li><b>NFL &amp; partners (existing).</b> NFL ID for sign-in; NFL’s event registration service for registration, QR codes, check-in and wallet passes; notifications through AJO (real-time: confirmations, cancellations, reminders, push) and Adobe Campaign (batch email).</li><li><b>Personalization.</b> A personalization block in hub pages uses the AEP Web SDK to get Adobe Target offers informed by Real-Time CDP audiences: browser-direct, after first paint, consent-gated. An alerts block shows live event status.</li><li><b>Partners.</b> Paid events link out to Ticketmaster (VIP via On Location). No payments in the hub.</li><li><b>Operations.</b> GitHub → code sync → preview → live; WAF and bot rules at the CDN; AEM telemetry and logs. Nothing to provision and no fan data stored by the hub.</li></ol>
   </div>
 </body>
 </html>
