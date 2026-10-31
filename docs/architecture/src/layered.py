@@ -26,7 +26,7 @@ def legend_y(y0, items):
             out.append(f'<rect x="{x}" y="{y0+34}" width="16" height="12" rx="2" fill="{fill}" stroke="{stroke}" stroke-width="1"/>')
             tx = x + 24
         out.append(f'<text x="{tx}" y="{y0+44}" fill="{MUTED}" font-size="10" font-family="{SANS}">{esc(text)}</text>')
-        x += 168
+        x += 150
     return "\n".join(out)
 
 
@@ -84,20 +84,20 @@ d.append(node(880, 384, 328, 112, "backend", "STATIC", "Cached pages & JSON", "H
 d.append(node(520, 544, 240, 112, "focal", "EDGE", "Edge worker", "session / auth layer",
               ["stateless · no data at rest"]))
 d.append(node(72, 776, 1136, 64, "external", "API", "NFL APIs", "called server-side by the edge worker (via NFL API gateway, if present)"))
-d.append(node(72, 880, 264, 64, "external", "IDP", "NFL ID", "id.nfl.com · Gigya"))
-d.append(node(360, 880, 264, 64, "external", "SOR", "OnePass registration", "QR · wallet · status"))
+d.append(node(72, 880, 264, 64, "external", "IDP", "NFL ID", "id.nfl.com · one account"))
+d.append(node(360, 880, 264, 64, "external", "SOR", "OnePass event platform", "registration · QR · check-in"))
 d.append(node(648, 880, 264, 64, "external", "SOR", "Notifications", "email · app push"))
-d.append(node(936, 880, 264, 64, "external", "FUTURE", "Leap (future)", "badges · offers · sponsors"))
+d.append(node(936, 880, 264, 64, "external", "EVENT TECH", "Leap", "badges · scan · offers"))
 d.append(legend_y(1000, [("input", "People / teams"), ("backend", "Adobe EDS"), ("focal", "Thin edge worker"),
                          ("external", "CDN / NFL / partner"), ("arrow:muted", "Content path"), ("arrow:accent", "Signed-in path"),
-                         ("arrow:link", "Server-side / exit")]))
+                         ("arrow:link", "Server-side call"), ("arrow:link:dashed", "Exit / later")]))
 
 doc = page("nfl-events-hub-layered", "Platform architecture · NFL Events Hub on AEM Edge Delivery Services",
            "NFL Events Hub — platform architecture",
            "NFL Events Hub layered platform architecture",
            "Three-layer architecture of the NFL Events Hub: marketing, operations and developer teams publish into AEM Edge Delivery storage; "
            "the edge CDN serves cached pages to every fan and routes only signed-in calls to a stateless edge worker; the worker calls NFL ID, "
-           "OnePass registration and notifications; paid tickets link out to Ticketmaster.",
+           "the OnePass event platform and notifications; paid tickets link out to Ticketmaster.",
            "\n".join(d))
 doc = doc.replace('viewBox="0 0 1280 720"', f'viewBox="0 0 1280 {H}"', 1)
 open(f"{OUT}/nfl-events-hub-layered-architecture.html", "w").write(doc)

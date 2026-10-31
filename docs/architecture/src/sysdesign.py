@@ -44,7 +44,7 @@ d = []
 # zones
 d.append(zone(248, 304, 552, 352, "EDGE · CDN + BFF"))
 d.append(zone(560, 128, 504, 136, "ADOBE AEM · CONTENT"))
-d.append(zone(824, 536, 416, 216, "NFL ONEPASS PLATFORM"))
+d.append(zone(824, 536, 416, 216, "ONEPASS PLATFORM · ASSUMED INTERNALS"))
 # connectors
 d.append(arrow("M 128,304 V 234", dashed=True))                                       # clients -> DNS
 d.append(arrow("M 208,376 H 262"))                                                    # clients -> CDN
@@ -62,7 +62,7 @@ d += [badge(148, 268, 1), badge(236, 352, 2), badge(536, 280, 3), badge(824, 176
       badge(536, 464, 5), badge(812, 448, 6), badge(812, 576, 7), badge(1040, 576, 8),
       badge(952, 652, 9), badge(148, 512, 10)]
 # nodes
-d.append(node(40, 168, 168, 64, "external", "DNS", "DNS", "event.nfl.com"))
+d.append(node(40, 168, 168, 64, "external", "DNS", "DNS", "nfl.com subdomain"))
 d.append(node(40, 304, 168, 160, "input", "CLIENTS", "Fans", "web browser",
               ["NFL OnePass app", "NFL App (WebView)"]))
 d.append(node(40, 560, 168, 64, "external", "PARTNER", "Ticketmaster", "paid · exit link"))
@@ -83,7 +83,7 @@ d.append(legend_y(784, [("badge", "Step (see below)"), ("focal", "Hub origin & B
 doc = page("nfl-events-hub-system-design", "High-level system design · NFL Events Hub",
            "NFL Events Hub — high-level system design",
            "NFL Events Hub high-level system design",
-           "Request flow for the NFL Events Hub: fans on web, OnePass and the NFL App resolve event.nfl.com, every request hits the edge CDN, "
+           "Request flow for the NFL Events Hub: fans on web, OnePass and the NFL App open the hub on an nfl.com subdomain, every request hits the edge CDN, "
            "pages and event JSON come from the AEM Edge Delivery origin, and only sign-in and registration calls go through a stateless Edge BFF "
            "to NFL ID and the OnePass registration API, which stores registrations and queues notifications.",
            "\n".join(d))
@@ -91,7 +91,7 @@ doc = doc.replace('viewBox="0 0 1280 720"', f'viewBox="0 112 1280 {H - 112}"', 1
 
 STEPS = [
     ("Static path", "Every fan, one portal", [
-        "<b>Resolve.</b> Web, NFL OnePass and the NFL App open <code>event.nfl.com</code> (apps in a WebView).",
+        "<b>Resolve.</b> Web, NFL OnePass and the NFL App open the hub on an nfl.com subdomain (e.g. <code>event.nfl.com</code>, proposed); apps use a WebView.",
         "<b>Edge.</b> Every request lands on the CDN: cache, WAF, bot rules, and a waiting room for peak registration openings.",
         "<b>Origin on miss.</b> Pages, <code>events.json</code> (all events, filters, search) and status come from AEM Edge Delivery. Most traffic stops at the cache.",
         "<b>Publish.</b> Clubs and the league author in AEM; publishing purges the CDN in seconds (cancellations included)."]),
@@ -99,7 +99,7 @@ STEPS = [
         "<b>Route.</b> The CDN sends only <code>/auth/*</code> and <code>/api/*</code> to the Edge BFF; everything else stays static.",
         "<b>Sign in.</b> The BFF runs OIDC with NFL ID (OnePass hands its session to the WebView) and sets an HttpOnly cookie.",
         "<b>Register.</b> The BFF forwards register / my events to the OnePass registration API with the fan’s identity.",
-        "<b>Store.</b> The API enforces capacity and one-per-fan, stores the registration, issues the QR and wallet pass.",
+        "<b>Store.</b> The API enforces capacity and one-per-fan (an adult 18+ can add up to 5 minors, as OnePass does today), stores the registration, issues the QR and wallet pass.",
         "<b>Notify.</b> Confirmations and cancellations go on a queue; the notifications worker sends email and push."]),
     ("Exit", "Paid events", [
         "<b>Buy.</b> Paid events link out to Ticketmaster (VIP via On Location); no payments in the hub."]),
