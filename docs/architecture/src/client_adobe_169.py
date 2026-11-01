@@ -59,7 +59,7 @@ B.append(chan(40, 342, "app", "NFL App", "embedded hub"))
 B.append(chan(40, 422, "laptop", "Web", "events.nfl.com"))
 # edge + authoring
 B.append(adobe(260, 236, 170, 264, "Adobe CDN", "", ["WAF & bot protection", "Edge caching", "Routing & queuing"]))
-B.append(adobe(560, 84, 360, 56, "AEM Authoring", "club & league content · event data · forms"))
+B.append(box(520, 74, 480, 78, "adobe", f'<img class="mark" src="{AMARK}" alt=""><div class="t">EDS Content &amp; Event Sources</div><div class="chips"><span>Document Authoring</span><span>Universal Editor</span><span>Registration Forms</span><span>Event Sources</span></div>'))
 # hub
 B.append(box(480, 172, 520, 428, "panel hub", f'<img class="mark" src="{AMARK}" alt=""><div class="pt">NFL Events Hub<span>events.nfl.com · AEM Edge Delivery Services</span></div>'))
 B.append(box(500, 232, 480, 44, "model", '<b>UNIFIED<br>EVENT MODEL</b><span>League · Club · International<br>Free · Paid · Ticketed · Registration</span>'))
@@ -102,7 +102,7 @@ for y in (294, 374, 454):
     path(f"M 208,{y} H 258")
 lab(234, 282, "HTTPS", "middle")
 path("M 430,368 H 478")                                  ; lab(454, 360, "origin", "middle")
-path("M 740,140 V 170", thick=True)                      ; lab(748, 160, "publish")
+path("M 740,152 V 170", thick=True)                      ; lab(748, 166, "publish")
 path("M 740,600 V 638", "acc")                           ; lab(748, 624, "authenticate", cls="acc")
 path("M 1000,218 H 1086", "lnk", dashed=True)
 path("M 1000,270 H 1086", "lnk", dashed=True)            ; lab(1043, 248, "hand-off", "middle", "lnk")
@@ -157,6 +157,8 @@ doc = f"""<!DOCTYPE html>
   svg.conn text {{ font-family:'IBM Plex Mono',monospace; font-size:11px; fill:#333; paint-order:stroke; stroke:#fff; stroke-width:4px; }}
   svg.conn text.acc {{ fill:#c11a12; }} svg.conn text.lnk {{ fill:#2e5aa8; }}
   .foot {{ position:absolute; left:24px; top:836px; font-size:11.5px; color:#7a8294; }}
+  .chips {{ display:flex; gap:6px; margin-top:8px; flex-wrap:nowrap; }}
+  .chips span {{ background:#fff; border-radius:4px; padding:5px 8px; font-size:11px; white-space:nowrap; }}
   .legend {{ position:absolute; left:24px; top:800px; display:flex; gap:26px; font-size:11px; color:#444; align-items:center; }}
   .legend i {{ display:inline-block; width:26px; height:0; border-top:2px solid #4a4a4a; margin-right:8px; vertical-align:middle; }}
   .legend i.acc {{ border-color:#c11a12; }} .legend i.lnk {{ border-color:#2e5aa8; }} .legend i.dash {{ border-top-style:dashed; }}
