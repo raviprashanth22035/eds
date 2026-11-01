@@ -58,7 +58,7 @@ B.append(adobe(200, 860, 270, 72, "Journey Optimizer · Campaign", "confirmation
 B.append(box(480, 318, 540, 392, "panel hub", f'<img class="mark" src="{AMARK}" alt=""><div class="pt">NFL Events Hub · events.nfl.com<span>one event platform on AEM Edge Delivery Services</span></div>'))
 B.append(group(500, 384, 240, 168, "Discover", ["Find league, club & international events", "Event details & venue map", "Events near me", "Calendar & schedule"]))
 B.append(group(760, 384, 240, 168, "Attend", ["Register as guest or signed in", "Guest: QR code by email", "Signed in: My Events + wallet", "Buy tickets · live alerts"]))
-B.append(bar(500, 566, 500, 52, "pers", "Personalized for signed-in fans", "events and offers based on the fan’s NFL ID profile · guests see the standard page"))
+B.append(bar(500, 566, 500, 52, "pers", "Personalized for signed-in fans", "based on the NFL ID profile · guests see the standard page"))
 B.append(bar(500, 630, 500, 56, "run", "Run by clubs & league", "event sheets · club × market roll-out · languages · short links"))
 # partners on the right
 B.append(tile(1100, 400, 240, 56, "tm", "Ticketmaster · On Location", "buy tickets · hospitality"))
