@@ -50,6 +50,7 @@ B = []
 # zones
 B.append(zone(24, 236, 200, 264, "CHANNELS"))
 B.append(zone(1064, 172, 512, 128, "TICKETING PARTNERS"))
+B.append(zone(1064, 384, 512, 96, "FAN WALLET"))
 B.append(zone(1064, 520, 512, 100, "ADOBE EXPERIENCE CLOUD"))
 B.append(zone(1064, 636, 512, 244, "NFL SYSTEMS & MESSAGING"))
 # channels
@@ -78,9 +79,10 @@ B.append(adobe(480, 640, 520, 64, "Secure API layer · edge worker", "forwards r
 # right side
 B.append(tile(1088, 196, 464, 44, "tm", "Ticketmaster", "ticketing"))
 B.append(tile(1088, 248, 464, 44, "tm", "On Location", "official hospitality"))
+B.append(tile(1088, 408, 464, 52, "wal", "Apple Wallet · Google Wallet", "event QR & ticket passes · signed-in fans"))
 B.append(adobe(1088, 542, 464, 56, "Adobe Target · Real-Time CDP", "signed-in personalization"))
 B.append(tile(1088, 652, 464, 44, "nfl", "NFL ID", "one fan account · SSO"))
-B.append(tile(1088, 716, 464, 48, "leap", "NFL event registration", "OnePass · issues QR · wallet"))
+B.append(tile(1088, 716, 464, 48, "leap", "NFL event registration", "OnePass · issues QR & wallet pass"))
 B.append(adobe(1088, 800, 464, 64, "Journey Optimizer · Campaign", "confirmations · reminders · alerts"))
 
 P, LAB = [], []
@@ -105,6 +107,7 @@ path("M 740,140 V 170", thick=True)                      ; lab(748, 160, "publis
 path("M 740,600 V 638", "acc")                           ; lab(748, 624, "register (anyone) · sign in", cls="acc")
 path("M 1000,218 H 1086", "lnk", dashed=True)
 path("M 1000,270 H 1086", "lnk", dashed=True)            ; lab(1043, 248, "hand-off", "middle", "lnk")
+path("M 1000,434 H 1086", "lnk", dashed=True)            ; lab(1043, 424, "wallet", "middle", "lnk")
 path("M 1000,564 H 1086", "lnk", dashed=True)            ; lab(1043, 554, "web sdk", "middle", "lnk")
 path("M 1000,672 H 1086", "lnk")                         ; lab(1043, 664, "sign in", "middle", "lnk")
 path("M 1000,696 H 1032 Q 1040,696 1040,704 V 732 Q 1040,740 1048,740 H 1086", "lnk")
@@ -143,7 +146,7 @@ doc = f"""<!DOCTYPE html>
   .pers {{ background:#fde7e7; border:1.5px solid #e1251b; display:flex; align-items:center; justify-content:center; box-shadow:2px 2px 0 #bdbdbd; }}
   .pers .t {{ font-size:13px; font-weight:600; }}
   .tile {{ padding:8px 12px; border:1.5px solid rgba(0,0,0,0.12); }}
-  .nfl {{ background:#dfe6f6; }} .leap {{ background:#e9e0ff; }} .tm {{ background:#dceaff; }}
+  .nfl {{ background:#dfe6f6; }} .leap {{ background:#e9e0ff; }} .tm {{ background:#dceaff; }} .wal {{ background:#fff3d6; }}
   .chan {{ background:#e6e6e6; display:flex; align-items:center; gap:10px; padding:8px 12px; }}
   .chan .t {{ font-size:13px; font-weight:600; }} .chan .s {{ font-size:10.5px; color:#555; margin-top:2px; }}
   svg.conn {{ position:absolute; left:0; top:0; }}
