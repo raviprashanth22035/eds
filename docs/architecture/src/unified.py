@@ -138,8 +138,8 @@ d.append(legend_y(928, [("input", "Channels / authors"), ("focal", "Platform foc
                         ("external", "Existing system / partner"), ("arrow:muted", "Content"), ("arrow:accent", "Signed-in"),
                         ("arrow:link", "Synchronous"), ("arrow:link:dashed", "Async / external")]))
 
-doc = page("nfl-event-hub-unified", "Platform architecture · NFL Event Hub",
-           "NFL Event Hub — unified event platform",
+doc = page("nfl-event-hub-unified", "Capability & integration view · NFL Event Hub",
+           "NFL Event Hub — capabilities & integrations",
            "NFL Event Hub unified event platform",
            "Platform architecture of the NFL Event Hub: NFL OnePass and web channels reach the hub through the edge CDN; the hub on AEM Edge "
            "Delivery composes discover and attend capabilities over one event model with personalization across all blocks; a thin identity and "
