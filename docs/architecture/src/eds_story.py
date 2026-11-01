@@ -50,14 +50,14 @@ B.append(adobe(170, 60, 270, 214, "Adobe CDN", "", ["Fast, secure pages worldwid
                                                    "Right country & language site"]))
 B.append(adobe(740, 190, 260, 90, "AEM authoring", "teams create & publish events"))
 B.append(person(1150, 214, "Club & league teams"))
-B.append(adobe(170, 356, 220, 112, "Secure sign-in & registration", "thin edge service · stores no fan data"))
+B.append(adobe(170, 356, 220, 112, "Secure registration & sign-in", "guest or NFL ID · stores no fan data"))
 B.append(tile(170, 540, 140, 64, "leap", "Registration", "OnePass · QR code"))
 B.append(tile(320, 540, 120, 64, "nfl", "NFL ID", "one fan account"))
 B.append(adobe(200, 860, 270, 72, "Journey Optimizer · Campaign", "confirmations · reminders · alerts"))
 # the hub
 B.append(box(480, 318, 540, 392, "panel hub", f'<img class="mark" src="{AMARK}" alt=""><div class="pt">NFL Events Hub · events.nfl.com<span>one event platform on AEM Edge Delivery Services</span></div>'))
 B.append(group(500, 384, 240, 168, "Discover", ["Find league, club & international events", "Event details & venue map", "Events near me", "Calendar & schedule"]))
-B.append(group(760, 384, 240, 168, "Attend", ["Register (with extra fields)", "My events · QR · wallet", "Buy tickets (link-out)", "Live event alerts"]))
+B.append(group(760, 384, 240, 168, "Attend", ["Register as guest or signed in", "Guest: QR code by email", "Signed in: My Events + wallet", "Buy tickets · live alerts"]))
 B.append(bar(500, 566, 500, 52, "pers", "Personalized for every fan", "the right events and offers on web, OnePass and the NFL App"))
 B.append(bar(500, 630, 500, 56, "run", "Run by clubs & league", "event sheets · club × market roll-out · languages · short links"))
 # partners on the right
@@ -87,7 +87,7 @@ path("M 1150,268 H 1002")                                ; lab(1076, 258, "creat
 path("M 870,280 V 316", thick=True)                      ; lab(880, 302, "publish")
 path("M 80,326 V 188 Q 80,180 88,180 H 168")             ; lab(92, 250, "open the hub")             ; badge(60, 250, 2)
 path("M 440,150 H 592 Q 600,150 600,158 V 316")          ; lab(520, 142, "fast pages", "middle")     ; badge(520, 168, 3)
-path("M 478,430 H 392")                                  ; lab(435, 396, "sign in", "middle") ; lab(435, 412, "register", "middle") ; badge(435, 452, 4)
+path("M 478,430 H 392")                                  ; lab(435, 396, "register", "middle") ; lab(435, 412, "sign in", "middle") ; badge(435, 452, 4)
 path("M 380,468 V 538")                                  ; lab(388, 504, "sign in")
 path("M 230,468 V 538")                                  ; lab(238, 504, "register")                ; badge(212, 500, 5)
 path("M 250,604 V 858", dashed=True)                     ; lab(258, 740, "registration events")     ; badge(232, 740, 6)
@@ -100,8 +100,8 @@ path("M 1000,658 H 1098", dashed=True, both=True)        ; lab(1049, 678, "trans
 STEPS = ["Club & league teams create and publish events in AEM.",
          "Fans open events.nfl.com — on the web or inside OnePass and the NFL App.",
          "Adobe CDN serves fast pages in the right country and language.",
-         "Signing in or registering on a hub page uses the fan’s NFL ID — the same account as OnePass.",
-         "Registering creates the fan’s OnePass registration and QR code — the same QR used at the venue.",
+         "Fans register on the hub as a guest, or sign in with NFL ID (same account as OnePass) for one-tap registration.",
+         "Registration creates the OnePass QR code. Guests get it by email; signed-in fans also see it in My Events with Add to Wallet.",
          "Confirmations, reminders and alerts go out through Journey Optimizer and Campaign.",
          "Paid events: Buy Tickets opens Ticketmaster — no payments in the hub.",
          "Consent first: only after the fan agrees (OneTrust) is content personalized with Adobe Target and Real-Time CDP."]

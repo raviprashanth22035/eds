@@ -50,8 +50,8 @@ B.append(adobe(200, 860, 270, 72, "Journey Optimizer · Campaign", "confirmation
 # authoring panel
 B.append(box(480, 318, 540, 422, "panel hub", f'<img class="mark" src="{AMARK}" alt=""><div class="pt">NFL Events Hub · events.nfl.com<span>built on AEM Edge Delivery Services</span></div>'))
 blocks = [("Event listing & filters", "events.json · search"), ("Event detail block", "venue · map · tickets"),
-          ("Registration form block", "EDS forms · extra fields"), ("Personalization block", "Target offers"),
-          ("My Events block", "signed-in · QR · wallet"), ("Event alerts block", "live status banner"),
+          ("Registration form block", "guest or signed in"), ("Personalization block", "Target offers"),
+          ("My Events block", "signed in · QR · wallet"), ("Event alerts block", "live status banner"),
           ("Event sheets", "schedule · status · forms"), ("Authorable redirects", "vanity URLs"),
           ("Page authoring & roll-out", "league · club × market"), ("Localization", "multilingual sites")]
 for i, (t, s) in enumerate(blocks):
