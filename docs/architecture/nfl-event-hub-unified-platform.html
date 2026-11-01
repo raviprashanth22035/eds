@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFL Event Hub unified event platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-paper: #f5f5f5; --color-ink: #2d3142; --color-muted: #4f5d75;
+      --font-sans: 'Geist', system-ui, sans-serif;
+      --font-serif: 'Instrument Serif', serif;
+      --font-mono: 'Geist Mono', ui-monospace, monospace;
+    }
+    body { font-family: var(--font-sans); background: var(--color-paper); color: var(--color-ink);
+           min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 3rem 2rem; }
+    .frame { max-width: 1280px; width: 100%; min-width: 0; }
+    .eyebrow { font-family: var(--font-mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.18em;
+               text-transform: uppercase; color: var(--color-muted); margin-bottom: 0.5rem; }
+    h1 { font-family: var(--font-serif); font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2.5rem); font-weight: 400;
+         letter-spacing: -0.02em; line-height: 1.15; color: var(--color-ink); margin-bottom: 1.5rem; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    svg { width: 100%; min-width: 1280px; display: block; }
+    @media print { .diagram-container { overflow-x: visible; } svg { min-width: 0; } }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <p class="eyebrow">Platform architecture · NFL Event Hub</p>
+    <h1>NFL Event Hub — unified event platform</h1>
+    <div class="diagram-container">
+    <svg viewBox="0 0 1280 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="nfl-event-hub-unified-title nfl-event-hub-unified-desc">
+<title id="nfl-event-hub-unified-title">NFL Event Hub unified event platform</title>
+<desc id="nfl-event-hub-unified-desc">Platform architecture of the NFL Event Hub: NFL OnePass and web channels reach the hub through the edge CDN; the hub on AEM Edge Delivery composes discover and attend capabilities over one event model with personalization across all blocks; a thin identity and API middleware handles NFL ID sessions and calls Leap for registration, QR and check-in, Adobe Real-Time CDP for profile data and Journey Optimizer and Campaign for notifications; ticketing hands off to Ticketmaster and On Location, and OneTrust supplies consent.</desc>
+<defs>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
+<marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
+<marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2e5aa8"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#f5f5f5"/>
+<text x="24" y="28" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="start" letter-spacing="0.18em">CHANNELS &amp; DELIVERY</text>
+<text x="696" y="28" fill="#bf4520" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.18em">UNIFIED EVENT PLATFORM</text>
+<text x="1240" y="28" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end" letter-spacing="0.18em">EXISTING SYSTEMS &amp; PARTNERS</text>
+<rect x="24" y="240" width="200" height="200" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<rect x="92" y="244" width="64" height="12" rx="2" fill="#f5f5f5"/>
+<text x="124" y="253" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">CHANNELS</text>
+<rect x="264" y="232" width="176" height="200" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<rect x="304" y="236" width="96" height="12" rx="2" fill="#f5f5f5"/>
+<text x="352" y="245" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">DELIVERY EDGE</text>
+<rect x="488" y="144" width="416" height="472" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<rect x="512" y="148" width="368" height="12" rx="2" fill="#f5f5f5"/>
+<text x="696" y="157" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">NFL EVENT HUB · EXPERIENCE COMPOSITION · AEM EDGE DELIVERY</text>
+<rect x="488" y="656" width="416" height="128" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<rect x="504" y="660" width="188" height="12" rx="2" fill="#f5f5f5"/>
+<text x="598" y="669" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">MIDDLEWARE · THIN, STATELESS</text>
+<rect x="952" y="232" width="288" height="208" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<rect x="1032" y="236" width="128" height="12" rx="2" fill="#f5f5f5"/>
+<text x="1096" y="245" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">COMMERCE &amp; CONSENT</text>
+<rect x="952" y="520" width="288" height="104" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<rect x="1012" y="524" width="168" height="12" rx="2" fill="#f5f5f5"/>
+<text x="1096" y="533" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">ADOBE EXPERIENCE PLATFORM</text>
+<rect x="952" y="680" width="288" height="224" rx="8" fill="rgba(45,49,66,0.02)" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<rect x="1024" y="684" width="144" height="12" rx="2" fill="#f5f5f5"/>
+<text x="1096" y="693" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.14em">PLATFORMS &amp; MESSAGING</text>
+<rect x="512" y="168" width="368" height="44" rx="6" fill="#2d3142"/>
+<text x="528" y="186" fill="#f5f5f5" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" font-weight="600" text-anchor="start" letter-spacing="0.16em">ONE EVENT</text>
+<text x="528" y="200" fill="#f5f5f5" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" font-weight="600" text-anchor="start" letter-spacing="0.16em">MODEL</text>
+<line x1="612" y1="176" x2="612" y2="204" stroke="rgba(245,245,245,0.35)" stroke-width="1"/>
+<text x="624" y="186" fill="#f5f5f5" font-size="10" font-family="'Geist', system-ui, sans-serif">League · Club · International</text>
+<text x="624" y="201" fill="#f5f5f5" font-size="10" font-family="'Geist', system-ui, sans-serif">Free · Paid · Ticketed · Registration-based</text>
+<text x="512" y="236" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="start" letter-spacing="0.18em">DISCOVER</text>
+<text x="704" y="236" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="start" letter-spacing="0.18em">ATTEND</text>
+<path d="M 696,104 V 142" fill="none" stroke="#4f5d75" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+<rect x="704" y="120" width="72" height="16" rx="2" fill="#f5f5f5"/>
+<text x="740" y="132" fill="#5a6580" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">PUBLISH</text>
+<path d="M 216,304 H 278" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+<path d="M 216,384 H 278" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+<rect x="222" y="276" width="52" height="16" rx="2" fill="#f5f5f5"/>
+<text x="248" y="288" fill="#5a6580" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">HTTPS</text>
+<path d="M 424,336 H 486" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+<rect x="426" y="308" width="60" height="16" rx="2" fill="#f5f5f5"/>
+<text x="456" y="320" fill="#5a6580" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">ORIGIN</text>
+<path d="M 696,616 V 686" fill="none" stroke="#bf4520" stroke-width="1.4" marker-end="url(#arrow-accent)"/>
+<rect x="704" y="644" width="112" height="16" rx="2" fill="#f5f5f5"/>
+<text x="760" y="656" fill="#bf4520" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">/AUTH · /API</text>
+<path d="M 880,320 H 920 Q 928,320 928,312 V 296 Q 928,288 936,288 H 966" fill="none" stroke="#2e5aa8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-link)"/>
+<path d="M 880,344 H 966" fill="none" stroke="#2e5aa8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-link)"/>
+<rect x="884" y="350" width="80" height="16" rx="2" fill="#f5f5f5"/>
+<text x="924" y="362" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">HAND-OFF</text>
+<path d="M 966,400 H 906" fill="none" stroke="#2e5aa8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-link)"/>
+<rect x="892" y="406" width="72" height="16" rx="2" fill="#f5f5f5"/>
+<text x="928" y="418" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">CONSENT</text>
+<path d="M 880,572 H 966" fill="none" stroke="#2e5aa8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-link)"/>
+<rect x="886" y="550" width="72" height="16" rx="2" fill="#f5f5f5"/>
+<text x="922" y="562" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">WEB SDK</text>
+<path d="M 880,696 H 984 Q 992,696 992,688 V 602" fill="none" stroke="#2e5aa8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-link)"/>
+<rect x="884" y="674" width="112" height="16" rx="2" fill="#f5f5f5"/>
+<text x="940" y="686" fill="#2e5aa8" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">PROFILE DATA</text>
+<path d="M 880,728 H 966" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+<path d="M 880,744 H 936 Q 944,744 944,752 V 784 Q 944,792 952,792 H 966" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+<path d="M 880,760 H 920 Q 928,760 928,768 V 848 Q 928,856 936,856 H 966" fill="none" stroke="#2e5aa8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-link)"/>
+<rect x="40" y="272" width="176" height="64" rx="6" fill="#f5f5f5"/>
+<rect x="40" y="272" width="176" height="64" rx="6" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
+<rect x="48" y="280" width="32" height="12" rx="2" fill="transparent" stroke="rgba(90,101,128,0.40)" stroke-width="0.8"/>
+<text x="64" y="289" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">APP</text>
+<text x="128" y="312" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">NFL OnePass</text>
+<text x="128" y="332" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">WebView · token</text>
+<rect x="40" y="352" width="176" height="64" rx="6" fill="#f5f5f5"/>
+<rect x="40" y="352" width="176" height="64" rx="6" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
+<rect x="48" y="360" width="32" height="12" rx="2" fill="transparent" stroke="rgba(90,101,128,0.40)" stroke-width="0.8"/>
+<text x="64" y="369" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">WEB</text>
+<text x="128" y="392" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Web</text>
+<text x="128" y="412" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">nfl.com · events</text>
+<rect x="280" y="264" width="144" height="144" rx="6" fill="#f5f5f5"/>
+<rect x="280" y="264" width="144" height="144" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<rect x="288" y="272" width="32" height="12" rx="2" fill="transparent" stroke="rgba(45,49,66,0.22)" stroke-width="0.8"/>
+<text x="304" y="281" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">CDN</text>
+<text x="352" y="312" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Edge CDN</text>
+<text x="352" y="332" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">WAF · cache</text>
+<text x="352" y="364" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">routing · queue</text>
+<rect x="536" y="40" width="320" height="64" rx="6" fill="#f5f5f5"/>
+<rect x="536" y="40" width="320" height="64" rx="6" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
+<rect x="544" y="48" width="56" height="12" rx="2" fill="transparent" stroke="rgba(90,101,128,0.40)" stroke-width="0.8"/>
+<text x="572" y="57" fill="#5a6580" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">AUTHORS</text>
+<text x="696" y="80" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Content authoring</text>
+<text x="696" y="100" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">events · forms · club × market × lang</text>
+<rect x="512" y="244" width="176" height="52" rx="6" fill="#f5f5f5"/>
+<rect x="512" y="244" width="176" height="52" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="600" y="268" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Event Discovery</text>
+<text x="600" y="283" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">league · club · intl</text>
+<rect x="512" y="304" width="176" height="52" rx="6" fill="#f5f5f5"/>
+<rect x="512" y="304" width="176" height="52" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="600" y="328" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Events Near Me</text>
+<text x="600" y="343" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">location-aware</text>
+<rect x="512" y="364" width="176" height="52" rx="6" fill="#f5f5f5"/>
+<rect x="512" y="364" width="176" height="52" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="600" y="388" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Event Detail</text>
+<text x="600" y="403" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">venue · map · FAQ</text>
+<rect x="512" y="424" width="176" height="52" rx="6" fill="#f5f5f5"/>
+<rect x="512" y="424" width="176" height="52" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="600" y="448" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Search &amp; Filters</text>
+<text x="600" y="463" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">events.json</text>
+<rect x="512" y="484" width="176" height="52" rx="6" fill="#f5f5f5"/>
+<rect x="512" y="484" width="176" height="52" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="600" y="508" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Calendar / Schedule</text>
+<text x="600" y="523" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">add to calendar</text>
+<rect x="704" y="244" width="176" height="52" rx="6" fill="#f5f5f5"/>
+<rect x="704" y="244" width="176" height="52" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="792" y="268" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Registration</text>
+<text x="792" y="283" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">EDS forms → Leap</text>
+<rect x="704" y="304" width="176" height="52" rx="6" fill="#f5f5f5"/>
+<rect x="704" y="304" width="176" height="52" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="792" y="328" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Ticketing</text>
+<text x="792" y="343" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Ticketmaster · On Loc.</text>
+<rect x="704" y="364" width="176" height="52" rx="6" fill="#f5f5f5"/>
+<rect x="704" y="364" width="176" height="52" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="792" y="388" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">My Events</text>
+<text x="792" y="403" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">signed-in profile</text>
+<rect x="704" y="424" width="176" height="52" rx="6" fill="#f5f5f5"/>
+<rect x="704" y="424" width="176" height="52" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="792" y="448" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">QR / Check-in</text>
+<text x="792" y="463" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">via Leap</text>
+<rect x="704" y="484" width="176" height="52" rx="6" fill="#f5f5f5"/>
+<rect x="704" y="484" width="176" height="52" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="792" y="508" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Event Alerts</text>
+<text x="792" y="523" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">AJO · Campaign</text>
+<rect x="512" y="552" width="368" height="40" rx="6" fill="#f5f5f5"/>
+<rect x="512" y="552" width="368" height="40" rx="6" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
+<text x="696" y="576" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Personalization · applied across all blocks</text>
+<rect x="512" y="688" width="368" height="80" rx="6" fill="#f5f5f5"/>
+<rect x="512" y="688" width="368" height="80" rx="6" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
+<rect x="520" y="696" width="32" height="12" rx="2" fill="transparent" stroke="rgba(191,69,32,0.50)" stroke-width="0.8"/>
+<text x="536" y="705" fill="#bf4520" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.08em">BFF</text>
+<text x="696" y="736" fill="#2d3142" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Identity &amp; API middleware</text>
+<text x="696" y="756" fill="#4f5d75" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">anonymous + NFL ID session · API mediation</text>
+<rect x="968" y="264" width="256" height="48" rx="6" fill="#f5f5f5"/>
+<rect x="968" y="264" width="256" height="48" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<text x="1096" y="286" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Ticketmaster</text>
+<text x="1096" y="301" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">ticketing</text>
+<rect x="968" y="320" width="256" height="48" rx="6" fill="#f5f5f5"/>
+<rect x="968" y="320" width="256" height="48" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<text x="1096" y="342" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">On Location</text>
+<text x="1096" y="357" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">official hospitality</text>
+<rect x="968" y="376" width="256" height="48" rx="6" fill="#f5f5f5"/>
+<rect x="968" y="376" width="256" height="48" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<text x="1096" y="398" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OneTrust</text>
+<text x="1096" y="413" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">consent &amp; privacy</text>
+<rect x="968" y="544" width="256" height="56" rx="6" fill="#f5f5f5"/>
+<rect x="968" y="544" width="256" height="56" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<text x="1096" y="570" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Real-Time CDP</text>
+<text x="1096" y="585" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Edge Network · NFL ID identity</text>
+<rect x="968" y="704" width="256" height="48" rx="6" fill="#f5f5f5"/>
+<rect x="968" y="704" width="256" height="48" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<text x="1096" y="726" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Leap Event Platform</text>
+<text x="1096" y="741" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">registration · QR · check-in</text>
+<rect x="968" y="768" width="256" height="48" rx="6" fill="#f5f5f5"/>
+<rect x="968" y="768" width="256" height="48" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<text x="1096" y="790" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">NFL ID</text>
+<text x="1096" y="805" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">SSO · all NFL apps</text>
+<rect x="968" y="832" width="256" height="56" rx="6" fill="#f5f5f5"/>
+<rect x="968" y="832" width="256" height="56" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<text x="1096" y="858" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Notifications</text>
+<text x="1096" y="873" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Journey Optimizer · Campaign</text>
+<line x1="40" y1="928" x2="1240" y2="928" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<text x="40" y="948" fill="#4f5d75" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.18em">LEGEND</text>
+<rect x="40" y="962" width="16" height="12" rx="2" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
+<text x="64" y="972" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Channels / authors</text>
+<rect x="196" y="962" width="16" height="12" rx="2" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
+<text x="220" y="972" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Platform focus</text>
+<rect x="329" y="962" width="16" height="12" rx="2" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="353" y="972" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Hub capability</text>
+<rect x="462" y="962" width="16" height="12" rx="2" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+<text x="486" y="972" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Existing system / partner</text>
+<line x1="659" y1="968" x2="687" y2="968" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+<text x="695" y="972" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Content</text>
+<line x1="763" y1="968" x2="791" y2="968" stroke="#bf4520" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
+<text x="799" y="972" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Signed-in</text>
+<line x1="879" y1="968" x2="907" y2="968" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+<text x="915" y="972" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Synchronous</text>
+<line x1="1006" y1="968" x2="1034" y2="968" stroke="#2e5aa8" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-link)"/>
+<text x="1042" y="972" fill="#4f5d75" font-size="10" font-family="'Geist', system-ui, sans-serif">Async / external</text>
+    </svg>
+    </div>
+  </div>
+</body>
+</html>
