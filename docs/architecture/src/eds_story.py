@@ -58,7 +58,7 @@ B.append(adobe(200, 860, 270, 72, "Journey Optimizer · Campaign", "confirmation
 B.append(box(480, 318, 540, 392, "panel hub", f'<img class="mark" src="{AMARK}" alt=""><div class="pt">NFL Events Hub · events.nfl.com<span>one event platform on AEM Edge Delivery Services</span></div>'))
 B.append(group(500, 384, 240, 168, "Discover", ["Find league, club & international events", "Event details & venue map", "Events near me", "Calendar & schedule"]))
 B.append(group(760, 384, 240, 168, "Attend", ["Register as guest or signed in", "Guest: QR code by email", "Signed in: My Events + wallet", "Buy tickets · live alerts"]))
-B.append(bar(500, 566, 500, 52, "pers", "Personalized for every fan", "the right events and offers on web, OnePass and the NFL App"))
+B.append(bar(500, 566, 500, 52, "pers", "Personalized for signed-in fans", "events and offers based on the fan’s NFL ID profile · guests see the standard page"))
 B.append(bar(500, 630, 500, 56, "run", "Run by clubs & league", "event sheets · club × market roll-out · languages · short links"))
 # partners on the right
 B.append(tile(1100, 400, 240, 56, "tm", "Ticketmaster · On Location", "buy tickets · hospitality"))
@@ -100,7 +100,7 @@ STEPS = ["Club & league teams create and publish events in AEM.",
          "Registration creates the OnePass QR code. Guests get it by email; signed-in fans also see it in My Events with Add to Wallet.",
          "Confirmations, reminders and alerts go out through Journey Optimizer and Campaign.",
          "Paid events: Buy Tickets opens Ticketmaster — no payments in the hub.",
-         "Consent first: only after the fan agrees on NFL’s consent banner is content personalized with Adobe Target and Real-Time CDP."]
+         "Signed-in fans get personalized events and offers (Adobe Target, Real-Time CDP), with their consent. Guests see the standard page."]
 how = "".join(f'<li><span>{i + 1}</span>{e(t)}</li>' for i, t in enumerate(STEPS))
 
 doc = f"""<!DOCTYPE html>
