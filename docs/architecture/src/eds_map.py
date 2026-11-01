@@ -42,13 +42,13 @@ B.append(person(28, 330, "Fans"))
 B.append(adobe(170, 60, 270, 214, "Adobe CDN", "", ["Path routing: /auth · /api → edge worker",
                                                    "301s & vanity URLs (/draftaccess)",
                                                    "Geo-IP → market & language site"]))
-B.append(adobe(520, 190, 220, 90, "Edge Delivery Services", "events.nfl.com"))
+B.append(adobe(740, 190, 260, 90, "Document Authoring · UE", "pages · event sheets · forms"))
 B.append(adobe(170, 360, 270, 100, "Session & identity middleware", "edge worker · stateless · NFL ID session · API proxy"))
 B.append(tile(170, 540, 120, 64, "leap", "Leap", "registration · QR"))
 B.append(tile(320, 540, 120, 64, "nfl", "NFL ID", "SSO · one account"))
 B.append(adobe(200, 860, 270, 72, "Journey Optimizer · Campaign", "confirmations · reminders · alerts"))
 # authoring panel
-B.append(box(480, 330, 540, 410, "panel", '<div class="pt">Document Authoring · Universal Editor</div>'))
+B.append(box(480, 318, 540, 422, "panel hub", f'<img class="mark" src="{AMARK}" alt=""><div class="pt">NFL Events Hub · events.nfl.com<span>built on AEM Edge Delivery Services</span></div>'))
 blocks = [("Event listing & filters", "events.json · search"), ("Event detail block", "venue · map · tickets"),
           ("Registration form block", "EDS forms · extra fields"), ("Personalization block", "Target offers"),
           ("My Events block", "signed-in · QR · wallet"), ("Event alerts block", "live status banner"),
@@ -81,8 +81,8 @@ def path(d, dashed=False, both=False, thick=False):
 
 
 path("M 80,330 V 188 Q 80,180 88,180 H 168")                         ; lab(90, 250, "https")
-path("M 440,150 H 622 Q 630,150 630,158 V 188")                       ; lab(535, 142, "/* pages", "middle")
-path("M 630,280 V 328", thick=True)
+path("M 440,150 H 592 Q 600,150 600,158 V 316")                       ; lab(520, 142, "/* pages", "middle")
+path("M 870,280 V 316", thick=True)                                  ; lab(878, 302, "publish")
 path("M 305,274 V 358")                                               ; lab(313, 320, "/auth · /api")
 path("M 230,460 V 538")                                               ; lab(238, 504, "register")
 path("M 380,460 V 538")                                               ; lab(388, 504, "sign-in")
@@ -94,7 +94,7 @@ path("M 1000,412 H 1098", dashed=True)                                ; lab(1049
 path("M 1000,480 H 1098", dashed=True)                                ; lab(1049, 472, "web sdk", "middle")
 path("M 1100,548 H 1022", dashed=True)                                ; lab(1061, 540, "consent", "middle")
 path("M 1000,684 H 1098", dashed=True, both=True)                     ; lab(1049, 676, "translate", "middle")
-path("M 1150,268 H 908 Q 900,268 900,276 V 328")                      ; lab(1020, 260, "author · publish", "middle")
+path("M 1150,268 H 1002")                                              ; lab(1076, 260, "author", "middle")
 
 doc = f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -114,7 +114,10 @@ doc = f"""<!DOCTYPE html>
   .adobe .s {{ font-size:11.5px; color:#444; margin-top:4px; line-height:1.35; }}
   .item {{ background:#e9e9e9; border-radius:4px; font-size:11.5px; padding:8px 10px; margin-top:10px; box-shadow:2px 2px 0 #cfcfcf; }}
   .panel {{ background:#d6d6d6; }}
-  .pt {{ position:absolute; left:20px; top:14px; font-size:15px; font-weight:600; }}
+  .pt {{ position:absolute; left:20px; top:12px; font-size:17px; font-weight:600; }}
+  .pt span {{ display:block; font-size:11.5px; font-weight:400; color:#444; margin-top:2px; }}
+  .hub {{ border:2px solid #e1251b; }}
+  .hub .mark {{ position:absolute; left:-14px; top:-16px; width:32px; height:32px; border-radius:4px; }}
   .blk {{ background:#ececec; padding:8px 12px; box-shadow:2px 2px 0 #bdbdbd; }}
   .blk .t, .tile .t {{ font-size:12.5px; font-weight:600; }}
   .blk .s, .tile .s {{ font-size:11px; color:#555; margin-top:3px; }}
