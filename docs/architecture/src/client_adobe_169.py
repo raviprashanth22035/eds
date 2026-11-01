@@ -74,7 +74,7 @@ for i, (t, s_) in enumerate(attend):
     B.append(mini(748, 290 + i * 50, t, s_))
 B.append(box(500, 546, 480, 38, "pers", '<div class="t">Personalization · signed-in fans only</div>'))
 # middleware
-B.append(adobe(480, 640, 520, 64, "Registration & sign-in service", "thin · stateless · guest or NFL ID · stores no fan data"))
+B.append(adobe(480, 640, 520, 64, "Event registration & sign-in service", "guests & signed-in fans · stateless · stores no fan data"))
 # right side
 B.append(tile(1088, 196, 464, 44, "tm", "Ticketmaster", "ticketing"))
 B.append(tile(1088, 248, 464, 44, "tm", "On Location", "official hospitality"))
@@ -102,7 +102,7 @@ for y in (294, 374, 454):
 lab(234, 282, "https", "middle")
 path("M 430,368 H 478")                                  ; lab(454, 360, "origin", "middle")
 path("M 740,140 V 170", thick=True)                      ; lab(748, 160, "publish")
-path("M 740,600 V 638", "acc")                           ; lab(748, 624, "register · sign in", cls="acc")
+path("M 740,600 V 638", "acc")                           ; lab(748, 624, "register (anyone) · sign in", cls="acc")
 path("M 1000,218 H 1086", "lnk", dashed=True)
 path("M 1000,270 H 1086", "lnk", dashed=True)            ; lab(1043, 248, "hand-off", "middle", "lnk")
 path("M 1000,564 H 1086", "lnk", dashed=True)            ; lab(1043, 554, "web sdk", "middle", "lnk")
