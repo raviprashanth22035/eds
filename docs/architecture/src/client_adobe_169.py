@@ -50,8 +50,9 @@ B = []
 # zones
 B.append(zone(24, 236, 200, 264, "EXPERIENCE CHANNELS"))
 B.append(zone(1064, 172, 512, 128, "TICKETING PARTNERS"))
-B.append(zone(1064, 324, 512, 160, "ADOBE EXPERIENCE CLOUD"))
-B.append(zone(1064, 616, 512, 136, "NFL PLATFORM SERVICES"))
+B.append(zone(1064, 324, 512, 88, "NFL EVENT REGISTRATION"))
+B.append(zone(1064, 436, 512, 160, "ADOBE EXPERIENCE CLOUD"))
+B.append(zone(1064, 616, 512, 92, "NFL IDENTITY"))
 # channels
 B.append(chan(40, 262, "phone", "NFL OnePass", "embedded hub"))
 B.append(chan(40, 342, "app", "NFL App", "embedded hub"))
@@ -74,14 +75,14 @@ for i, (t, s_) in enumerate(attend):
     B.append(mini(748, 290 + i * 50, t, s_))
 B.append(box(500, 546, 480, 38, "pers", '<div class="t">Personalization · authenticated fans only</div>'))
 # integration layer
-B.append(adobe(480, 640, 520, 64, "Integration Layer · Edge Worker", "secure API proxy · NFL ID session · stateless, no data persisted"))
+B.append(adobe(480, 640, 520, 64, "Identity Layer · Edge Worker", "NFL ID sign-in & session · stateless, no data persisted"))
 # right side
 B.append(tile(1088, 196, 464, 44, "tm", "Ticketmaster", "primary ticketing"))
 B.append(tile(1088, 248, 464, 44, "tm", "On Location", "official hospitality"))
-B.append(adobe(1088, 348, 464, 56, "Adobe Target · Real-Time CDP", "personalization · fan profiles"))
-B.append(adobe(1088, 420, 464, 56, "Journey Optimizer · Campaign", "confirmations · reminders · alerts"))
+B.append(adobe(1088, 460, 464, 56, "Adobe Target · Real-Time CDP", "personalization · fan profiles"))
+B.append(adobe(1088, 532, 464, 56, "Journey Optimizer · Campaign", "confirmations · reminders · alerts"))
 B.append(tile(1088, 640, 464, 44, "nfl", "NFL ID", "identity · single sign-on"))
-B.append(tile(1088, 696, 464, 48, "leap", "NFL Event Registration", "registration · entry QR · wallet pass"))
+B.append(tile(1088, 348, 464, 48, "leap", "NFL Event Registration", "OnePass · registration · entry QR · wallet pass"))
 
 P, LAB = [], []
 
@@ -102,16 +103,16 @@ for y in (294, 374, 454):
 lab(234, 282, "HTTPS", "middle")
 path("M 430,368 H 478")                                  ; lab(454, 360, "origin", "middle")
 path("M 740,140 V 170", thick=True)                      ; lab(748, 160, "publish")
-path("M 740,600 V 638", "acc")                           ; lab(748, 624, "register · authenticate", cls="acc")
+path("M 740,600 V 638", "acc")                           ; lab(748, 624, "authenticate", cls="acc")
 path("M 1000,218 H 1086", "lnk", dashed=True)
 path("M 1000,270 H 1086", "lnk", dashed=True)            ; lab(1043, 248, "hand-off", "middle", "lnk")
-path("M 1000,564 H 1012 Q 1020,564 1020,556 V 384 Q 1020,376 1028,376 H 1086", "lnk", dashed=True)
-lab(1057, 366, "Web SDK", "middle", "lnk")
+path("M 1000,312 H 1012 Q 1020,312 1020,320 V 364 Q 1020,372 1028,372 H 1086", "lnk")
+lab(1026, 352, "register", cls="lnk")
+path("M 1000,564 H 1012 Q 1020,564 1020,556 V 496 Q 1020,488 1028,488 H 1086", "lnk", dashed=True)
+lab(1057, 478, "Web SDK", "middle", "lnk")
 path("M 1000,662 H 1086", "lnk")                         ; lab(1043, 654, "authenticate", "middle", "lnk")
-path("M 1000,690 H 1032 Q 1040,690 1040,698 V 712 Q 1040,720 1048,720 H 1086", "lnk")
-lab(1043, 740, "register", "middle", "lnk")
-path("M 1552,720 H 1560 Q 1568,720 1568,712 V 456 Q 1568,448 1560,448 H 1554", "lnk", dashed=True)
-lab(1560, 556, "events", "end", "lnk")
+path("M 1552,372 H 1560 Q 1568,372 1568,380 V 552 Q 1568,560 1560,560 H 1554", "lnk", dashed=True)
+lab(1560, 428, "events", "end", "lnk")
 
 doc = f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -173,7 +174,7 @@ doc = f"""<!DOCTYPE html>
 </svg>
 {''.join(B)}
 <svg class="conn" width="{W}" height="{H}" aria-hidden="true">{''.join(LAB)}</svg>
-<div class="foot">Draft for discussion · NFL ID, NFL Event Registration and Adobe Target / RT-CDP integration details to be confirmed with NFL.</div>
+<div class="foot">Draft for discussion · the hub registers fans directly with NFL Event Registration (browser API access to be confirmed); the edge worker handles NFL ID sign-in only.</div>
 <div class="legend">
   <span><b style="background:#eef0f4;border:2px solid #e1251b"></b>In scope · NFL Events Hub</span><span><b style="background:#fbd3d3"></b>Adobe platform</span>
   <span><b style="background:#dfe6f6;border:1px solid #ccc"></b>NFL / partner system</span>
