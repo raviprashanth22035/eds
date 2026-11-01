@@ -32,7 +32,7 @@
     <div class="diagram-container">
     <svg viewBox="0 0 1280 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="nfl-event-hub-unified-title nfl-event-hub-unified-desc">
 <title id="nfl-event-hub-unified-title">NFL Event Hub unified event platform</title>
-<desc id="nfl-event-hub-unified-desc">Platform architecture of the NFL Event Hub: NFL OnePass and web channels reach the hub through the edge CDN; the hub on AEM Edge Delivery composes discover and attend capabilities over one event model with personalization across all blocks; a thin identity and API middleware handles NFL ID sessions and calls Leap for registration, QR and check-in, Adobe Real-Time CDP for profile data and Journey Optimizer and Campaign for notifications; ticketing hands off to Ticketmaster and On Location, and OneTrust supplies consent.</desc>
+<desc id="nfl-event-hub-unified-desc">Platform architecture of the NFL Event Hub: NFL OnePass and web channels reach the hub through the edge CDN; the hub on AEM Edge Delivery composes discover and attend capabilities over one event model with personalization across all blocks; a thin identity and API middleware handles NFL ID sessions and calls OnePass registration for registration, QR and check-in, Adobe Real-Time CDP for profile data and Journey Optimizer and Campaign for notifications; ticketing hands off to Ticketmaster and On Location, and OneTrust supplies consent.</desc>
 <defs>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
 <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
@@ -148,7 +148,7 @@
 <rect x="704" y="244" width="176" height="52" rx="6" fill="#f5f5f5"/>
 <rect x="704" y="244" width="176" height="52" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
 <text x="792" y="268" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Registration</text>
-<text x="792" y="283" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">EDS forms → Leap</text>
+<text x="792" y="283" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">EDS forms → OnePass</text>
 <rect x="704" y="304" width="176" height="52" rx="6" fill="#f5f5f5"/>
 <rect x="704" y="304" width="176" height="52" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
 <text x="792" y="328" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Ticketing</text>
@@ -160,7 +160,7 @@
 <rect x="704" y="424" width="176" height="52" rx="6" fill="#f5f5f5"/>
 <rect x="704" y="424" width="176" height="52" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
 <text x="792" y="448" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">QR / Check-in</text>
-<text x="792" y="463" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">via Leap</text>
+<text x="792" y="463" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">OnePass QR</text>
 <rect x="704" y="484" width="176" height="52" rx="6" fill="#f5f5f5"/>
 <rect x="704" y="484" width="176" height="52" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
 <text x="792" y="508" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Event Alerts</text>
@@ -192,7 +192,7 @@
 <text x="1096" y="585" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Edge Network · NFL ID identity</text>
 <rect x="968" y="704" width="256" height="48" rx="6" fill="#f5f5f5"/>
 <rect x="968" y="704" width="256" height="48" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
-<text x="1096" y="726" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Leap Event Platform</text>
+<text x="1096" y="726" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OnePass registration</text>
 <text x="1096" y="741" fill="#4f5d75" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">registration · QR · check-in</text>
 <rect x="968" y="768" width="256" height="48" rx="6" fill="#f5f5f5"/>
 <rect x="968" y="768" width="256" height="48" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>

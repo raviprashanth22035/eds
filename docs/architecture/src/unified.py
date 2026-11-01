@@ -116,8 +116,8 @@ d.append(node(536, 40, 320, 64, "input", "AUTHORS", "Content authoring", "events
 discover = [("Event Discovery", "league · club · intl"), ("Events Near Me", "location-aware"),
             ("Event Detail", "venue · map · FAQ"), ("Search & Filters", "events.json"),
             ("Calendar / Schedule", "add to calendar")]
-attend = [("Registration", "EDS forms → Leap"), ("Ticketing", "Ticketmaster · On Loc."),
-          ("My Events", "signed-in profile"), ("QR / Check-in", "via Leap"),
+attend = [("Registration", "EDS forms → OnePass"), ("Ticketing", "Ticketmaster · On Loc."),
+          ("My Events", "signed-in profile"), ("QR / Check-in", "OnePass QR"),
           ("Event Alerts", "AJO · Campaign")]
 for i, (n, s) in enumerate(discover):
     d.append(mini(512, 244 + i * 60, 176, 52, n, s))
@@ -131,7 +131,7 @@ d.append(mini(968, 264, 256, 48, "Ticketmaster", "ticketing", "external"))
 d.append(mini(968, 320, 256, 48, "On Location", "official hospitality", "external"))
 d.append(mini(968, 376, 256, 48, "OneTrust", "consent & privacy", "external"))
 d.append(mini(968, 544, 256, 56, "Real-Time CDP", "Edge Network · NFL ID identity", "external"))
-d.append(mini(968, 704, 256, 48, "Leap Event Platform", "registration · QR · check-in", "external"))
+d.append(mini(968, 704, 256, 48, "OnePass registration", "registration · QR · check-in", "external"))
 d.append(mini(968, 768, 256, 48, "NFL ID", "SSO · all NFL apps", "external"))
 d.append(mini(968, 832, 256, 56, "Notifications", "Journey Optimizer · Campaign", "external"))
 d.append(legend_y(928, [("input", "Channels / authors"), ("focal", "Platform focus"), ("backend", "Hub capability"),
@@ -143,7 +143,7 @@ doc = page("nfl-event-hub-unified", "Capability & integration view · NFL Event 
            "NFL Event Hub unified event platform",
            "Platform architecture of the NFL Event Hub: NFL OnePass and web channels reach the hub through the edge CDN; the hub on AEM Edge "
            "Delivery composes discover and attend capabilities over one event model with personalization across all blocks; a thin identity and "
-           "API middleware handles NFL ID sessions and calls Leap for registration, QR and check-in, Adobe Real-Time CDP for profile data and "
+           "API middleware handles NFL ID sessions and calls OnePass registration for registration, QR and check-in, Adobe Real-Time CDP for profile data and "
            "Journey Optimizer and Campaign for notifications; ticketing hands off to Ticketmaster and On Location, and OneTrust supplies consent.",
            "\n".join(d))
 doc = doc.replace('viewBox="0 0 1280 720"', f'viewBox="0 0 1280 {H}"', 1)

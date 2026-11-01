@@ -140,7 +140,7 @@ doc = f"""<!DOCTYPE html>
   {card("target", "Adobe Target · RT-CDP", "personalization")}{card("shield", "OneTrust", "consent & privacy")}{card("ticket", "Ticketmaster", "ticketing · link-out")}{card("hotel", "On Location", "official hospitality · link-out")}
 </div>
 <div class="abs panel" style="left:1272px;top:524px;width:304px;height:272px"><h2>Platform Services</h2><h3>via middleware</h3>
-  {card("user", "NFL ID", "SSO · identity")}{card("cal", "Leap", "registration · QR · check-in")}{card("bell", "Notifications", "AJO · Campaign")}
+  {card("user", "NFL ID", "SSO · identity")}{card("cal", "OnePass registration", "QR · check-in")}{card("bell", "Notifications", "AJO · Campaign")}
 </div>
 
 <svg class="abs" style="left:0;top:0" width="1600" height="900" aria-hidden="true">
@@ -160,7 +160,7 @@ doc = f"""<!DOCTYPE html>
   <div>{icon("check", 30)}Faster event delivery</div><div>{icon("layers", 30)}One event catalog</div>
   <div>{icon("fans", 30)}Personalized fan experiences</div><div>{icon("trend", 30)}Scalable &amp; secure</div>
 </div>
-<div class="abs note" style="left:60px;top:878px">Leap and OneTrust to be confirmed with NFL. Logos cropped from the draft for internal review — replace with official brand assets before sharing.</div>
+<div class="abs note" style="left:60px;top:878px">OneTrust to be confirmed with NFL. Logos cropped from the draft for internal review — replace with official brand assets before sharing.</div>
 
 </div></div></body></html>
 """

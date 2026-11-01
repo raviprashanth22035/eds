@@ -50,8 +50,8 @@ B.append(adobe(170, 60, 270, 214, "Adobe CDN", "", ["Fast, secure pages worldwid
                                                    "Right country & language site"]))
 B.append(adobe(740, 190, 260, 90, "AEM authoring", "teams create & publish events"))
 B.append(person(1150, 214, "Club & league teams"))
-B.append(adobe(170, 360, 270, 100, "Secure sign-in & registration", "thin edge service · stores no fan data"))
-B.append(tile(170, 540, 120, 64, "leap", "Leap", "registration · QR"))
+B.append(adobe(170, 356, 220, 112, "Secure sign-in & registration", "thin edge service · stores no fan data"))
+B.append(tile(170, 540, 140, 64, "leap", "Registration", "OnePass · QR code"))
 B.append(tile(320, 540, 120, 64, "nfl", "NFL ID", "one fan account"))
 B.append(adobe(200, 860, 270, 72, "Journey Optimizer · Campaign", "confirmations · reminders · alerts"))
 # the hub
@@ -87,9 +87,9 @@ path("M 1150,268 H 1002")                                ; lab(1076, 258, "creat
 path("M 870,280 V 316", thick=True)                      ; lab(880, 302, "publish")
 path("M 80,326 V 188 Q 80,180 88,180 H 168")             ; lab(92, 250, "open the hub")             ; badge(60, 250, 2)
 path("M 440,150 H 592 Q 600,150 600,158 V 316")          ; lab(520, 142, "fast pages", "middle")     ; badge(520, 168, 3)
-path("M 305,274 V 358")                                  ; lab(313, 312, "sign-in · register")      ; badge(285, 316, 4)
-path("M 380,460 V 538")                                  ; lab(388, 504, "sign in")
-path("M 230,460 V 538")                                  ; lab(238, 504, "register")                ; badge(212, 500, 5)
+path("M 478,430 H 392")                                  ; lab(435, 396, "sign in", "middle") ; lab(435, 412, "register", "middle") ; badge(435, 452, 4)
+path("M 380,468 V 538")                                  ; lab(388, 504, "sign in")
+path("M 230,468 V 538")                                  ; lab(238, 504, "register")                ; badge(212, 500, 5)
 path("M 250,604 V 858", dashed=True)                     ; lab(258, 740, "registration events")     ; badge(232, 740, 6)
 path("M 200,892 H 88 Q 80,892 80,884 V 432")             ; lab(144, 884, "email · push", "middle")
 path("M 1000,428 H 1098", dashed=True)                   ; lab(1049, 420, "buy", "middle")           ; badge(1049, 446, 7)
@@ -100,11 +100,11 @@ path("M 1000,658 H 1098", dashed=True, both=True)        ; lab(1049, 678, "trans
 STEPS = ["Club & league teams create and publish events in AEM.",
          "Fans open events.nfl.com — on the web or inside OnePass and the NFL App.",
          "Adobe CDN serves fast pages in the right country and language.",
-         "Fans sign in once with their NFL ID — the same account as OnePass.",
-         "Registering sends the fan to Leap, which issues the QR code.",
+         "Signing in or registering on a hub page uses the fan’s NFL ID — the same account as OnePass.",
+         "Registering creates the fan’s OnePass registration and QR code — the same QR used at the venue.",
          "Confirmations, reminders and alerts go out through Journey Optimizer and Campaign.",
          "Paid events: Buy Tickets opens Ticketmaster — no payments in the hub.",
-         "Content is personalized with Adobe Target and Real-Time CDP, within the fan’s consent."]
+         "Consent first: only after the fan agrees (OneTrust) is content personalized with Adobe Target and Real-Time CDP."]
 how = "".join(f'<li><span>{i + 1}</span>{e(t)}</li>' for i, t in enumerate(STEPS))
 
 doc = f"""<!DOCTYPE html>
@@ -155,7 +155,7 @@ doc = f"""<!DOCTYPE html>
   .foot {{ position:absolute; left:500px; top:948px; font-size:10.5px; color:#777; }}
 </style></head>
 <body><div class="wrap"><div class="slide" role="img" aria-label="NFL Events Hub platform: how fans, teams and partner systems connect">
-<h1>NFL Events Hub — how it works<span>events.nfl.com · one event platform for web, NFL OnePass and the NFL App</span></h1>
+<h1>NFL Events Hub — how it works<span>events.nfl.com (proposed) · one event platform for web, NFL OnePass and the NFL App</span></h1>
 <svg class="conn" width="1380" height="990" aria-hidden="true">
   <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z"/></marker></defs>
   {''.join(P)}
@@ -163,7 +163,7 @@ doc = f"""<!DOCTYPE html>
 {''.join(B)}
 <svg class="conn" width="1380" height="990" aria-hidden="true">{''.join(LAB)}{''.join(BAD)}</svg>
 <div class="how"><h2>How it works</h2><ol>{how}</ol></div>
-<div class="foot">Leap, OneTrust and the translation partner to be confirmed with NFL.</div>
+<div class="foot">OneTrust, Target / RT-CDP licences and the translation partner to be confirmed with NFL.</div>
 </div></div></body></html>
 """
 open(f"{OUT}/nfl-events-hub-how-it-works.html", "w").write(doc)

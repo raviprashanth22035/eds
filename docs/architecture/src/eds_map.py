@@ -44,7 +44,7 @@ B.append(adobe(170, 60, 270, 214, "Adobe CDN", "", ["Path routing: /auth · /api
                                                    "Geo-IP → market & language site"]))
 B.append(adobe(740, 190, 260, 90, "Document Authoring · UE", "pages · event sheets · forms"))
 B.append(adobe(170, 360, 270, 100, "Session & identity middleware", "edge worker · stateless · NFL ID session · API proxy"))
-B.append(tile(170, 540, 120, 64, "leap", "Leap", "registration · QR"))
+B.append(tile(170, 540, 120, 64, "leap", "Registration", "OnePass · QR"))
 B.append(tile(320, 540, 120, 64, "nfl", "NFL ID", "SSO · one account"))
 B.append(adobe(200, 860, 270, 72, "Journey Optimizer · Campaign", "confirmations · reminders · alerts"))
 # authoring panel
@@ -141,7 +141,7 @@ doc = f"""<!DOCTYPE html>
 {''.join(B)}
 <svg class="conn" width="1380" height="980" aria-hidden="true">{''.join(LAB)}</svg>
 <div class="note">Middleware is thin and stateless: sign-in and forwarding only, no data stored. Paid tickets link out; no payments in the hub.
-Leap, OneTrust and the translation vendor to be confirmed with NFL.</div>
+OneTrust and the translation vendor to be confirmed with NFL.</div>
 </div></div></body></html>
 """
 open(f"{OUT}/nfl-events-hub-eds-map.html", "w").write(doc)

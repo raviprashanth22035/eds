@@ -134,7 +134,7 @@ d.append(mini(968, 240, 256, 48, "Ticketmaster", "ticketing · payments", "exter
 d.append(mini(968, 296, 256, 48, "On Location", "official hospitality", "external"))
 d.append(mini(968, 352, 256, 48, "OneTrust", "consent & privacy", "external"))
 d.append(mini(968, 448, 256, 56, "Real-Time CDP", "data: profiles · NFL ID identity", "external"))
-d.append(mini(968, 584, 256, 48, "Leap Event Platform", "data: registrations · QR", "external"))
+d.append(mini(968, 584, 256, 48, "OnePass registration", "data: registrations · QR", "external"))
 d.append(mini(968, 648, 256, 48, "NFL ID", "data: fan accounts · SSO", "external"))
 d.append(mini(968, 712, 256, 48, "Notifications", "Journey Optimizer · Campaign", "external"))
 # cross-cutting band
@@ -153,7 +153,7 @@ doc = page("nfl-event-hub-platform", "Platform architecture · NFL Event Hub",
            "NFL Event Hub platform architecture",
            "Platform architecture of the NFL Event Hub with ownership and data: NFL OnePass and web reach the hub through an Adobe-managed or "
            "BYO edge CDN; the hub and a thin, stateless identity and API middleware are built by us on AEM Edge Delivery; partners handle "
-           "ticketing and consent; Real-Time CDP holds profiles; Leap, NFL ID and Adobe messaging hold registrations, accounts and notifications; "
+           "ticketing and consent; Real-Time CDP holds profiles; OnePass registration, NFL ID and Adobe messaging hold registrations, accounts and notifications; "
            "security, identity and consent, observability and CI/CD run across the platform.",
            "\n".join(d))
 doc = doc.replace('viewBox="0 0 1280 720"', f'viewBox="0 0 1280 {H}"', 1)
