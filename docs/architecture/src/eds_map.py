@@ -60,7 +60,6 @@ for i, (t, s) in enumerate(blocks):
 B.append(tile(1100, 384, 240, 56, "tm", "Ticketmaster · On Location", "paid tickets · hospitality"))
 B.append(adobe(1100, 452, 240, 56, "Adobe Target · RT-CDP", "Web SDK · audiences"))
 B.append(tile(1100, 520, 240, 56, "ot", "OneTrust", "consent & privacy"))
-B.append(tile(1100, 656, 240, 56, "tr", "Translation service", "vendor to be decided"))
 B.append(person(1150, 220, "Club & league authors"))
 
 LAB = []
@@ -93,7 +92,6 @@ path("M 200,892 H 88 Q 80,892 80,884 V 428")                          ; lab(144,
 path("M 1000,412 H 1098", dashed=True)                                ; lab(1049, 404, "buy", "middle")
 path("M 1000,480 H 1098", dashed=True)                                ; lab(1049, 472, "web sdk", "middle")
 path("M 1100,548 H 1022", dashed=True)                                ; lab(1061, 540, "consent", "middle")
-path("M 1000,684 H 1098", dashed=True, both=True)                     ; lab(1049, 676, "translate", "middle")
 path("M 1150,268 H 1002")                                              ; lab(1076, 260, "author", "middle")
 
 doc = f"""<!DOCTYPE html>
@@ -141,7 +139,7 @@ doc = f"""<!DOCTYPE html>
 {''.join(B)}
 <svg class="conn" width="1380" height="980" aria-hidden="true">{''.join(LAB)}</svg>
 <div class="note">Middleware is thin and stateless: sign-in and forwarding only, no data stored. Paid tickets link out; no payments in the hub.
-OneTrust and the translation vendor to be confirmed with NFL.</div>
+OneTrust to be confirmed with NFL.</div>
 </div></div></body></html>
 """
 open(f"{OUT}/nfl-events-hub-eds-map.html", "w").write(doc)

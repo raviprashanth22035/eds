@@ -62,9 +62,7 @@ B.append(bar(500, 566, 500, 52, "pers", "Personalized for every fan", "the right
 B.append(bar(500, 630, 500, 56, "run", "Run by clubs & league", "event sheets · club × market roll-out · languages · short links"))
 # partners on the right
 B.append(tile(1100, 400, 240, 56, "tm", "Ticketmaster · On Location", "buy tickets · hospitality"))
-B.append(tile(1100, 482, 240, 56, "ot", "OneTrust", "consent & privacy"))
 B.append(adobe(1100, 564, 240, 56, "Adobe Target · RT-CDP", "personalization"))
-B.append(tile(1100, 630, 240, 56, "tr", "Translation partner", "local languages"))
 
 P, LAB, BAD = [], [], []
 
@@ -93,9 +91,7 @@ path("M 230,468 V 538")                                  ; lab(238, 504, "regist
 path("M 250,604 V 858", dashed=True)                     ; lab(258, 740, "registration events")     ; badge(232, 740, 6)
 path("M 200,892 H 88 Q 80,892 80,884 V 432")             ; lab(144, 884, "email · push", "middle")
 path("M 1000,428 H 1098", dashed=True)                   ; lab(1049, 420, "buy", "middle")           ; badge(1049, 446, 7)
-path("M 1100,510 H 1022", dashed=True)                   ; lab(1061, 502, "consent", "middle")
 path("M 1000,592 H 1098", dashed=True, both=True)        ; lab(1040, 584, "personalize", "middle")   ; badge(1040, 610, 8)
-path("M 1000,658 H 1098", dashed=True, both=True)        ; lab(1049, 678, "translate", "middle")
 
 STEPS = ["Club & league teams create and publish events in AEM.",
          "Fans open events.nfl.com — on the web or inside OnePass and the NFL App.",
@@ -104,7 +100,7 @@ STEPS = ["Club & league teams create and publish events in AEM.",
          "Registration creates the OnePass QR code. Guests get it by email; signed-in fans also see it in My Events with Add to Wallet.",
          "Confirmations, reminders and alerts go out through Journey Optimizer and Campaign.",
          "Paid events: Buy Tickets opens Ticketmaster — no payments in the hub.",
-         "Consent first: only after the fan agrees (OneTrust) is content personalized with Adobe Target and Real-Time CDP."]
+         "Consent first: only after the fan agrees on NFL’s consent banner is content personalized with Adobe Target and Real-Time CDP."]
 how = "".join(f'<li><span>{i + 1}</span>{e(t)}</li>' for i, t in enumerate(STEPS))
 
 doc = f"""<!DOCTYPE html>
@@ -163,7 +159,7 @@ doc = f"""<!DOCTYPE html>
 {''.join(B)}
 <svg class="conn" width="1380" height="990" aria-hidden="true">{''.join(LAB)}{''.join(BAD)}</svg>
 <div class="how"><h2>How it works</h2><ol>{how}</ol></div>
-<div class="foot">OneTrust, Target / RT-CDP licences and the translation partner to be confirmed with NFL.</div>
+<div class="foot">Target / RT-CDP licences to be confirmed with NFL.</div>
 </div></div></body></html>
 """
 open(f"{OUT}/nfl-events-hub-how-it-works.html", "w").write(doc)
