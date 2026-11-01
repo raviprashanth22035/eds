@@ -176,12 +176,6 @@ doc = f"""<!DOCTYPE html>
 </svg>
 {''.join(B)}
 <svg class="conn" width="{W}" height="{H}" aria-hidden="true">{''.join(LAB)}</svg>
-<div class="foot">Draft for discussion · the hub registers fans directly with NFL Event Registration (browser API access to be confirmed); the edge worker handles NFL ID sign-in only.</div>
-<div class="legend">
-  <span><b style="background:#eef0f4;border:2px solid #e1251b"></b>In scope · NFL Events Hub</span><span><b style="background:#fbd3d3"></b>Adobe platform</span>
-  <span><b style="background:#dfe6f6;border:1px solid #ccc"></b>NFL / partner system</span>
-  <span><i></i>Content delivery</span><span><i class="acc"></i>Fan request</span><span><i class="lnk"></i>Service call</span><span><i class="lnk dash"></i>Async / hand-off</span>
-</div>
 </div></div></body></html>
 """
 open(f"{OUT}/nfl-events-hub-client-adobe-16x9.html", "w").write(doc)
