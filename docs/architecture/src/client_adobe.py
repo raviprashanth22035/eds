@@ -74,13 +74,13 @@ for i, (t, s) in enumerate(attend):
     B.append(mini(728, 344 + i * 56, t, s))
 B.append(box(500, 632, 440, 44, "pers", '<div class="t">Personalization · signed-in fans only</div>'))
 # middleware
-B.append(adobe(480, 764, 480, 80, "Event registration & sign-in service", "guests & signed-in fans · stateless · stores no fan data"))
+B.append(adobe(480, 764, 480, 80, "Secure API layer · edge worker", "forwards registration & sign-in to NFL · stateless · no data"))
 # right side
 B.append(tile(1048, 330, 344, 52, "tm", "Ticketmaster", "ticketing"))
 B.append(tile(1048, 394, 344, 52, "tm", "On Location", "official hospitality"))
 B.append(adobe(1048, 626, 344, 52, "Adobe Target · Real-Time CDP", "signed-in personalization"))
 B.append(tile(1048, 764, 344, 48, "nfl", "NFL ID", "one fan account · SSO"))
-B.append(tile(1048, 828, 344, 52, "leap", "OnePass registration", "registrations · QR · wallet"))
+B.append(tile(1048, 828, 344, 52, "leap", "NFL event registration", "OnePass · issues QR · wallet"))
 B.append(adobe(1048, 916, 344, 64, "Journey Optimizer · Campaign", "confirmations · reminders · alerts"))
 
 P, LAB = [], []
