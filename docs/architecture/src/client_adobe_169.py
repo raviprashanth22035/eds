@@ -123,7 +123,7 @@ doc = f"""<!DOCTYPE html>
   body {{ background:#fff; font-family:'IBM Plex Sans',system-ui,sans-serif; color:#1b1f2a; }}
   .wrap {{ width:100%; overflow-x:auto; }}
   .slide {{ position:relative; width:{W}px; height:{H}px; margin:0 auto; background:#fff; }}
-  h1 {{ position:absolute; left:24px; top:22px; font-size:26px; font-weight:600; letter-spacing:-0.01em; }}
+  h1 {{ position:absolute; left:0; width:100%; text-align:center; top:26px; font-size:26px; font-weight:600; letter-spacing:-0.01em; }}
   h1 span {{ display:block; font-size:14px; font-weight:400; color:#5b6375; margin-top:6px; }}
   .col {{ position:absolute; top:256px; font-size:10.5px; font-weight:600; letter-spacing:0.12em; color:#666; }}
   .b {{ position:absolute; border-radius:6px; }}
@@ -159,6 +159,7 @@ doc = f"""<!DOCTYPE html>
   .foot {{ position:absolute; left:24px; top:836px; font-size:11.5px; color:#7a8294; }}
   .chips {{ display:flex; gap:6px; margin-top:8px; flex-wrap:nowrap; }}
   .chips span {{ background:#fff; border-radius:4px; padding:5px 8px; font-size:11px; white-space:nowrap; }}
+  .dg {{ position:absolute; left:0; top:64px; width:{W}px; height:{H}px; }}
   .legend {{ position:absolute; left:24px; top:800px; display:flex; gap:26px; font-size:11px; color:#444; align-items:center; }}
   .legend i {{ display:inline-block; width:26px; height:0; border-top:2px solid #4a4a4a; margin-right:8px; vertical-align:middle; }}
   .legend i.acc {{ border-color:#c11a12; }} .legend i.lnk {{ border-color:#2e5aa8; }} .legend i.dash {{ border-top-style:dashed; }}
@@ -166,6 +167,7 @@ doc = f"""<!DOCTYPE html>
 </style></head>
 <body><div class="wrap"><div class="slide" role="img" aria-label="NFL Events Hub platform and integrations">
 <h1>NFL Events Hub — Platform Architecture<span>Target state · one event platform for web, NFL OnePass and the NFL App</span></h1>
+<div class="dg">
 <svg class="conn" width="{W}" height="{H}" aria-hidden="true">
   <defs>
     <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4a4a4a"/></marker>
@@ -176,6 +178,7 @@ doc = f"""<!DOCTYPE html>
 </svg>
 {''.join(B)}
 <svg class="conn" width="{W}" height="{H}" aria-hidden="true">{''.join(LAB)}</svg>
+</div>
 </div></div></body></html>
 """
 open(f"{OUT}/nfl-events-hub-client-adobe-16x9.html", "w").write(doc)
