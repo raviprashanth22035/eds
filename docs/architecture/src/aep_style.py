@@ -79,10 +79,14 @@ B.append(panel(780, 346, 200, 296, "Attend",
                 ("Event Alerts", "status & cancellations")]))
 B.append(panel(1000, 500, 156, 142, "Personalization", [("Contextual · all fans", "near me · market · language"), ("Profile · signed-in", "favourite club · past events")], ih=46))
 # integrations column
-B.append(box(1250, 250, 210, 500, "src"))
-B.append(item(1262, 362, 186, 44, "Journey Optimizer · Campaign", "confirmations · alerts"))
-B.append(item(1262, 438, 186, 44, "Ticketmaster · On Location", "ticketing · hospitality"))
-B.append(item(1262, 520, 186, 44, "Adobe Target · RT-CDP", "contextual & profile-based"))
+B.append(box(1250, 330, 210, 432, "src"))
+B.append(box(1262, 340, 186, 12, "gl", "ENGAGEMENT"))
+B.append(item(1262, 356, 186, 42, "Journey Optimizer · Campaign", "confirmations · alerts"))
+B.append(box(1262, 422, 186, 12, "gl", "TICKETING"))
+B.append(item(1262, 439, 186, 42, "Ticketmaster · On Location", "ticketing · hospitality"))
+B.append(box(1262, 504, 186, 12, "gl", "PERSONALIZATION"))
+B.append(item(1262, 521, 186, 42, "Adobe Target · RT-CDP", "contextual & profile-based"))
+B.append(box(1262, 596, 186, 12, "gl", "REGISTRATION · ID · WALLET"))
 B.append(item(1262, 614, 186, 42, "NFL Event Registration", "registration · entry QR"))
 B.append(item(1262, 661, 186, 42, "NFL ID", "identity · single sign-on"))
 B.append(item(1262, 708, 186, 42, "Apple Wallet · Google Wallet", "event passes"))
@@ -113,9 +117,9 @@ path("M 1156,542 H 1260", "egress")                                    ; lab(120
 path("M 510,682 H 1220 Q 1228,682 1228,674 V 643 Q 1228,635 1236,635 H 1260", "egress") ; lab(860, 676, "register", "middle", "egress")
 path("M 510,705 H 1236 Q 1244,705 1244,697 V 690 Q 1244,682 1252,682 H 1260", "egress") ; lab(860, 699, "sign-in", "middle", "egress")
 path("M 510,729 H 1260", "egress")                                    ; lab(860, 723, "add to wallet", "middle", "egress")
-path("M 1448,635 H 1468 Q 1476,635 1476,627 V 402 Q 1476,394 1468,394 H 1450", "intra", dashed=True)
-L.append('<text class="intra" x="1490" y="520" text-anchor="middle" transform="rotate(-90 1490 520)">registration events</text>')
-path("M 1448,376 H 1484 Q 1492,376 1492,368 V 168 Q 1492,160 1484,160 H 173 Q 165,160 165,168 V 248", "egress")
+path("M 1448,635 H 1472 Q 1480,635 1480,627 V 391 Q 1480,383 1472,383 H 1450", "intra", dashed=True)
+L.append('<text class="intra" x="1494" y="509" text-anchor="middle" transform="rotate(-90 1494 509)">registration events</text>')
+path("M 1448,371 H 1516 Q 1524,371 1524,363 V 168 Q 1524,160 1516,160 H 173 Q 165,160 165,168 V 248", "egress")
 lab(830, 152, "confirmations · reminders · alerts → fans", "middle", "egress")
 
 doc = f"""<!DOCTYPE html>
@@ -132,6 +136,7 @@ doc = f"""<!DOCTYPE html>
   .b {{ position:absolute; }}
   .band {{ background:#dcdcdc; }} .band span {{ position:absolute; top:4px; font-size:11px; font-weight:600; letter-spacing:0.06em; color:#444; }}
   .src {{ background:#e6e6e6; border-radius:6px; padding:10px 8px; }}
+  .gl {{ font-size:10px; line-height:12px; font-weight:700; letter-spacing:0.1em; color:#6a6a6a; white-space:nowrap; }}
   .st {{ font-size:12px; font-weight:600; color:#444; text-align:center; margin-bottom:12px; }}
   .ci {{ display:flex; flex-direction:column; align-items:center; gap:4px; margin-bottom:34px; text-align:center; }}
   .ci span {{ font-size:12px; font-weight:600; line-height:1.2; }} .ci i {{ font-weight:400; font-size:10.5px; color:#555; }}
