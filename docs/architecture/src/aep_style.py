@@ -52,7 +52,7 @@ B.append(box(140, 250, 100, 390, "src", '<div class="st">Channels</div>'
              f'<div class="ci">{icon("app")}<span>NFL App<br><i>embedded hub</i></span></div>'
              f'<div class="ci">{icon("laptop")}<span>Web<br><i>events.nfl.com</i></span></div>'))
 # CDN bar
-B.append(box(290, 180, 470, 28, "dark", '<img class="mk" src="' + AMARK + '" alt="">Adobe CDN · WAF · edge cache · routing &amp; queuing'))
+B.append(box(290, 180, 470, 28, "dark", '<img class="mk" src="' + AMARK + '" alt="">Adobe CDN · WAF · edge cache · /api routing to middleware'))
 # outer platform panel + gold hub box
 B.append(box(270, 226, 950, 534, "outer"))
 B.append(box(540, 246, 660, 414, "gold"))
@@ -60,8 +60,8 @@ B.append(box(540, 246, 660, 414, "gold"))
 B.append(panel(290, 250, 220, 210, "EDS Authoring",
                [("Document Authoring", ""), ("Universal Editor", ""), ("Registration Forms", ""), ("Event Sources", "")], ih=32))
 B.append(panel(290, 480, 220, 112, "Content & Code", [("Content & media bus", "EDS"), ("GitHub", "EDS blocks · middleware")], ih=30))
-B.append(box(290, 620, 220, 120, "dark mw", '<img class="mk" src="' + AMARK + '" alt=""><b>Middleware · Edge Worker</b>'
-             '<i>registration · NFL ID session · wallet pass<br>stateless · no data persisted</i>'))
+B.append(box(290, 620, 220, 120, "dark mw", '<b>Middleware · Node.js API</b>'
+             '<i>registration · NFL ID session · wallet pass<br>behind Adobe CDN at /api/*<br>stateless · no data persisted</i>'))
 # hub
 B.append(box(560, 262, 620, 30, "dark", '<img class="mk" src="' + AMARK + '" alt="">NFL Events Hub · events.nfl.com · AEM Edge Delivery Services'))
 B.append(box(560, 302, 620, 30, "model", '<b>Unified Event Model</b> League · Club · International &nbsp;|&nbsp; Free · Paid · Ticketed · Registration'))

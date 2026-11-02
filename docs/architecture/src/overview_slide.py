@@ -40,7 +40,7 @@ D.append(zone(470, 150, 140, 254, "AUTHORING", "pink"))
 D.append(zone(650, 150, 120, 110, "CONTENT STORAGE", "sand"))
 D.append(zone(790, 150, 410, 110, "EDS RUNTIME + DELIVERY", "blue"))
 D.append(zone(790, 300, 410, 96, "ENVIRONMENTS", "sand"))
-D.append(zone(790, 430, 410, 110, "EDGE COMPUTE", "grey"))
+D.append(zone(790, 430, 410, 110, "MIDDLEWARE · NODE.JS", "grey"))
 D.append(zone(462, 440, 162, 150, "DEVELOPMENT", "grey"))
 # people
 D.append(person(386, 172, "Club & league authors"))
@@ -56,11 +56,11 @@ D.append(node(1060, 178, 130, 56, "site", "events.nfl.com", "web · OnePass · N
 # environments
 D.append(node(800, 328, 180, 52, "store", "Preview", "*.aem.page · authors review"))
 D.append(node(1010, 328, 180, 52, "store", "Live", "*.aem.live · CDN-cached"))
-# edge compute
-D.append(node(800, 460, 390, 62, "ours", "Middleware · edge worker", "runs at the CDN edge · NFL ID session · stateless, no data", True))
+# middleware
+D.append(node(800, 460, 390, 62, "ours", "Middleware · Node.js API", "behind Adobe CDN at /api/* · NFL ID session · stateless, no data"))
 # github
 D.append(node(474, 470, 140, 44, "gh", "GitHub · EDS blocks", "JavaScript · CSS"))
-D.append(node(474, 532, 140, 44, "gh", "GitHub · middleware", "edge worker code"))
+D.append(node(474, 532, 140, 44, "gh", "GitHub · middleware", "Node.js code"))
 
 P, L = [], []
 
@@ -85,7 +85,7 @@ path("M 980,354 H 1008")                        ; lab(994, 346, "go live", "midd
 # code sync: GitHub blocks -> runtime (over the top)
 path("M 614,492 H 622 Q 630,492 630,484 V 148 Q 630,140 638,140 H 850 Q 858,140 858,148 V 176", dashed=True)
 lab(636, 420, "code sync")
-# deploy: GitHub middleware -> edge worker
+# deploy: GitHub middleware -> Node.js API
 path("M 614,554 H 700 Q 708,554 708,546 V 500 Q 708,492 716,492 H 798", dashed=True) ; lab(756, 484, "deploy", "middle")
 # CDN routes /auth to middleware
 path("M 462,516 H 472")
@@ -99,7 +99,7 @@ NEEDS = ["One platform for league, club & international events",
 EDS = ["Blocks in JavaScript & CSS — no Java backend",
        "Document Authoring or Universal Editor",
        "Publish in seconds · Adobe CDN edge delivery",
-       "Thin middleware (edge worker) · no fan data stored",
+       "Thin Node.js middleware · no fan data stored",
        "Preview & live environments for every change",
        "Independent dev / test / release via GitHub"]
 needs = "".join(f"<li>{e(t)}</li>" for t in NEEDS)

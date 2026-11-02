@@ -72,7 +72,7 @@ for i, (t, s_) in enumerate(attend):
     B.append(mini(748, 290 + i * 50, t, s_))
 B.append(box(500, 546, 480, 38, "pers", '<div class="t">Personalization · contextual for all fans · profile-based when signed in</div>'))
 # integration layer
-B.append(box(480, 640, 520, 120, "adobe", f'<img class="mark" src="{AMARK}" alt=""><div class="t">Middleware · Edge Worker</div><div class="s">runs on the CDN · stateless, no data persisted</div><div class="mwr"><span>Registration proxy</span><span>NFL ID session</span><span>Wallet pass proxy</span></div>'))
+B.append(box(480, 640, 520, 120, "adobe", f'<div class="t">Middleware · Node.js API</div><div class="s">behind Adobe CDN at /api/* · stateless, no data persisted</div><div class="mwr"><span>Registration proxy</span><span>NFL ID session</span><span>Wallet pass proxy</span></div>'))
 # right side
 B.append(tile(1088, 260, 464, 44, "tm", "Ticketmaster", "primary ticketing"))
 B.append(tile(1088, 312, 464, 44, "tm", "On Location", "official hospitality"))

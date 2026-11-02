@@ -72,7 +72,7 @@ for i, (t, s_) in enumerate(attend):
     B.append(mini(748, 290 + i * 50, t, s_))
 B.append(box(500, 546, 480, 38, "pers", '<div class="t">Personalization · contextual for all fans · profile-based when signed in</div>'))
 # integration layer
-B.append(box(480, 640, 520, 120, "adobe", f'<img class="mark" src="{AMARK}" alt=""><div class="t">Middleware · Edge Worker</div><div class="s">runs on the CDN · stateless, no data persisted</div><div class="mwr"><span>Registration proxy</span><span>NFL ID session</span><span>Wallet pass proxy</span></div>'))
+B.append(box(480, 640, 520, 120, "adobe", f'<div class="t">Middleware · Node.js API</div><div class="s">behind Adobe CDN at /api/* · stateless, no data persisted</div><div class="mwr"><span>Registration proxy</span><span>NFL ID session</span><span>Wallet pass proxy</span></div>'))
 # right side
 B.append(tile(1088, 260, 464, 44, "tm", "Ticketmaster", "primary ticketing"))
 B.append(tile(1088, 312, 464, 44, "tm", "On Location", "official hospitality"))
@@ -86,7 +86,7 @@ B.append(box(104, 56, 1472, 88, "band", '<div class="bl">BUILD &amp; PUBLISH</di
            '<div class="grp"><b>Club &amp; league authors</b><span>Document Authoring</span><span>Universal Editor</span><span>Registration Forms</span><span>Event Sources</span></div>'
            '<div class="grp"><b>Dev team · GitHub</b><span>EDS blocks · JS/CSS</span><span>Middleware code</span></div>'
            '<div class="arr">→</div><div class="env"><b>Preview</b><small>*.aem.page</small></div><div class="arr">→</div><div class="env"><b>Live</b><small>*.aem.live</small></div>'))
-B.append(box(104, 790, 1472, 34, "foot", '<span>JavaScript &amp; CSS blocks — no Java backend</span><span>Publish in seconds</span><span>Thin middleware — no fan data stored</span><span>Independent releases via GitHub</span>'))
+B.append(box(104, 790, 1472, 34, "foot", '<span>JavaScript &amp; CSS blocks — no Java backend</span><span>Publish in seconds</span><span>Thin Node.js middleware — no fan data stored</span><span>Independent releases via GitHub</span>'))
 
 P, LAB = [], []
 
