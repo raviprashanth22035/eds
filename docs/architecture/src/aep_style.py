@@ -122,7 +122,7 @@ path("M 510,729 H 1260", "egress")                                    ; lab(860,
 path("M 1448,635 H 1472 Q 1480,635 1480,627 V 391 Q 1480,383 1472,383 H 1450", "intra", dashed=True)
 L.append('<text class="intra" x="1494" y="509" text-anchor="middle" transform="rotate(-90 1494 509)">registration events</text>')
 path("M 1448,371 H 1516 Q 1524,371 1524,363 V 168 Q 1524,160 1516,160 H 173 Q 165,160 165,168 V 248", "egress")
-lab(830, 152, "confirmations · reminders · alerts → fans", "middle", "egress")
+lab(1300, 178, "confirmations · reminders · alerts → fans", "middle", "egress")
 
 doc = f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
