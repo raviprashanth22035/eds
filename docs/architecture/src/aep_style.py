@@ -8,6 +8,10 @@ OUT = sys.argv[1]
 ASSETS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets")
 with open(os.path.join(ASSETS, "adobe-mark-crop.png"), "rb") as f:
     AMARK = "data:image/png;base64," + base64.b64encode(f.read()).decode()
+def _svg(n):
+    with open(os.path.join(ASSETS, n), "rb") as fh:
+        return "data:image/svg+xml;base64," + base64.b64encode(fh.read()).decode()
+AWSMARK, AWS_LAMBDA, AWS_APIGW, AWS_SECRETS = (_svg(n) for n in ("aws-cloud-logo.svg", "aws-lambda.svg", "aws-api-gateway.svg", "aws-secrets-manager.svg"))
 e = html.escape
 W, H = 1600, 900
 
@@ -60,7 +64,7 @@ B.append(box(540, 246, 660, 414, "gold"))
 B.append(panel(290, 250, 220, 210, "EDS Authoring",
                [("Document Authoring", ""), ("Universal Editor", ""), ("Registration Forms", ""), ("Event Sources", "")], ih=32))
 B.append(panel(290, 480, 220, 112, "Content & Code", [("Content & media bus", "EDS"), ("GitHub", "EDS blocks · middleware")], ih=30))
-B.append(box(290, 620, 220, 120, "dark mw", '<b>Middleware API · AWS</b>'
+B.append(box(290, 620, 220, 120, "dark mw", f'<img class="mk aws" src="{AWSMARK}" alt=""><b>Middleware API · AWS</b>'
              '<i>API Gateway → Lambda (Node.js)<br>Secrets Manager · static egress IP<br>stateless · no fan data stored</i>'))
 # hub
 B.append(box(560, 262, 620, 30, "dark", '<img class="mk" src="' + AMARK + '" alt="">NFL Events Hub · events.nfl.com · AEM Edge Delivery Services'))
@@ -85,6 +89,7 @@ B.append(item(1262, 708, 186, 42, "Apple Wallet · Google Wallet", "event passes
 # footer
 B.append(box(290, 800, 420, 40, "foot", f'<img src="{AMARK}" alt="">Adobe Experience Manager · Edge Delivery Services'))
 B.append(box(740, 800, 360, 40, "foot", f'<img src="{AMARK}" alt="">Adobe Experience Cloud'))
+B.append(box(990, 800, 240, 40, "foot", f'<img src="{AWSMARK}" alt="">Amazon Web Services'))
 
 P, L = [], []
 
@@ -135,6 +140,7 @@ doc = f"""<!DOCTYPE html>
   .mw {{ flex-direction:column; justify-content:center; text-align:center; padding:10px; gap:6px; }}
   .mw b {{ font-size:14px; }} .mw i {{ font-size:11.5px; font-weight:400; line-height:1.35; color:#e8e8e8; }}
   .mw .mk {{ position:absolute; left:8px; top:8px; }}
+  .mw .mk.aws {{ width:26px; height:26px; box-shadow:0 0 0 1px #6b6b6b; }}
   .outer {{ border:1.5px solid #4a4a4a; border-radius:10px; }}
   .gold {{ border:2.5px solid #e9b63b; border-radius:10px; }}
   .panel {{ background:#3a3a3a; border-radius:5px; }}

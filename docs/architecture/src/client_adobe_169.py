@@ -8,6 +8,10 @@ OUT = sys.argv[1]
 ASSETS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets")
 with open(os.path.join(ASSETS, "adobe-mark-crop.png"), "rb") as f:
     AMARK = "data:image/png;base64," + base64.b64encode(f.read()).decode()
+def _svg(n):
+    with open(os.path.join(ASSETS, n), "rb") as fh:
+        return "data:image/svg+xml;base64," + base64.b64encode(fh.read()).decode()
+AWSMARK, AWS_LAMBDA, AWS_APIGW, AWS_SECRETS = (_svg(n) for n in ("aws-cloud-logo.svg", "aws-lambda.svg", "aws-api-gateway.svg", "aws-secrets-manager.svg"))
 e = html.escape
 W, H = 1600, 900
 
@@ -72,7 +76,9 @@ for i, (t, s_) in enumerate(attend):
     B.append(mini(748, 290 + i * 50, t, s_))
 B.append(box(500, 546, 480, 38, "pers", '<div class="t">Personalization · contextual for all fans · profile-based when signed in</div>'))
 # integration layer
-B.append(box(480, 640, 520, 120, "adobe aws", '<div class="t">Middleware API · AWS</div><div class="s">API Gateway → Lambda (Node.js) · Secrets Manager · static egress IP<br>stateless · no fan data stored</div><div class="mwr"><span>/api/register</span><span>/api/session · NFL ID</span><span>/api/wallet</span></div>'))
+B.append(box(480, 640, 520, 120, "adobe aws", f'<img class="mark" src="{AWSMARK}" alt=""><div class="t">Middleware API · AWS <em>stateless · no fan data stored · static egress IP</em></div>'
+             f'<div class="svc"><span><img src="{AWS_APIGW}" alt="">Amazon API Gateway</span><span><img src="{AWS_LAMBDA}" alt="">AWS Lambda · Node.js</span><span><img src="{AWS_SECRETS}" alt="">AWS Secrets Manager</span></div>'
+             '<div class="mwr"><span>/api/register</span><span>/api/session · NFL ID</span><span>/api/wallet</span></div>'))
 # right side
 B.append(tile(1088, 260, 464, 44, "tm", "Ticketmaster", "primary ticketing"))
 B.append(tile(1088, 312, 464, 44, "tm", "On Location", "official hospitality"))
@@ -154,7 +160,10 @@ doc = f"""<!DOCTYPE html>
   svg.conn text.acc {{ fill:#c11a12; }} svg.conn text.lnk {{ fill:#2e5aa8; }}
   .foot {{ position:absolute; left:24px; top:836px; font-size:11.5px; color:#7a8294; }}
   .aws {{ background:#fff0e0; box-shadow:inset 0 0 0 1px #f0c89a; }}
-  .mwr {{ display:flex; gap:8px; margin-top:10px; }}
+  .aws .t em {{ font-style:normal; font-weight:400; font-size:11.5px; color:#6b5a48; margin-left:8px; }}
+  .svc {{ display:flex; gap:16px; margin-top:10px; font-size:12px; font-weight:600; color:#232f3e; }}
+  .svc span {{ display:flex; align-items:center; gap:6px; }} .svc img {{ width:22px; height:22px; border-radius:3px; }}
+  .mwr {{ display:flex; gap:8px; margin-top:8px; }}
   .mwr span {{ background:#fff; border-radius:4px; padding:6px 10px; font-size:12px; }}
   .chips {{ display:flex; gap:6px; margin-top:8px; flex-wrap:nowrap; }}
   .chips span {{ background:#fff; border-radius:4px; padding:5px 8px; font-size:11px; white-space:nowrap; }}
