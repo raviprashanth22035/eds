@@ -82,7 +82,7 @@ B.append(box(480, 640, 520, 120, "adobe aws", f'<img class="mark" src="{AWSMARK}
 # right side
 B.append(tile(1088, 260, 464, 44, "tm", "Ticketmaster", "primary ticketing"))
 B.append(tile(1088, 312, 464, 44, "tm", "On Location", "official hospitality"))
-B.append(adobe(1088, 412, 464, 52, "Journey Optimizer · Campaign", "reminders · updates · cancellations — email & SMS (push optional)"))
+B.append(adobe(1088, 412, 464, 52, "Journey Optimizer · Campaign", "reminders · updates · cancellations — email & SMS"))
 B.append(adobe(1088, 538, 464, 52, "Adobe Target · Real-Time CDP", "contextual & profile-based personalization"))
 B.append(tile(1088, 628, 464, 44, "reg", "NFL Event Registration", "registration · entry QR"))
 B.append(tile(1088, 678, 464, 44, "nfl", "NFL ID", "identity · single sign-on"))
