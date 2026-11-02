@@ -73,13 +73,13 @@ B.append(panel(780, 346, 200, 296, "Attend",
                [("Registration", "guest & authenticated"), ("Ticketing", "hand-off to Ticketmaster"),
                 ("My Events", "authenticated · wallet"), ("Entry QR", "email (guest) · in-app"),
                 ("Event Alerts", "status & cancellations")]))
-B.append(panel(1000, 540, 156, 102, "Personalization", [("Signed-in fans only", "Target offers · RT-CDP")], ih=50))
+B.append(panel(1000, 500, 156, 142, "Personalization", [("Contextual · all fans", "near me · market · language"), ("Profile · signed-in", "favourite club · past events")], ih=46))
 # integrations column
 B.append(box(1250, 250, 210, 500, "src", '<div class="st">Integrations</div>'))
 B.append(item(1262, 296, 186, 44, "Journey Optimizer · Campaign", "confirmations · alerts"))
 B.append(item(1262, 388, 186, 44, "NFL Event Registration", "OnePass · QR · wallet pass"))
 B.append(item(1262, 438, 186, 44, "Ticketmaster · On Location", "ticketing · hospitality"))
-B.append(item(1262, 568, 186, 44, "Adobe Target · RT-CDP", "personalization"))
+B.append(item(1262, 568, 186, 44, "Adobe Target · RT-CDP", "contextual & profile-based"))
 B.append(item(1262, 658, 186, 44, "NFL ID", "identity · single sign-on"))
 # footer
 B.append(box(290, 800, 420, 40, "foot", f'<img src="{AMARK}" alt="">Adobe Experience Manager · Edge Delivery Services'))

@@ -71,13 +71,13 @@ for i, (t, s_) in enumerate(discover):
     B.append(mini(500, 290 + i * 50, t, s_))
 for i, (t, s_) in enumerate(attend):
     B.append(mini(748, 290 + i * 50, t, s_))
-B.append(box(500, 546, 480, 38, "pers", '<div class="t">Personalization · authenticated fans only</div>'))
+B.append(box(500, 546, 480, 38, "pers", '<div class="t">Personalization · contextual for all fans · profile-based when signed in</div>'))
 # integration layer
 B.append(adobe(480, 640, 520, 64, "Middleware · Edge Worker", "NFL ID sign-in & session · stateless, no data persisted"))
 # right side
 B.append(tile(1088, 196, 464, 44, "tm", "Ticketmaster", "primary ticketing"))
 B.append(tile(1088, 248, 464, 44, "tm", "On Location", "official hospitality"))
-B.append(adobe(1088, 460, 464, 56, "Adobe Target · Real-Time CDP", "personalization · fan profiles"))
+B.append(adobe(1088, 460, 464, 56, "Adobe Target · Real-Time CDP", "contextual & profile-based personalization"))
 B.append(adobe(1088, 532, 464, 56, "Journey Optimizer · Campaign", "confirmations · reminders · alerts"))
 B.append(tile(1088, 640, 464, 44, "nfl", "NFL ID", "identity · single sign-on"))
 B.append(tile(1088, 348, 464, 48, "leap", "NFL Event Registration", "OnePass · registration · entry QR · wallet pass"))
