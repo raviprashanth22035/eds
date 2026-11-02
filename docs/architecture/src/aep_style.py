@@ -61,7 +61,7 @@ B.append(panel(290, 250, 220, 210, "EDS Authoring",
                [("Document Authoring", ""), ("Universal Editor", ""), ("Registration Forms", ""), ("Event Sources", "")], ih=32))
 B.append(panel(290, 480, 220, 112, "Content & Code", [("Content & media bus", "EDS"), ("GitHub", "EDS blocks · middleware")], ih=30))
 B.append(box(290, 620, 220, 120, "dark mw", '<img class="mk" src="' + AMARK + '" alt=""><b>Middleware · Edge Worker</b>'
-             '<i>NFL ID sign-in &amp; session<br>stateless · no data persisted</i>'))
+             '<i>registration · NFL ID session · wallet pass<br>stateless · no data persisted</i>'))
 # hub
 B.append(box(560, 262, 620, 30, "dark", '<img class="mk" src="' + AMARK + '" alt="">NFL Events Hub · events.nfl.com · AEM Edge Delivery Services'))
 B.append(box(560, 302, 620, 30, "model", '<b>Unified Event Model</b> League · Club · International &nbsp;|&nbsp; Free · Paid · Ticketed · Registration'))
@@ -76,11 +76,12 @@ B.append(panel(780, 346, 200, 296, "Attend",
 B.append(panel(1000, 500, 156, 142, "Personalization", [("Contextual · all fans", "near me · market · language"), ("Profile · signed-in", "favourite club · past events")], ih=46))
 # integrations column
 B.append(box(1250, 250, 210, 500, "src", '<div class="st">Integrations</div>'))
-B.append(item(1262, 296, 186, 44, "Journey Optimizer · Campaign", "confirmations · alerts"))
-B.append(item(1262, 388, 186, 44, "NFL Event Registration", "OnePass · QR · wallet pass"))
+B.append(item(1262, 362, 186, 44, "Journey Optimizer · Campaign", "confirmations · alerts"))
 B.append(item(1262, 438, 186, 44, "Ticketmaster · On Location", "ticketing · hospitality"))
-B.append(item(1262, 568, 186, 44, "Adobe Target · RT-CDP", "contextual & profile-based"))
-B.append(item(1262, 658, 186, 44, "NFL ID", "identity · single sign-on"))
+B.append(item(1262, 520, 186, 44, "Adobe Target · RT-CDP", "contextual & profile-based"))
+B.append(item(1262, 614, 186, 42, "NFL Event Registration", "registration · entry QR"))
+B.append(item(1262, 661, 186, 42, "NFL ID", "identity · single sign-on"))
+B.append(item(1262, 708, 186, 42, "Apple Wallet · Google Wallet", "event passes"))
 # footer
 B.append(box(290, 800, 420, 40, "foot", f'<img src="{AMARK}" alt="">Adobe Experience Manager · Edge Delivery Services'))
 B.append(box(740, 800, 360, 40, "foot", f'<img src="{AMARK}" alt="">Adobe Experience Cloud'))
@@ -101,13 +102,15 @@ path("M 215,250 V 202 Q 215,194 223,194 H 288", "ingress")            ; lab(222,
 path("M 700,208 V 244", "ingress")                                     ; lab(706, 230, "pages", kind="ingress")
 path("M 510,300 H 538", "intra", dashed=True)                          ; lab(524, 292, "publish", "middle", "intra")
 path("M 400,460 V 478", "intra", dashed=True)
-path("M 540,652 Q 526,652 526,660 V 672 Q 526,680 518,680 H 512", "egress") ; lab(536, 674, "authenticate", kind="egress")
-path("M 968,410 H 1260", "egress")                                     ; lab(1090, 402, "register", "middle", "egress")
+path("M 540,640 H 512", "egress")
 path("M 968,460 H 1260", "egress", dashed=True)                        ; lab(1090, 452, "hand-off", "middle", "egress")
-path("M 1156,590 H 1260", "egress")                                    ; lab(1206, 582, "Web SDK", "middle", "egress")
-path("M 510,710 H 1236 Q 1244,710 1244,702 V 688 Q 1244,680 1252,680 H 1260", "egress") ; lab(860, 702, "sign-in", "middle", "egress")
-path("M 1355,388 V 342", "intra", dashed=True)                         ; lab(1361, 368, "registration events", kind="intra")
-path("M 1448,318 H 1484 Q 1492,318 1492,310 V 168 Q 1492,160 1484,160 H 173 Q 165,160 165,168 V 248", "egress")
+path("M 1156,542 H 1260", "egress")                                    ; lab(1206, 534, "Web SDK", "middle", "egress")
+path("M 510,682 H 1220 Q 1228,682 1228,674 V 643 Q 1228,635 1236,635 H 1260", "egress") ; lab(860, 676, "register", "middle", "egress")
+path("M 510,705 H 1236 Q 1244,705 1244,697 V 690 Q 1244,682 1252,682 H 1260", "egress") ; lab(860, 699, "sign-in", "middle", "egress")
+path("M 510,729 H 1260", "egress")                                    ; lab(860, 723, "add to wallet", "middle", "egress")
+path("M 1448,635 H 1468 Q 1476,635 1476,627 V 402 Q 1476,394 1468,394 H 1450", "intra", dashed=True)
+L.append('<text class="intra" x="1490" y="520" text-anchor="middle" transform="rotate(-90 1490 520)">registration events</text>')
+path("M 1448,376 H 1484 Q 1492,376 1492,368 V 168 Q 1492,160 1484,160 H 173 Q 165,160 165,168 V 248", "egress")
 lab(830, 152, "confirmations · reminders · alerts → fans", "middle", "egress")
 
 doc = f"""<!DOCTYPE html>

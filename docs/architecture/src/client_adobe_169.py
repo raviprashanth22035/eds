@@ -49,10 +49,9 @@ def chan(x, y, icon, title, sub):
 B = []
 # zones
 B.append(zone(104, 236, 264, 264, "EXPERIENCE CHANNELS"))
-B.append(zone(1064, 172, 512, 128, "TICKETING PARTNERS"))
-B.append(zone(1064, 324, 512, 88, "NFL EVENT REGISTRATION"))
-B.append(zone(1064, 436, 512, 160, "ADOBE EXPERIENCE CLOUD"))
-B.append(zone(1064, 616, 512, 92, "NFL IDENTITY"))
+B.append(zone(1064, 236, 512, 128, "TICKETING PARTNERS"))
+B.append(zone(1064, 388, 512, 216, "ADOBE EXPERIENCE CLOUD"))
+B.append(zone(1064, 616, 512, 168, "REGISTRATION, IDENTITY & WALLET"))
 # channels
 B.append(chan(120, 262, "phone", "NFL OnePass", "embedded hub"))
 B.append(chan(120, 342, "app", "NFL App", "embedded hub"))
@@ -73,14 +72,15 @@ for i, (t, s_) in enumerate(attend):
     B.append(mini(748, 290 + i * 50, t, s_))
 B.append(box(500, 546, 480, 38, "pers", '<div class="t">Personalization · contextual for all fans · profile-based when signed in</div>'))
 # integration layer
-B.append(adobe(480, 640, 520, 64, "Middleware · Edge Worker", "NFL ID sign-in & session · stateless, no data persisted"))
+B.append(box(480, 640, 520, 120, "adobe", f'<img class="mark" src="{AMARK}" alt=""><div class="t">Middleware · Edge Worker</div><div class="s">runs on the CDN · stateless, no data persisted</div><div class="mwr"><span>Registration proxy</span><span>NFL ID session</span><span>Wallet pass proxy</span></div>'))
 # right side
-B.append(tile(1088, 196, 464, 44, "tm", "Ticketmaster", "primary ticketing"))
-B.append(tile(1088, 248, 464, 44, "tm", "On Location", "official hospitality"))
-B.append(adobe(1088, 460, 464, 56, "Adobe Target · Real-Time CDP", "contextual & profile-based personalization"))
-B.append(adobe(1088, 532, 464, 56, "Journey Optimizer · Campaign", "confirmations · reminders · alerts"))
-B.append(tile(1088, 640, 464, 44, "nfl", "NFL ID", "identity · single sign-on"))
-B.append(tile(1088, 348, 464, 48, "leap", "NFL Event Registration", "OnePass · registration · entry QR · wallet pass"))
+B.append(tile(1088, 260, 464, 44, "tm", "Ticketmaster", "primary ticketing"))
+B.append(tile(1088, 312, 464, 44, "tm", "On Location", "official hospitality"))
+B.append(adobe(1088, 412, 464, 52, "Journey Optimizer · Campaign", "confirmations · reminders · alerts"))
+B.append(adobe(1088, 538, 464, 52, "Adobe Target · Real-Time CDP", "contextual & profile-based personalization"))
+B.append(tile(1088, 628, 464, 44, "leap", "NFL Event Registration", "registration · entry QR"))
+B.append(tile(1088, 678, 464, 44, "nfl", "NFL ID", "identity · single sign-on"))
+B.append(tile(1088, 728, 464, 44, "wal", "Apple Wallet · Google Wallet", "event passes"))
 
 P, LAB = [], []
 
@@ -100,16 +100,15 @@ for y in (294, 374, 454):
     path(f"M 352,{y} H 478")
 lab(424, 284, "HTTPS", "middle")
 lab(424, 330, "via Adobe CDN", "middle")
-path("M 740,600 V 638", "acc")                           ; lab(748, 624, "Authenticate", cls="acc")
-path("M 1000,218 H 1086", "lnk", dashed=True)
-path("M 1000,270 H 1086", "lnk", dashed=True)            ; lab(1043, 248, "Hand-off", "middle", "lnk")
-path("M 1000,312 H 1012 Q 1020,312 1020,320 V 364 Q 1020,372 1028,372 H 1086", "lnk")
-lab(1026, 352, "Register", cls="lnk")
-path("M 1000,564 H 1012 Q 1020,564 1020,556 V 496 Q 1020,488 1028,488 H 1086", "lnk", dashed=True)
-lab(1057, 478, "Web SDK", "middle", "lnk")
-path("M 1000,662 H 1086", "lnk")                         ; lab(1043, 654, "Authenticate", "middle", "lnk")
-path("M 1552,372 H 1560 Q 1568,372 1568,380 V 552 Q 1568,560 1560,560 H 1554", "lnk", dashed=True)
-lab(1560, 428, "Events", "end", "lnk")
+path("M 740,600 V 638", "acc")                           ; lab(748, 624, "Register · sign in · wallet", cls="acc")
+path("M 1000,282 H 1086", "lnk", dashed=True)
+path("M 1000,334 H 1086", "lnk", dashed=True)            ; lab(1043, 312, "Hand-off", "middle", "lnk")
+path("M 1000,564 H 1086", "lnk", dashed=True)            ; lab(1043, 556, "Web SDK", "middle", "lnk")
+path("M 1000,650 H 1086", "lnk")                         ; lab(1043, 642, "Register", "middle", "lnk")
+path("M 1000,700 H 1086", "lnk")                         ; lab(1043, 692, "Sign in", "middle", "lnk")
+path("M 1000,750 H 1086", "lnk")                         ; lab(1043, 742, "Wallet", "middle", "lnk")
+path("M 1552,650 H 1560 Q 1568,650 1568,642 V 446 Q 1568,438 1560,438 H 1554", "lnk", dashed=True)
+lab(1560, 520, "Events", "end", "lnk")
 
 doc = f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -154,6 +153,8 @@ doc = f"""<!DOCTYPE html>
   svg.conn text {{ font-family:'IBM Plex Mono',monospace; font-size:12px; fill:#333; paint-order:stroke; stroke:#fff; stroke-width:4px; }}
   svg.conn text.acc {{ fill:#c11a12; }} svg.conn text.lnk {{ fill:#2e5aa8; }}
   .foot {{ position:absolute; left:24px; top:836px; font-size:11.5px; color:#7a8294; }}
+  .mwr {{ display:flex; gap:8px; margin-top:12px; }}
+  .mwr span {{ background:#fff; border-radius:4px; padding:6px 10px; font-size:12px; }}
   .chips {{ display:flex; gap:6px; margin-top:8px; flex-wrap:nowrap; }}
   .chips span {{ background:#fff; border-radius:4px; padding:5px 8px; font-size:11px; white-space:nowrap; }}
   .dg {{ position:absolute; left:0; top:48px; width:{W}px; height:{H}px; }}
