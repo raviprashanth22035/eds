@@ -59,7 +59,7 @@ B.append(box(540, 246, 660, 414, "gold"))
 # authoring & delivery
 B.append(panel(290, 250, 220, 210, "EDS Authoring",
                [("Document Authoring", ""), ("Universal Editor", ""), ("Registration Forms", ""), ("Event Sources", "")], ih=32))
-B.append(panel(290, 480, 220, 112, "Publishing", [("Preview", "*.aem.page"), ("Live", "*.aem.live")], ih=30))
+B.append(panel(290, 480, 220, 112, "Content & Code", [("Content & media bus", "EDS"), ("GitHub", "EDS blocks · middleware")], ih=30))
 B.append(box(290, 620, 220, 120, "dark mw", '<img class="mk" src="' + AMARK + '" alt=""><b>Middleware · Edge Worker</b>'
              '<i>NFL ID sign-in &amp; session<br>stateless · no data persisted</i>'))
 # hub
