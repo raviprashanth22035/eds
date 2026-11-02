@@ -43,23 +43,21 @@ def mini(x, y, title, sub):
 def chan(x, y, icon, title, sub):
     svg = (f'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#3b3b3b" stroke-width="1.7" '
            f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{ICON[icon]}</svg>')
-    return box(x, y, 168, 64, "chan", f'{svg}<div><div class="t">{e(title)}</div><div class="s">{e(sub)}</div></div>')
+    return box(x, y, 232, 64, "chan", f'{svg}<div><div class="t">{e(title)}</div><div class="s">{e(sub)}</div></div>')
 
 
 B = []
 # zones
-B.append(zone(24, 236, 200, 264, "EXPERIENCE CHANNELS"))
+B.append(zone(104, 236, 264, 264, "EXPERIENCE CHANNELS"))
 B.append(zone(1064, 172, 512, 128, "TICKETING PARTNERS"))
 B.append(zone(1064, 324, 512, 88, "NFL EVENT REGISTRATION"))
 B.append(zone(1064, 436, 512, 160, "ADOBE EXPERIENCE CLOUD"))
 B.append(zone(1064, 616, 512, 92, "NFL IDENTITY"))
 # channels
-B.append(chan(40, 262, "phone", "NFL OnePass", "embedded hub"))
-B.append(chan(40, 342, "app", "NFL App", "embedded hub"))
-B.append(chan(40, 422, "laptop", "Web", "events.nfl.com"))
+B.append(chan(120, 262, "phone", "NFL OnePass", "embedded hub"))
+B.append(chan(120, 342, "app", "NFL App", "embedded hub"))
+B.append(chan(120, 422, "laptop", "Web", "events.nfl.com"))
 # edge + authoring
-B.append(adobe(260, 270, 170, 200, "Adobe CDN", "", ["WAF & bot protection", "Edge caching", "Routing & queuing"]))
-B.append(box(520, 74, 480, 78, "adobe", f'<img class="mark" src="{AMARK}" alt=""><div class="t">EDS Content &amp; Event Sources</div><div class="chips"><span>Document Authoring</span><span>Universal Editor</span><span>Registration Forms</span><span>Event Sources</span></div>'))
 # hub
 B.append(box(480, 172, 520, 428, "panel hub", f'<img class="mark" src="{AMARK}" alt=""><div class="pt">NFL Events Hub<span>events.nfl.com · AEM Edge Delivery Services</span></div>'))
 B.append(box(500, 232, 480, 44, "model", '<b>UNIFIED<br>EVENT MODEL</b><span>League · Club · International<br>Free · Paid · Ticketed · Registration</span>'))
@@ -99,10 +97,9 @@ def lab(x, y, t, anchor="start", cls=""):
 
 
 for y in (294, 374, 454):
-    path(f"M 208,{y} H 258")
-lab(234, 338, "HTTPS", "middle")
-path("M 430,368 H 478")                                  ; lab(454, 360, "Origin", "middle")
-path("M 740,152 V 170", thick=True)                      ; lab(748, 166, "Publish")
+    path(f"M 352,{y} H 478")
+lab(424, 284, "HTTPS", "middle")
+lab(424, 330, "via Adobe CDN", "middle")
 path("M 740,600 V 638", "acc")                           ; lab(748, 624, "Authenticate", cls="acc")
 path("M 1000,218 H 1086", "lnk", dashed=True)
 path("M 1000,270 H 1086", "lnk", dashed=True)            ; lab(1043, 248, "Hand-off", "middle", "lnk")
@@ -159,14 +156,14 @@ doc = f"""<!DOCTYPE html>
   .foot {{ position:absolute; left:24px; top:836px; font-size:11.5px; color:#7a8294; }}
   .chips {{ display:flex; gap:6px; margin-top:8px; flex-wrap:nowrap; }}
   .chips span {{ background:#fff; border-radius:4px; padding:5px 8px; font-size:11px; white-space:nowrap; }}
-  .dg {{ position:absolute; left:0; top:84px; width:{W}px; height:{H}px; }}
+  .dg {{ position:absolute; left:0; top:48px; width:{W}px; height:{H}px; }}
   .legend {{ position:absolute; left:24px; top:800px; display:flex; gap:26px; font-size:11px; color:#444; align-items:center; }}
   .legend i {{ display:inline-block; width:26px; height:0; border-top:2px solid #4a4a4a; margin-right:8px; vertical-align:middle; }}
   .legend i.acc {{ border-color:#c11a12; }} .legend i.lnk {{ border-color:#2e5aa8; }} .legend i.dash {{ border-top-style:dashed; }}
   .legend b {{ display:inline-block; width:14px; height:12px; margin-right:8px; vertical-align:middle; border-radius:2px; }}
 </style></head>
 <body><div class="wrap"><div class="slide" role="img" aria-label="NFL Events Hub platform and integrations">
-<h1>NFL Events Hub — Platform Architecture<span>Target state · one event platform for web, NFL OnePass and the NFL App</span></h1>
+<h1>NFL Events Hub — Platform Architecture<span>What fans do on the hub — and the NFL, Adobe and partner systems it connects to</span></h1>
 <div class="dg">
 <svg class="conn" width="{W}" height="{H}" aria-hidden="true">
   <defs>

@@ -39,10 +39,12 @@ D = []
 D.append(zone(470, 150, 140, 254, "AUTHORING", "pink"))
 D.append(zone(650, 150, 120, 110, "CONTENT STORAGE", "sand"))
 D.append(zone(790, 150, 410, 110, "EDS RUNTIME + DELIVERY", "blue"))
-D.append(zone(650, 410, 550, 240, "INTEGRATIONS", "grey"))
+D.append(zone(790, 300, 410, 96, "ENVIRONMENTS", "sand"))
+D.append(zone(790, 430, 410, 110, "EDGE COMPUTE", "grey"))
+D.append(zone(462, 440, 162, 150, "DEVELOPMENT", "grey"))
 # people
 D.append(person(386, 172, "Club & league authors"))
-D.append(person(386, 470, "Dev team"))
+D.append(person(386, 486, "Dev team"))
 # authoring chips
 for i, t in enumerate(["Document Authoring", "Universal Editor", "Registration Forms", "Event Sources"]):
     D.append(node(482, 178 + i * 54, 116, 42, "chip", t))
@@ -51,16 +53,14 @@ D.append(node(660, 178, 100, 66, "store", "Content & media bus", "EDS"))
 D.append(node(800, 178, 116, 56, "run", "EDS runtime", "content + code", True))
 D.append(node(930, 178, 116, 56, "run", "Adobe CDN", "edge cache · WAF", True))
 D.append(node(1060, 178, 130, 56, "site", "events.nfl.com", "web · OnePass · NFL App"))
+# environments
+D.append(node(800, 328, 180, 52, "store", "Preview", "*.aem.page · authors review"))
+D.append(node(1010, 328, 180, 52, "store", "Live", "*.aem.live · CDN-cached"))
+# edge compute
+D.append(node(800, 460, 390, 62, "ours", "Middleware · edge worker", "runs at the CDN edge · NFL ID session · stateless, no data", True))
 # github
-D.append(node(476, 464, 140, 44, "gh", "GitHub · EDS blocks", "JavaScript · CSS"))
-D.append(node(476, 528, 140, 44, "gh", "GitHub · middleware", "edge worker code"))
-# services
-D.append(node(662, 470, 124, 60, "ours", "Middleware", "edge worker · NFL ID sign-in", True))
-D.append(node(800, 470, 124, 60, "nfl", "NFL Event Registration", "QR · wallet pass"))
-D.append(node(938, 470, 124, 60, "adobe", "Target · RT-CDP", "signed-in only", True))
-D.append(node(1070, 470, 120, 60, "tm", "Ticketmaster", "On Location"))
-D.append(node(662, 574, 124, 50, "nfl", "NFL ID", "single sign-on"))
-D.append(node(800, 574, 124, 50, "adobe", "AJO · Campaign", "alerts", True))
+D.append(node(474, 470, 140, 44, "gh", "GitHub · EDS blocks", "JavaScript · CSS"))
+D.append(node(474, 532, 140, 44, "gh", "GitHub · middleware", "edge worker code"))
 
 P, L = [], []
 
@@ -79,20 +79,16 @@ path("M 610,212 H 648")                         ; lab(629, 204, "publish", "midd
 path("M 770,206 H 798")
 path("M 916,206 H 928")
 path("M 1046,206 H 1058")
-# code sync: GitHub blocks -> runtime
-path("M 616,486 H 622 Q 630,486 630,478 V 288 Q 630,280 638,280 H 850 Q 858,280 858,272 V 236", dashed=True)
-lab(738, 294, "code sync", "middle")
-path("M 616,550 H 630 Q 638,550 638,542 V 518 Q 638,510 646,510 H 660", dashed=True) ; lab(628, 574, "deploy", "middle")
-path("M 462,500 H 474")
-# hub pages bus
-P.append('<path class="lnk" d="M 1125,234 V 440 H 724" fill="none"/>')
-lab(1133, 330, "from hub pages", cls="lnk")
-for x, t, dash in [(724, "sign-in", False), (862, "register", False), (1000, "Web SDK", True)]:
-    path(f"M {x},440 V 468", "lnk", dashed=dash)
-    lab(x + 6, 458, t, cls="lnk")
-path("M 1125,440 V 468", "lnk", dashed=True)    ; lab(1131, 458, "hand-off", cls="lnk")
-path("M 724,530 V 572", "lnk")
-path("M 862,530 V 572", "lnk", dashed=True)     ; lab(868, 556, "events", cls="lnk")
+# content preview -> live
+path("M 712,244 V 346 Q 712,354 720,354 H 798", dashed=True) ; lab(756, 346, "preview", "middle")
+path("M 980,354 H 1008")                        ; lab(994, 346, "go live", "middle")
+# code sync: GitHub blocks -> runtime (over the top)
+path("M 614,492 H 622 Q 630,492 630,484 V 148 Q 630,140 638,140 H 850 Q 858,140 858,148 V 176", dashed=True)
+lab(636, 420, "code sync")
+# deploy: GitHub middleware -> edge worker
+path("M 614,554 H 700 Q 708,554 708,546 V 500 Q 708,492 716,492 H 798", dashed=True) ; lab(756, 484, "deploy", "middle")
+# CDN routes /auth to middleware
+path("M 462,516 H 472")
 
 NEEDS = ["One platform for league, club & international events",
          "Free registration & ticketed events",
@@ -104,7 +100,7 @@ EDS = ["Blocks in JavaScript & CSS — no Java backend",
        "Document Authoring or Universal Editor",
        "Publish in seconds · Adobe CDN edge delivery",
        "Thin middleware (edge worker) · no fan data stored",
-       "Integrates NFL ID, Event Registration & Adobe",
+       "Preview & live environments for every change",
        "Independent dev / test / release via GitHub"]
 needs = "".join(f"<li>{e(t)}</li>" for t in NEEDS)
 eds = "".join(f"<li>{e(t)}</li>" for t in EDS)
