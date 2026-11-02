@@ -80,10 +80,10 @@ B.append(panel(780, 346, 200, 296, "Attend",
 B.append(panel(1000, 476, 156, 172, "Personalization", [("Contextual · all fans", "near me · market · language"), ("Profile · signed-in", "favourite club · past events"), ("Consent manager", "gates Web SDK")], ih=40))
 # integrations column
 B.append(box(1250, 330, 210, 432, "src"))
-B.append(box(1262, 340, 186, 12, "gl", "ENGAGEMENT"))
-B.append(item(1262, 356, 186, 42, "Journey Optimizer · Campaign", "email & SMS · reminders · updates"))
-B.append(box(1262, 422, 186, 12, "gl", "TICKETING"))
-B.append(item(1262, 439, 186, 42, "Ticketmaster · On Location", "ticketing · hospitality"))
+B.append(box(1262, 340, 186, 12, "gl", "TICKETING"))
+B.append(item(1262, 356, 186, 42, "Ticketmaster · On Location", "ticketing · hospitality"))
+B.append(box(1262, 422, 186, 12, "gl", "ENGAGEMENT"))
+B.append(item(1262, 439, 186, 42, "Journey Optimizer · Campaign", "email & SMS · reminders · updates"))
 B.append(box(1262, 504, 186, 12, "gl", "PERSONALIZATION"))
 B.append(item(1262, 521, 186, 42, "Adobe Target · RT-CDP", "contextual & profile-based"))
 B.append(box(1262, 596, 186, 12, "gl", "REGISTRATION · ID · WALLET"))
@@ -112,13 +112,13 @@ path("M 700,208 V 244", "ingress")                                     ; lab(706
 path("M 510,300 H 538", "intra", dashed=True)                          ; lab(524, 292, "publish", "middle", "intra")
 path("M 400,460 V 478", "intra", dashed=True)
 path("M 540,640 H 512", "egress")
-path("M 968,460 H 1260", "egress")                        ; lab(1090, 452, "hand-off", "middle", "egress")
+path("M 968,460 H 1228 Q 1236,460 1236,452 V 385 Q 1236,377 1244,377 H 1260", "egress")                        ; lab(1090, 452, "hand-off", "middle", "egress")
 path("M 1156,542 H 1260", "egress")                                    ; lab(1206, 534, "Web SDK", "middle", "egress")
 path("M 510,682 H 1220 Q 1228,682 1228,674 V 643 Q 1228,635 1236,635 H 1260", "egress") ; lab(860, 676, "register", "middle", "egress")
 path("M 510,705 H 1236 Q 1244,705 1244,697 V 690 Q 1244,682 1252,682 H 1260", "egress") ; lab(860, 699, "sign-in", "middle", "egress")
 path("M 510,729 H 1260", "egress")                                    ; lab(860, 723, "add to wallet", "middle", "egress")
-path("M 1448,635 H 1472 Q 1480,635 1480,627 V 391 Q 1480,383 1472,383 H 1450", "intra", dashed=True)
-L.append('<text class="intra" x="1494" y="509" text-anchor="middle" transform="rotate(-90 1494 509)">registration events</text>')
+path("M 1448,635 H 1472 Q 1480,635 1480,627 V 468 Q 1480,460 1472,460 H 1450", "intra", dashed=True)
+L.append('<text class="intra" x="1494" y="548" text-anchor="middle" transform="rotate(-90 1494 548)">registration events</text>')
 
 doc = f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
