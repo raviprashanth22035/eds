@@ -68,7 +68,7 @@ discover = [("Event Discovery", "league, club & international"), ("Location Sear
             ("Event Detail", "venue, schedule, FAQ"), ("Search & Filter", "indexed event catalog"),
             ("Calendar", "add to calendar")]
 attend = [("Registration", "guest & authenticated"), ("Ticketing", "hand-off to Ticketmaster"),
-          ("My Events", "authenticated · wallet"), ("Entry QR", "email (guest) · in-app"),
+          ("My Events", "authenticated · wallet"), ("Entry QR", "email · My Events · wallet"),
           ("Event Alerts", "status & cancellations")]
 for i, (t, s_) in enumerate(discover):
     B.append(mini(500, 290 + i * 50, t, s_))

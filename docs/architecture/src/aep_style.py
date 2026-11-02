@@ -51,7 +51,7 @@ B.append(box(140, 118, 1320, 22, "band",
              '<span style="left:20px">CHANNELS</span><span style="left:230px">AUTHORING &amp; DELIVERY</span>'
              '<span style="left:640px">NFL EVENTS HUB</span><span style="left:1150px">INTEGRATIONS</span>'))
 # channels column
-B.append(box(140, 250, 100, 390, "src", '<div class="st">Channels</div>'
+B.append(box(140, 250, 100, 390, "src", 
              f'<div class="ci">{icon("phone")}<span>NFL OnePass<br><i>embedded hub</i></span></div>'
              f'<div class="ci">{icon("app")}<span>NFL App<br><i>embedded hub</i></span></div>'
              f'<div class="ci">{icon("laptop")}<span>Web<br><i>events.nfl.com</i></span></div>'))
@@ -75,11 +75,11 @@ B.append(panel(560, 346, 200, 296, "Discover",
                 ("Calendar", "add to calendar")]))
 B.append(panel(780, 346, 200, 296, "Attend",
                [("Registration", "guest & authenticated"), ("Ticketing", "hand-off to Ticketmaster"),
-                ("My Events", "authenticated · wallet"), ("Entry QR", "email (guest) · in-app"),
+                ("My Events", "authenticated · wallet"), ("Entry QR", "email · My Events · wallet"),
                 ("Event Alerts", "status & cancellations")]))
 B.append(panel(1000, 500, 156, 142, "Personalization", [("Contextual · all fans", "near me · market · language"), ("Profile · signed-in", "favourite club · past events")], ih=46))
 # integrations column
-B.append(box(1250, 250, 210, 500, "src", '<div class="st">Integrations</div>'))
+B.append(box(1250, 250, 210, 500, "src"))
 B.append(item(1262, 362, 186, 44, "Journey Optimizer · Campaign", "confirmations · alerts"))
 B.append(item(1262, 438, 186, 44, "Ticketmaster · On Location", "ticketing · hospitality"))
 B.append(item(1262, 520, 186, 44, "Adobe Target · RT-CDP", "contextual & profile-based"))
