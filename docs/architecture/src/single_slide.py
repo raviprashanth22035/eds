@@ -84,7 +84,7 @@ B.append(tile(1088, 260, 464, 44, "tm", "Ticketmaster", "primary ticketing"))
 B.append(tile(1088, 312, 464, 44, "tm", "On Location", "official hospitality"))
 B.append(adobe(1088, 412, 464, 52, "Journey Optimizer · Campaign", "confirmations · reminders · alerts"))
 B.append(adobe(1088, 538, 464, 52, "Adobe Target · Real-Time CDP", "contextual & profile-based personalization"))
-B.append(tile(1088, 628, 464, 44, "leap", "NFL Event Registration", "registration · entry QR"))
+B.append(tile(1088, 628, 464, 44, "reg", "NFL Event Registration", "registration · entry QR"))
 B.append(tile(1088, 678, 464, 44, "nfl", "NFL ID", "identity · single sign-on"))
 B.append(tile(1088, 728, 464, 44, "wal", "Apple Wallet · Google Wallet", "event passes"))
 
@@ -155,7 +155,7 @@ doc = f"""<!DOCTYPE html>
   .pers {{ background:#fde7e7; border:1.5px solid #e1251b; display:flex; align-items:center; justify-content:center; }}
   .pers .t {{ font-size:13px; font-weight:600; }}
   .tile {{ padding:8px 12px; border:1.5px solid rgba(0,0,0,0.12); }}
-  .nfl {{ background:#dfe6f6; }} .leap {{ background:#e9e0ff; }} .tm {{ background:#dceaff; }} .wal {{ background:#fff3d6; }}
+  .nfl {{ background:#dfe6f6; }} .reg {{ background:#e9e0ff; }} .tm {{ background:#dceaff; }} .wal {{ background:#fff3d6; }}
   .chan {{ background:#eef0f4; display:flex; align-items:center; gap:10px; padding:8px 12px; }}
   .chan .t {{ font-size:13px; font-weight:600; }} .chan .s {{ font-size:10.5px; color:#555; margin-top:2px; }}
   svg.conn {{ position:absolute; left:0; top:0; }}
