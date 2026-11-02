@@ -83,7 +83,8 @@ B.append(panel(1000, 500, 156, 142, "Personalization", [("Contextual · all fans
 # integrations column
 B.append(box(1250, 330, 210, 432, "src"))
 B.append(box(1262, 340, 186, 12, "gl", "ENGAGEMENT"))
-B.append(item(1262, 356, 186, 42, "Journey Optimizer · Campaign", "confirmations · alerts"))
+B.append(item(1262, 356, 186, 42, "Journey Optimizer · Campaign", "reminders · updates · cancellations"))
+B.append(box(1250, 198, 210, 44, "item fanmsg", '<b>Fans · email &amp; SMS</b><i>push / in-app optional · needs Adobe Mobile SDK</i>'))
 B.append(box(1262, 422, 186, 12, "gl", "TICKETING"))
 B.append(item(1262, 439, 186, 42, "Ticketmaster · On Location", "ticketing · hospitality"))
 B.append(box(1262, 504, 186, 12, "gl", "PERSONALIZATION"))
@@ -121,8 +122,8 @@ path("M 510,705 H 1236 Q 1244,705 1244,697 V 690 Q 1244,682 1252,682 H 1260", "e
 path("M 510,729 H 1260", "egress")                                    ; lab(860, 723, "add to wallet", "middle", "egress")
 path("M 1448,635 H 1472 Q 1480,635 1480,627 V 391 Q 1480,383 1472,383 H 1450", "intra", dashed=True)
 L.append('<text class="intra" x="1494" y="509" text-anchor="middle" transform="rotate(-90 1494 509)">registration events</text>')
-path("M 1448,371 H 1516 Q 1524,371 1524,363 V 168 Q 1524,160 1516,160 H 173 Q 165,160 165,168 V 248", "egress")
-lab(1300, 178, "confirmations · reminders · alerts → fans", "middle", "egress")
+path("M 1448,371 H 1492 Q 1500,371 1500,363 V 228 Q 1500,220 1492,220 H 1462", "egress")
+lab(1355, 190, "reminders · updates · cancellations", "middle", "egress")
 
 doc = f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -155,6 +156,7 @@ doc = f"""<!DOCTYPE html>
   .item {{ background:#fff; border-radius:3px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2px 6px; }}
   .item b {{ font-size:12.5px; font-weight:600; line-height:1.15; }} .item i {{ font-size:10.5px; color:#555; line-height:1.2; }}
   .src .item, .b.item {{ box-shadow:0 0 0 1px #c9c9c9; }}
+  .fanmsg i {{ font-size:9.5px; white-space:nowrap; }}
   .chan svg {{ width:24px; height:24px; margin-bottom:3px; }} .chan b {{ white-space:nowrap; }}
   .model {{ background:#e9e9e9; border:1px solid #cfcfcf; border-radius:4px; font-size:12px; color:#333; display:flex; align-items:center; justify-content:center; gap:10px; }}
   .model b {{ color:#222; }}
