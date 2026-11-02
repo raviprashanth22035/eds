@@ -51,12 +51,10 @@ B.append(box(140, 118, 1320, 22, "band",
              '<span style="left:20px">CHANNELS</span><span style="left:230px">AUTHORING &amp; DELIVERY</span>'
              '<span style="left:640px">NFL EVENTS HUB</span><span style="left:1150px">INTEGRATIONS</span>'))
 # channels column
-B.append(box(132, 250, 118, 290, "src"))
-B.append(box(141, 262, 100, 12, "gl", "EMBEDDED"))
-B.append(box(141, 278, 100, 68, "item chan", f'{icon("phone")}<b>NFL OnePass</b><i>embedded hub</i>'))
-B.append(box(141, 354, 100, 68, "item chan", f'{icon("app")}<b>NFL App</b><i>embedded hub</i>'))
-B.append(box(141, 444, 100, 12, "gl", "WEB"))
-B.append(box(141, 460, 100, 68, "item chan", f'{icon("laptop")}<b>Web</b><i>events.nfl.com</i>'))
+B.append(box(140, 250, 100, 330, "src", 
+             f'<div class="ci">{icon("phone")}<span>NFL OnePass<br><i>embedded hub</i></span></div>'
+             f'<div class="ci">{icon("app")}<span>NFL App<br><i>embedded hub</i></span></div>'
+             f'<div class="ci">{icon("laptop")}<span>Web<br><i>events.nfl.com</i></span></div>'))
 # CDN bar
 B.append(box(290, 180, 470, 28, "dark", '<img class="mk" src="' + AMARK + '" alt="">Adobe CDN · WAF · edge cache · /api routing to middleware'))
 # outer platform panel + gold hub box
@@ -139,6 +137,7 @@ doc = f"""<!DOCTYPE html>
   .gl {{ font-size:10px; line-height:12px; font-weight:700; letter-spacing:0.1em; color:#6a6a6a; white-space:nowrap; }}
   .st {{ font-size:12px; font-weight:600; color:#444; text-align:center; margin-bottom:12px; }}
   .ci {{ display:flex; flex-direction:column; align-items:center; gap:4px; margin-bottom:34px; text-align:center; }}
+  .src > .ci:first-child {{ margin-top:16px; }}
   .ci span {{ font-size:12px; font-weight:600; line-height:1.2; }} .ci i {{ font-weight:400; font-size:10.5px; color:#555; }}
   .dark {{ background:#3a3a3a; color:#fff; border-radius:4px; font-size:13px; font-weight:600; display:flex; align-items:center; justify-content:center; gap:8px; }}
   .dark .mk {{ width:18px; height:18px; border-radius:3px; }}
@@ -153,7 +152,6 @@ doc = f"""<!DOCTYPE html>
   .item {{ background:#fff; border-radius:3px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2px 6px; }}
   .item b {{ font-size:12.5px; font-weight:600; line-height:1.15; }} .item i {{ font-size:10.5px; color:#555; line-height:1.2; }}
   .src .item, .b.item {{ box-shadow:0 0 0 1px #c9c9c9; }}
-  .chan svg {{ width:24px; height:24px; margin-bottom:3px; }} .chan b {{ white-space:nowrap; }}
   .model {{ background:#e9e9e9; border:1px solid #cfcfcf; border-radius:4px; font-size:12px; color:#333; display:flex; align-items:center; justify-content:center; gap:10px; }}
   .model b {{ color:#222; }}
   .foot {{ display:flex; align-items:center; gap:12px; font-size:17px; color:#444; }}
