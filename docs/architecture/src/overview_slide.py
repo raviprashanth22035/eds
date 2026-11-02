@@ -40,7 +40,7 @@ D.append(zone(470, 150, 140, 254, "AUTHORING", "pink"))
 D.append(zone(650, 150, 120, 110, "CONTENT STORAGE", "sand"))
 D.append(zone(790, 150, 410, 110, "EDS RUNTIME + DELIVERY", "blue"))
 D.append(zone(790, 300, 410, 96, "ENVIRONMENTS", "sand"))
-D.append(zone(790, 430, 410, 110, "MIDDLEWARE · NODE.JS", "grey"))
+D.append(zone(790, 430, 410, 110, "MIDDLEWARE API · AWS", "grey"))
 D.append(zone(462, 440, 162, 150, "DEVELOPMENT", "grey"))
 # people
 D.append(person(386, 172, "Club & league authors"))
@@ -57,10 +57,10 @@ D.append(node(1060, 178, 130, 56, "site", "events.nfl.com", "web · OnePass · N
 D.append(node(800, 328, 180, 52, "store", "Preview", "*.aem.page · authors review"))
 D.append(node(1010, 328, 180, 52, "store", "Live", "*.aem.live · CDN-cached"))
 # middleware
-D.append(node(800, 460, 390, 62, "ours", "Middleware · Node.js API", "behind Adobe CDN at /api/* · NFL ID session · stateless, no data"))
+D.append(node(800, 460, 390, 62, "ours", "API Gateway → Lambda (Node.js)", "/api/* routed by Adobe CDN · Secrets Manager · stateless, no fan data"))
 # github
 D.append(node(474, 470, 140, 44, "gh", "GitHub · EDS blocks", "JavaScript · CSS"))
-D.append(node(474, 532, 140, 44, "gh", "GitHub · middleware", "Node.js code"))
+D.append(node(474, 532, 140, 44, "gh", "GitHub · middleware", "Node.js · CI/CD to AWS"))
 
 P, L = [], []
 
@@ -99,7 +99,7 @@ NEEDS = ["One platform for league, club & international events",
 EDS = ["Blocks in JavaScript & CSS — no Java backend",
        "Document Authoring or Universal Editor",
        "Publish in seconds · Adobe CDN edge delivery",
-       "Thin Node.js middleware · no fan data stored",
+       "Stateless middleware on AWS · no fan data stored",
        "Preview & live environments for every change",
        "Independent dev / test / release via GitHub"]
 needs = "".join(f"<li>{e(t)}</li>" for t in NEEDS)

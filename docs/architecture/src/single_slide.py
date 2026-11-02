@@ -72,7 +72,7 @@ for i, (t, s_) in enumerate(attend):
     B.append(mini(748, 290 + i * 50, t, s_))
 B.append(box(500, 546, 480, 38, "pers", '<div class="t">Personalization · contextual for all fans · profile-based when signed in</div>'))
 # integration layer
-B.append(box(480, 640, 520, 120, "adobe", f'<div class="t">Middleware · Node.js API</div><div class="s">behind Adobe CDN at /api/* · stateless, no data persisted</div><div class="mwr"><span>Registration proxy</span><span>NFL ID session</span><span>Wallet pass proxy</span></div>'))
+B.append(box(480, 640, 520, 120, "adobe aws", '<div class="t">Middleware API · AWS</div><div class="s">API Gateway → Lambda (Node.js) · Secrets Manager · static egress IP<br>stateless · no fan data stored</div><div class="mwr"><span>/api/register</span><span>/api/session · NFL ID</span><span>/api/wallet</span></div>'))
 # right side
 B.append(tile(1088, 260, 464, 44, "tm", "Ticketmaster", "primary ticketing"))
 B.append(tile(1088, 312, 464, 44, "tm", "On Location", "official hospitality"))
@@ -86,7 +86,7 @@ B.append(box(104, 56, 1472, 88, "band", '<div class="bl">BUILD &amp; PUBLISH</di
            '<div class="grp"><b>Club &amp; league authors</b><span>Document Authoring</span><span>Universal Editor</span><span>Registration Forms</span><span>Event Sources</span></div>'
            '<div class="grp"><b>Dev team · GitHub</b><span>EDS blocks · JS/CSS</span><span>Middleware code</span></div>'
            '<div class="arr">→</div><div class="env"><b>Preview</b><small>*.aem.page</small></div><div class="arr">→</div><div class="env"><b>Live</b><small>*.aem.live</small></div>'))
-B.append(box(104, 790, 1472, 34, "foot", '<span>JavaScript &amp; CSS blocks — no Java backend</span><span>Publish in seconds</span><span>Thin Node.js middleware — no fan data stored</span><span>Independent releases via GitHub</span>'))
+B.append(box(104, 790, 1472, 34, "foot", '<span>JavaScript &amp; CSS blocks — no Java backend</span><span>Publish in seconds</span><span>Stateless middleware on AWS — no fan data stored</span><span>Independent releases via GitHub</span>'))
 
 P, LAB = [], []
 
@@ -107,7 +107,7 @@ for y in (294, 374, 454):
 lab(424, 284, "HTTPS", "middle")
 lab(424, 330, "via Adobe CDN", "middle")
 path("M 740,144 V 170", thick=True)                      ; lab(748, 162, "Publish")
-path("M 740,600 V 638", "acc")                           ; lab(748, 624, "Register · sign in · wallet", cls="acc")
+path("M 740,600 V 638", "acc")                           ; lab(748, 624, "/api/* · via Adobe CDN", cls="acc")
 path("M 1000,282 H 1086", "lnk", dashed=True)
 path("M 1000,334 H 1086", "lnk", dashed=True)            ; lab(1043, 312, "Hand-off", "middle", "lnk")
 path("M 1000,564 H 1086", "lnk", dashed=True)            ; lab(1043, 556, "Web SDK", "middle", "lnk")
@@ -171,7 +171,8 @@ doc = f"""<!DOCTYPE html>
   .foot {{ display:flex; justify-content:space-between; gap:10px; }}
   .foot span {{ flex:1; text-align:center; background:#f3f4f7; border-radius:4px; padding:7px 8px; font-size:12.5px; font-weight:500; color:#2d3142; }}
   .foot span::before {{ content:"✓ "; color:#c11a12; font-weight:700; }}
-  .mwr {{ display:flex; gap:8px; margin-top:12px; }}
+  .aws {{ background:#fff0e0; box-shadow:inset 0 0 0 1px #f0c89a; }}
+  .mwr {{ display:flex; gap:8px; margin-top:10px; }}
   .mwr span {{ background:#fff; border-radius:4px; padding:6px 10px; font-size:12px; }}
   .chips {{ display:flex; gap:6px; margin-top:8px; flex-wrap:nowrap; }}
   .chips span {{ background:#fff; border-radius:4px; padding:5px 8px; font-size:11px; white-space:nowrap; }}

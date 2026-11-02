@@ -60,8 +60,8 @@ B.append(box(540, 246, 660, 414, "gold"))
 B.append(panel(290, 250, 220, 210, "EDS Authoring",
                [("Document Authoring", ""), ("Universal Editor", ""), ("Registration Forms", ""), ("Event Sources", "")], ih=32))
 B.append(panel(290, 480, 220, 112, "Content & Code", [("Content & media bus", "EDS"), ("GitHub", "EDS blocks · middleware")], ih=30))
-B.append(box(290, 620, 220, 120, "dark mw", '<b>Middleware · Node.js API</b>'
-             '<i>registration · NFL ID session · wallet pass<br>behind Adobe CDN at /api/*<br>stateless · no data persisted</i>'))
+B.append(box(290, 620, 220, 120, "dark mw", '<b>Middleware API · AWS</b>'
+             '<i>API Gateway → Lambda (Node.js)<br>Secrets Manager · static egress IP<br>stateless · no fan data stored</i>'))
 # hub
 B.append(box(560, 262, 620, 30, "dark", '<img class="mk" src="' + AMARK + '" alt="">NFL Events Hub · events.nfl.com · AEM Edge Delivery Services'))
 B.append(box(560, 302, 620, 30, "model", '<b>Unified Event Model</b> League · Club · International &nbsp;|&nbsp; Free · Paid · Ticketed · Registration'))
