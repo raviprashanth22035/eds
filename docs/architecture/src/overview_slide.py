@@ -39,7 +39,7 @@ D = []
 D.append(zone(470, 150, 140, 254, "AUTHORING", "pink"))
 D.append(zone(650, 150, 120, 110, "CONTENT STORAGE", "sand"))
 D.append(zone(790, 150, 410, 110, "EDS RUNTIME + DELIVERY", "blue"))
-D.append(zone(650, 410, 550, 240, "NFL & ADOBE SERVICES", "grey"))
+D.append(zone(650, 410, 550, 240, "INTEGRATIONS", "grey"))
 # people
 D.append(person(386, 172, "Club & league authors"))
 D.append(person(386, 470, "Dev team"))
@@ -53,9 +53,9 @@ D.append(node(930, 178, 116, 56, "run", "Adobe CDN", "edge cache · WAF", True))
 D.append(node(1060, 178, 130, 56, "site", "events.nfl.com", "web · OnePass · NFL App"))
 # github
 D.append(node(476, 464, 140, 44, "gh", "GitHub · EDS blocks", "JavaScript · CSS"))
-D.append(node(476, 528, 140, 44, "gh", "GitHub · edge worker", "identity layer code"))
+D.append(node(476, 528, 140, 44, "gh", "GitHub · middleware", "edge worker code"))
 # services
-D.append(node(662, 470, 124, 60, "ours", "Identity layer", "edge worker · stateless", True))
+D.append(node(662, 470, 124, 60, "ours", "Middleware", "edge worker · NFL ID sign-in", True))
 D.append(node(800, 470, 124, 60, "nfl", "NFL Event Registration", "QR · wallet pass"))
 D.append(node(938, 470, 124, 60, "adobe", "Target · RT-CDP", "signed-in only", True))
 D.append(node(1070, 470, 120, 60, "tm", "Ticketmaster", "On Location"))
@@ -103,7 +103,7 @@ NEEDS = ["One platform for league, club & international events",
 EDS = ["Blocks in JavaScript & CSS — no Java backend",
        "Document Authoring or Universal Editor",
        "Publish in seconds · Adobe CDN edge delivery",
-       "Thin edge worker · no fan data stored",
+       "Thin middleware (edge worker) · no fan data stored",
        "Integrates NFL ID, Event Registration & Adobe",
        "Independent dev / test / release via GitHub"]
 needs = "".join(f"<li>{e(t)}</li>" for t in NEEDS)
