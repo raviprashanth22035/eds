@@ -58,7 +58,7 @@ B.append(chan(40, 262, "phone", "NFL OnePass", "embedded hub"))
 B.append(chan(40, 342, "app", "NFL App", "embedded hub"))
 B.append(chan(40, 422, "laptop", "Web", "events.nfl.com"))
 # edge + authoring
-B.append(adobe(260, 236, 170, 264, "Adobe CDN", "", ["WAF & bot protection", "Edge caching", "Routing & queuing"]))
+B.append(adobe(260, 270, 170, 200, "Adobe CDN", "", ["WAF & bot protection", "Edge caching", "Routing & queuing"]))
 B.append(box(520, 74, 480, 78, "adobe", f'<img class="mark" src="{AMARK}" alt=""><div class="t">EDS Content &amp; Event Sources</div><div class="chips"><span>Document Authoring</span><span>Universal Editor</span><span>Registration Forms</span><span>Event Sources</span></div>'))
 # hub
 B.append(box(480, 172, 520, 428, "panel hub", f'<img class="mark" src="{AMARK}" alt=""><div class="pt">NFL Events Hub<span>events.nfl.com · AEM Edge Delivery Services</span></div>'))
@@ -75,7 +75,7 @@ for i, (t, s_) in enumerate(attend):
     B.append(mini(748, 290 + i * 50, t, s_))
 B.append(box(500, 546, 480, 38, "pers", '<div class="t">Personalization · authenticated fans only</div>'))
 # integration layer
-B.append(adobe(480, 640, 520, 64, "Identity Layer · Edge Worker", "NFL ID sign-in & session · stateless, no data persisted"))
+B.append(adobe(480, 640, 520, 64, "Middleware · Edge Worker", "NFL ID sign-in & session · stateless, no data persisted"))
 # right side
 B.append(tile(1088, 196, 464, 44, "tm", "Ticketmaster", "primary ticketing"))
 B.append(tile(1088, 248, 464, 44, "tm", "On Location", "official hospitality"))
@@ -100,7 +100,7 @@ def lab(x, y, t, anchor="start", cls=""):
 
 for y in (294, 374, 454):
     path(f"M 208,{y} H 258")
-lab(234, 282, "HTTPS", "middle")
+lab(234, 338, "HTTPS", "middle")
 path("M 430,368 H 478")                                  ; lab(454, 360, "origin", "middle")
 path("M 740,152 V 170", thick=True)                      ; lab(748, 166, "publish")
 path("M 740,600 V 638", "acc")                           ; lab(748, 624, "authenticate", cls="acc")
@@ -133,7 +133,7 @@ doc = f"""<!DOCTYPE html>
   .adobe .mark, .hub .mark {{ position:absolute; left:-12px; top:-14px; width:30px; height:30px; border-radius:4px; }}
   .adobe .t {{ font-size:15px; font-weight:600; }}
   .adobe .s {{ font-size:11.5px; color:#444; margin-top:4px; line-height:1.35; }}
-  .item {{ background:#fff; border-radius:4px; font-size:12px; padding:8px 10px; margin-top:12px; }}
+  .item {{ background:#fff; border-radius:4px; font-size:12px; padding:8px 10px; margin-top:10px; }}
   .panel {{ background:#eef0f4; }} .hub {{ border:2px solid #e1251b; }}
   .pt {{ position:absolute; left:20px; top:12px; font-size:17px; font-weight:600; }}
   .pt span {{ display:block; font-size:11.5px; font-weight:400; color:#444; margin-top:2px; }}
@@ -154,12 +154,12 @@ doc = f"""<!DOCTYPE html>
   svg.conn > path.thick {{ stroke-width:3; }}
   svg.conn > path.acc {{ stroke:#c11a12; stroke-width:2.2; }}
   svg.conn > path.lnk {{ stroke:#2e5aa8; }}
-  svg.conn text {{ font-family:'IBM Plex Mono',monospace; font-size:11px; fill:#333; paint-order:stroke; stroke:#fff; stroke-width:4px; }}
+  svg.conn text {{ font-family:'IBM Plex Mono',monospace; font-size:12px; fill:#333; paint-order:stroke; stroke:#fff; stroke-width:4px; }}
   svg.conn text.acc {{ fill:#c11a12; }} svg.conn text.lnk {{ fill:#2e5aa8; }}
   .foot {{ position:absolute; left:24px; top:836px; font-size:11.5px; color:#7a8294; }}
   .chips {{ display:flex; gap:6px; margin-top:8px; flex-wrap:nowrap; }}
   .chips span {{ background:#fff; border-radius:4px; padding:5px 8px; font-size:11px; white-space:nowrap; }}
-  .dg {{ position:absolute; left:0; top:64px; width:{W}px; height:{H}px; }}
+  .dg {{ position:absolute; left:0; top:84px; width:{W}px; height:{H}px; }}
   .legend {{ position:absolute; left:24px; top:800px; display:flex; gap:26px; font-size:11px; color:#444; align-items:center; }}
   .legend i {{ display:inline-block; width:26px; height:0; border-top:2px solid #4a4a4a; margin-right:8px; vertical-align:middle; }}
   .legend i.acc {{ border-color:#c11a12; }} .legend i.lnk {{ border-color:#2e5aa8; }} .legend i.dash {{ border-top-style:dashed; }}
