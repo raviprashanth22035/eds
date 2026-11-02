@@ -93,7 +93,7 @@ B.append(box(1204, 312, 332, 264, "card c-nfl",
 B.append(box(348, 612, 1188, 76, "card band",
              f'<div class="bl"><img src="{AMARK}" alt=""><span>Adobe Experience Cloud</span></div>'
              '<div class="bi"><b>Journey Optimizer · Campaign</b><i>reminders, updates &amp; cancellations · email &amp; SMS</i></div>'
-             '<div class="bi"><b>Target · Real-Time CDP</b><i>personalization for every fan</i></div>'))
+             '<div class="bi"><b>Target · Real-Time CDP</b><i>personalization for every fan · consent-gated</i></div>'))
 # outcomes
 OUTS = [("Seconds", "from author to live — no release cycle"),
         ("One platform", "league, club &amp; international events"),

@@ -50,7 +50,7 @@ D.append(zone(462, 440, 162, 150, "DEVELOPMENT", "grey"))
 D.append(person(386, 172, "Club & league authors"))
 D.append(person(386, 486, "Dev team"))
 # authoring chips
-for i, t in enumerate(["Document Authoring", "Universal Editor", "Registration Forms", "Event Sources"]):
+for i, t in enumerate(["Document Authoring", "Universal Editor", "Registration Forms", "Club & league event feeds"]):
     D.append(node(482, 178 + i * 54, 116, 42, "chip", t))
 # storage + runtime
 D.append(node(660, 178, 100, 66, "store", "Content & media bus", "EDS"))

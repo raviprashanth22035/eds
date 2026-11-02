@@ -74,7 +74,7 @@ for i, (t, s_) in enumerate(discover):
     B.append(mini(500, 290 + i * 50, t, s_))
 for i, (t, s_) in enumerate(attend):
     B.append(mini(748, 290 + i * 50, t, s_))
-B.append(box(500, 546, 480, 38, "pers", '<div class="t">Personalization · contextual for all fans · profile-based when signed in</div>'))
+B.append(box(500, 546, 480, 38, "pers", '<div class="t">Personalization · contextual for all · profile-based when signed in · consent-gated</div>'))
 # integration layer
 B.append(box(480, 640, 520, 120, "adobe aws", f'<img class="mark" src="{AWSMARK}" alt=""><div class="t">Middleware API · AWS <em>stateless · no fan data stored · static egress IP</em></div>'
              f'<div class="svc"><span><img src="{AWS_APIGW}" alt="">Amazon API Gateway</span><span><img src="{AWS_LAMBDA}" alt="">AWS Lambda · Node.js</span><span><img src="{AWS_SECRETS}" alt="">AWS Secrets Manager</span></div>'

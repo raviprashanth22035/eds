@@ -62,7 +62,7 @@ B.append(box(270, 226, 950, 534, "outer"))
 B.append(box(540, 246, 660, 414, "gold"))
 # authoring & delivery
 B.append(panel(290, 250, 220, 210, "EDS Authoring",
-               [("Document Authoring", ""), ("Universal Editor", ""), ("Registration Forms", ""), ("Event Sources", "")], ih=32))
+               [("Document Authoring", ""), ("Universal Editor", ""), ("Registration Forms", ""), ("Club & League Event Feeds", "")], ih=32))
 B.append(panel(290, 480, 220, 112, "Content & Code", [("Content & media bus", "EDS"), ("GitHub", "EDS blocks · middleware")], ih=30))
 B.append(box(290, 620, 220, 120, "dark mw", f'<img class="mk aws" src="{AWSMARK}" alt=""><b>Middleware API · AWS</b>'
              '<i>API Gateway → Lambda (Node.js)<br>Secrets Manager · static egress IP<br>stateless · no fan data stored</i>'))
@@ -77,7 +77,7 @@ B.append(panel(780, 346, 200, 296, "Attend",
                [("Registration", "guest & authenticated"), ("Ticketing", "hand-off to Ticketmaster"),
                 ("My Events", "authenticated · wallet"), ("Entry QR", "email · My Events · wallet"),
                 ("Event Alerts", "status & cancellations")]))
-B.append(panel(1000, 500, 156, 142, "Personalization", [("Contextual · all fans", "near me · market · language"), ("Profile · signed-in", "favourite club · past events")], ih=46))
+B.append(panel(1000, 476, 156, 172, "Personalization", [("Contextual · all fans", "near me · market · language"), ("Profile · signed-in", "favourite club · past events"), ("Consent manager", "gates Web SDK")], ih=40))
 # integrations column
 B.append(box(1250, 330, 210, 432, "src"))
 B.append(box(1262, 340, 186, 12, "gl", "ENGAGEMENT"))
@@ -112,7 +112,7 @@ path("M 700,208 V 244", "ingress")                                     ; lab(706
 path("M 510,300 H 538", "intra", dashed=True)                          ; lab(524, 292, "publish", "middle", "intra")
 path("M 400,460 V 478", "intra", dashed=True)
 path("M 540,640 H 512", "egress")
-path("M 968,460 H 1260", "egress", dashed=True)                        ; lab(1090, 452, "hand-off", "middle", "egress")
+path("M 968,460 H 1260", "egress")                        ; lab(1090, 452, "hand-off", "middle", "egress")
 path("M 1156,542 H 1260", "egress")                                    ; lab(1206, 534, "Web SDK", "middle", "egress")
 path("M 510,682 H 1220 Q 1228,682 1228,674 V 643 Q 1228,635 1236,635 H 1260", "egress") ; lab(860, 676, "register", "middle", "egress")
 path("M 510,705 H 1236 Q 1244,705 1244,697 V 690 Q 1244,682 1252,682 H 1260", "egress") ; lab(860, 699, "sign-in", "middle", "egress")
