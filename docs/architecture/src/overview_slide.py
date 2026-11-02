@@ -95,7 +95,7 @@ path("M 724,530 V 572", "lnk")
 path("M 862,530 V 572", "lnk", dashed=True)     ; lab(868, 556, "events", cls="lnk")
 
 NEEDS = ["One platform for league, club & international events",
-         "Free, paid & ticketed events",
+         "Free registration & ticketed events",
          "Guest & signed-in registration with entry QR",
          "Embedded in NFL OnePass & the NFL App",
          "Club & market content in local languages",
