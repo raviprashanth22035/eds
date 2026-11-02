@@ -58,8 +58,8 @@ D.append(node(800, 178, 116, 56, "run", "EDS runtime", "content + code", True))
 D.append(node(930, 178, 116, 56, "run", "Adobe CDN", "edge cache · WAF", True))
 D.append(node(1060, 178, 130, 56, "site", "events.nfl.com", "web · OnePass · NFL App"))
 # environments
-D.append(node(800, 328, 180, 52, "store", "Preview", "*.aem.page · authors review"))
-D.append(node(1010, 328, 180, 52, "store", "Live", "*.aem.live · CDN-cached"))
+D.append(node(800, 328, 170, 52, "store", "Preview", "*.aem.page · authors review"))
+D.append(node(1020, 328, 170, 52, "store", "Live", "*.aem.live · CDN-cached"))
 # middleware
 D.append(node(800, 460, 390, 62, "ours", "API Gateway → Lambda (Node.js)", "/api/* routed by Adobe CDN · Secrets Manager · stateless, no fan data", AWSMARK))
 # github
@@ -85,7 +85,7 @@ path("M 916,206 H 928")
 path("M 1046,206 H 1058")
 # content preview -> live
 path("M 712,244 V 346 Q 712,354 720,354 H 798", dashed=True) ; lab(756, 346, "preview", "middle")
-path("M 980,354 H 1008")                        ; lab(994, 346, "go live", "middle")
+path("M 970,354 H 1018")                        ; lab(994, 346, "go live", "middle")
 # code sync: GitHub blocks -> runtime (over the top)
 path("M 614,492 H 622 Q 630,492 630,484 V 148 Q 630,140 638,140 H 850 Q 858,140 858,148 V 176", dashed=True)
 lab(636, 420, "code sync")
