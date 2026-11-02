@@ -101,18 +101,18 @@ def lab(x, y, t, anchor="start", cls=""):
 for y in (294, 374, 454):
     path(f"M 208,{y} H 258")
 lab(234, 338, "HTTPS", "middle")
-path("M 430,368 H 478")                                  ; lab(454, 360, "origin", "middle")
-path("M 740,152 V 170", thick=True)                      ; lab(748, 166, "publish")
-path("M 740,600 V 638", "acc")                           ; lab(748, 624, "authenticate", cls="acc")
+path("M 430,368 H 478")                                  ; lab(454, 360, "Origin", "middle")
+path("M 740,152 V 170", thick=True)                      ; lab(748, 166, "Publish")
+path("M 740,600 V 638", "acc")                           ; lab(748, 624, "Authenticate", cls="acc")
 path("M 1000,218 H 1086", "lnk", dashed=True)
-path("M 1000,270 H 1086", "lnk", dashed=True)            ; lab(1043, 248, "hand-off", "middle", "lnk")
+path("M 1000,270 H 1086", "lnk", dashed=True)            ; lab(1043, 248, "Hand-off", "middle", "lnk")
 path("M 1000,312 H 1012 Q 1020,312 1020,320 V 364 Q 1020,372 1028,372 H 1086", "lnk")
-lab(1026, 352, "register", cls="lnk")
+lab(1026, 352, "Register", cls="lnk")
 path("M 1000,564 H 1012 Q 1020,564 1020,556 V 496 Q 1020,488 1028,488 H 1086", "lnk", dashed=True)
 lab(1057, 478, "Web SDK", "middle", "lnk")
-path("M 1000,662 H 1086", "lnk")                         ; lab(1043, 654, "authenticate", "middle", "lnk")
+path("M 1000,662 H 1086", "lnk")                         ; lab(1043, 654, "Authenticate", "middle", "lnk")
 path("M 1552,372 H 1560 Q 1568,372 1568,380 V 552 Q 1568,560 1560,560 H 1554", "lnk", dashed=True)
-lab(1560, 428, "events", "end", "lnk")
+lab(1560, 428, "Events", "end", "lnk")
 
 doc = f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
